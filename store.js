@@ -8,16 +8,7 @@ import { createBlacklistFilter } from 'redux-persist-transform-filter';
 import rootReducer from './reducers';
 import apiMiddleware from './middleware';
 
-
 const createCustomStore = () => {
-  // We don't want to persist the connection status
-  const blacklistFilter = createBlacklistFilter('calls', [
-    'connection',
-    'search',
-    'call',
-    'dialpad'
-  ]);
-
   const blacklistLoginFilter = createBlacklistFilter('auth', [
     'loginInProgress',
     'error',
@@ -30,7 +21,8 @@ const createCustomStore = () => {
   const persistConfig = {
     key: 'phone-webapp',
     storage,
-    transforms: [blacklistFilter, blacklistLoginFilter],
+    blacklist: ['connection', 'search', 'call', 'dialpad'],
+    transforms: [blacklistLoginFilter],
     stateReconciler: autoMergeLevel2
   };
 
