@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import RecentCallDetails from './RecentCallDetails';
 
-function mapStateToProps(state) {
-  const { calling } = state.calls.call;
+function mapStateToProps({ call }) {
   return {
-    calling
+    calling: call.calling
   };
 }
 

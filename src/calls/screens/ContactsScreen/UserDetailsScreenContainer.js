@@ -6,11 +6,10 @@ import dialBackendApi from '../../../services/api';
 
 import UserDetailsScreen from './UserDetailsScreen';
 
-function mapStateToProps(state) {
-  const { calls } = state;
+function mapStateToProps({ contacts, profile }) {
   return {
-    contacts: calls.contacts.getContacts.contacts,
-    profile: calls.profile.profile
+    contacts: contacts.getContacts.contacts,
+    profile: profile.profile
   };
 }
 

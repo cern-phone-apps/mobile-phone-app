@@ -6,10 +6,9 @@ import ContactsScreen from './ContactsScreen';
 
 import dialBackendApi from '../../../services/api';
 
-function mapStateToProps(state) {
-  const { calls } = state;
+function mapStateToProps({ contacts }) {
   return {
-    contacts: calls.contacts.getContacts.contacts
+    contacts: contacts.getContacts.contacts.contacts
   };
 }
 

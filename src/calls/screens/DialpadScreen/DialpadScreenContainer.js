@@ -2,13 +2,13 @@ import { connect } from 'react-redux';
 
 import ConnectedScreen from './DialpadScreen';
 
-function mapStateToProps(state) {
-  const { call } = state.calls;
+function mapStateToProps({ call, connection }) {
   return {
     onCall: call.onCall,
     disabled: call.onCall,
     calling: call.calling,
-    recipient: call.tempRemote
+    recipient: call.tempRemote,
+    connected: connection.connected
   };
 }
 

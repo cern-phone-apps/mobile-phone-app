@@ -4,10 +4,9 @@ import { bindActionCreators } from 'redux';
 import { callActions } from 'dial-core';
 import { RecentCallsScreen } from './RecentCallsScreen';
 
-function mapStateToProps(state) {
-  const { calls } = state;
+function mapStateToProps({ recent }) {
   return {
-    recentCalls: calls.recent.recentCalls
+    recentCalls: recent.recentCalls
   };
 }
 

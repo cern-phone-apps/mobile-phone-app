@@ -61,7 +61,7 @@ export default class SearchUsersScreen extends React.Component {
 
   renderItem = ({ item }) => {
     const { addUserContact, getUserContacts, contacts } = this.props;
-    const isAlreadyInUserContacts = !!contacts.find(
+    const isAlreadyInUserContacts = !!contacts.contacts.find(
       contact => parseInt(contact.personId, 10) === parseInt(item.personId, 10)
     );
 

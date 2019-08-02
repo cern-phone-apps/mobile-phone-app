@@ -5,11 +5,10 @@ import SearchUsersScreen from './SearchUsersScreen';
 
 import dialBackendApi from '../../../services/api';
 
-function mapStateToProps(state) {
-  const { calls } = state;
+function mapStateToProps({ search, contacts }) {
   return {
-    searching: calls.search.searching,
-    contacts: calls.contacts.getContacts.contacts
+    searching: search.searching,
+    contacts: contacts.getContacts.contacts
   };
 }
 

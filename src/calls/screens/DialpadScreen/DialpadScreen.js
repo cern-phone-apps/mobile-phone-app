@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 import { Icon, Text } from 'react-native-elements';
@@ -40,7 +40,19 @@ const callingStyles = StyleSheet.create({
   }
 });
 
-const DialpadScreen = ({ disabled, calling, recipient, onCall }) => {
+const DialpadScreen = ({
+  disabled,
+  calling,
+  recipient,
+  onCall,
+  connected,
+  navigation
+}) => {
+  useEffect(() => {
+    navigation.navigate(connected ? 'AppRegistered' : 'Register');
+    console.log('Running useEffect -> DialpadScreen()');
+  }, [connected]);
+
   if (onCall) {
     return <OnCallInfoContainer />;
   }
