@@ -96,11 +96,15 @@ export class PhoneProvider extends React.Component {
    * When the component is mounted we load Dial
    */
   componentDidMount() {
-    const dial = new Dial();
+    const { authToken } = this.props;
+
+    const firstRegister = !!authToken;
+    const devMode = false;
+
     RNCallKeep.setup(options);
     this.setState(
       {
-        toneAPI: dial
+        toneAPI: new Dial(devMode, firstRegister)
       },
       () => {
         this.addListeners();
@@ -147,11 +151,11 @@ export class PhoneProvider extends React.Component {
   authenticateUser = username => {
     const {
       authToken,
+      toneToken,
       requestRegistration,
       setToneToken,
-      toneToken,
       clearAuthToken,
-      logout
+      setRegistrationFailure
     } = this.props;
     const { toneAPI } = this.state;
 
@@ -165,6 +169,7 @@ export class PhoneProvider extends React.Component {
       tempToken = authToken;
     } else {
       tempToken = toneToken;
+      tokenUsed = 'hashedToken';
     }
     try {
       const eToken = toneAPI.authenticate(username, tempToken);
@@ -178,8 +183,18 @@ export class PhoneProvider extends React.Component {
         setToneToken(eToken);
       }
     } catch (error) {
+      errorMessage(`Unable to authenticate the user`);
       errorMessage(error);
-      logout();
+
+      const errorToDisplay = {
+        code: {
+          status_code: 'UA-1'
+        },
+        description: `Unable to authenticate the user on TONE`
+      };
+
+      setRegistrationFailure(errorToDisplay);
+      // logout();
     }
   };
 
@@ -240,13 +255,18 @@ export class PhoneProvider extends React.Component {
   };
 
   hangUpCurrentCallAction = () => {
+    const { setTempCallFinished } = this.props;
     const {
       call: { uuid }
     } = this.props;
     const { toneAPI } = this.state;
     toneOutMessage(`Hang up current call`);
     RNCallKeep.endCall(uuid);
-    return toneAPI.hangUp();
+    try {
+      toneAPI.hangUp();
+    } catch (error) {
+      setTempCallFinished();
+    }
   };
 
   hangUpCallEvent = () => {
@@ -359,12 +379,12 @@ export class PhoneProvider extends React.Component {
    * Logs the user out of TONE
    */
   unAuthenticateUser = () => {
-    const { setCallFinished, requestDisconnection, call: onCall } = this.props;
+    const { setTempCallFinished, requestDisconnection, call: onCall } = this.props;
     const { toneAPI } = this.state;
     toneOutMessage(`UnAuthenticating user`);
 
     if (onCall) {
-      setCallFinished();
+      setTempCallFinished();
     }
     requestDisconnection(true);
     return toneAPI.stopAgent();
@@ -376,20 +396,24 @@ export class PhoneProvider extends React.Component {
    */
   handleTerminatedEvent = () => {
     const {
-      setCallFinished,
-      call: { additionalCalls, tempRemote, remote, onCall, uuid },
-      removeAdditionalCall
+      addRecentCall,
+      setTempCallFinished,
+      setOngoingCallFinished,
+      call: { additionalCalls, tempRemote, remote, onCall }
     } = this.props;
-    logMessage(`additionalCalls: ${additionalCalls}`);
+
     if (additionalCalls > 0) {
-      removeAdditionalCall();
-      this.addCallToRecentCalls(tempRemote);
-      setCallFinished(true, remote);
+      // We need to handle the additionalCalls
+      this.handleTerminatedEventWithAdditionalCalls();
+    } else if (onCall) {
+      // We handle the ongoing call
+      addRecentCall(remote);
+      setOngoingCallFinished();
     } else {
-      this.addCallToRecentCalls(onCall ? remote : tempRemote);
-      setCallFinished();
+      // We handle the temp call
+      addRecentCall(tempRemote);
+      setTempCallFinished();
     }
-    RNCallKeep.endCall(this.getCurrentCallId());
   };
 
   /**
@@ -470,6 +494,22 @@ export class PhoneProvider extends React.Component {
     logMessage('Calling onIncomingCallDisplayed');
     // You will get this event after RNCallKeep finishes showing incoming call UI
     // You can check if there was an error while displaying
+  };
+
+  handlRegistrationFailedEvent = () => {
+    const { setRegistrationFailure } = this.props;
+    const errorToDisplay = {
+      code: {
+        status_code: 'UA-2-registration-failed'
+      },
+      description: `Unable to authenticate the user on TONE`
+    };
+    displayErrorAlert(
+      errorToDisplay.code.status_code,
+      errorToDisplay.code.description
+    );
+
+    setRegistrationFailure(errorToDisplay);
   };
 
   /**
