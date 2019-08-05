@@ -4,33 +4,18 @@ import { ListItem, Text } from 'react-native-elements';
 import { FlatList, View } from 'react-native';
 import { IconButton } from 'react-native-paper';
 
-export default class ContactsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Contacts'
-  };
+export default function ContactsScreen({
+  contacts,
+  getUserContacts,
+  removeUserContact,
+  navigation
+}) {
+  const keyExtractor = item => item.personId.toString();
 
-  static propTypes = {
-    contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-    getUserContacts: PropTypes.func.isRequired,
-    removeUserContact: PropTypes.func.isRequired
-  };
-
-  componentDidMount() {
-    const { getUserContacts } = this.props;
-    getUserContacts();
-  }
-
-  keyExtractor = item => item.personId.toString();
-
-  renderItem = ({ item }) => {
-    const { getUserContacts, removeUserContact } = this.props;
-    // const getUserContacts = () => [];
-    // const removeUserContact = () => {};
+  const renderItem = ({ item }) => {
     return (
       <ListItem
-        onPress={() =>
-          this.props.navigation.navigate('UserDetails', { details: item })
-        }
+        onPress={() => navigation.navigate('UserDetails', { details: item })}
         title={`${item.displayName} (${item.division})`}
         leftAvatar={{ title: item.displayName[0] }}
         rightIcon={
@@ -47,29 +32,43 @@ export default class ContactsScreen extends React.Component {
     );
   };
 
-  render() {
-    const { contacts } = this.props;
+  renderItem.propTypes = {
+    item: PropTypes.shape({
+      displayName: PropTypes.string.isRequired,
+      personId: PropTypes.string.isRequired,
+      division: PropTypes.string.isRequired
+    }).isRequired
+  };
 
-    return (
-      <View style={{ flex: 1 }}>
-        <FlatList
-          keyExtractor={this.keyExtractor}
-          data={contacts}
-          renderItem={this.renderItem}
-          ListEmptyComponent={
-            <Text
-              style={{
-                display: 'flex',
-                alignSelf: 'center',
-                marginTop: 10,
-                marginBottom: 10
-              }}
-            >
-              Currently you do not have any contacts
-            </Text>
-          }
-        />
-      </View>
-    );
-  }
+  return (
+    <View style={{ flex: 1 }}>
+      <FlatList
+        keyExtractor={keyExtractor}
+        data={contacts}
+        renderItem={renderItem}
+        ListEmptyComponent={
+          <Text
+            style={{
+              display: 'flex',
+              alignSelf: 'center',
+              marginTop: 10,
+              marginBottom: 10
+            }}
+          >
+            Currently you do not have any contacts
+          </Text>
+        }
+      />
+    </View>
+  );
 }
+
+ContactsScreen.navigationOptions = {
+  title: 'Contacts'
+};
+
+ContactsScreen.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getUserContacts: PropTypes.func.isRequired,
+  removeUserContact: PropTypes.func.isRequired
+};
