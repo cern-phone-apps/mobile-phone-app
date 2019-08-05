@@ -1,67 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Keyboard, ActivityIndicator, FlatList, View } from 'react-native';
+
 import PropTypes from 'prop-types';
 
-import { ActivityIndicator, FlatList, View } from 'react-native';
 import { Button, Icon, ListItem, SearchBar, Text } from 'react-native-elements';
 import { IconButton } from 'react-native-paper';
 
-export default class SearchUsersScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Search users'
-  };
+export default function SearchUsersScreen({
+  addUserContact,
+  searchUsers,
+  getUserContacts,
+  contacts,
+  searching
+}) {
+  const [searchText, setSearchText] = useState(null);
+  const [searchResults, setSearchResults] = useState([]);
 
-  static propTypes = {
-    searching: PropTypes.bool,
-    searchUsers: PropTypes.func.isRequired,
-    addUserContact: PropTypes.func.isRequired,
-    getUserContacts: PropTypes.func.isRequired,
-    contacts: PropTypes.arrayOf(PropTypes.object)
-  };
+  const keyExtractor = item => item.personId;
 
-  static defaultProps = {
-    contacts: [],
-    searching: false
-  };
-
-  state = {
-    searchText: null,
-    searchResults: []
-  };
-
-  keyExtractor = item => item.personId;
-
-  onPress = async () => {
-    const { searchText } = this.state;
-
+  const onPress = async () => {
+    Keyboard.dismiss();
     if (!searchText) {
-      this.setState({ searchResults: [] });
+      setSearchResults([]);
       return;
     }
     if (searchText.length < 3) {
       return;
     }
 
-    const { searchUsers } = this.props;
     const { payload } = await searchUsers(searchText);
-    this.setState({
-      searchResults: payload
-    });
-    console.log(payload);
+    setSearchResults(payload);
   };
 
-  onChangeText = searchText => {
-    const newState = { searchText };
-
-    if (!searchText) {
-      newState.searchResults = [];
+  const onChangeText = newSearchText => {
+    if (!newSearchText) {
+      setSearchResults([]);
     }
-
-    this.setState(newState);
+    setSearchText(newSearchText);
   };
 
-  renderItem = ({ item }) => {
-    const { addUserContact, getUserContacts, contacts } = this.props;
-    const isAlreadyInUserContacts = !!contacts.contacts.find(
+  const renderItem = ({ item }) => {
+    const isAlreadyInUserContacts = !!contacts.find(
       contact => parseInt(contact.personId, 10) === parseInt(item.personId, 10)
     );
 
@@ -70,7 +49,9 @@ export default class SearchUsersScreen extends React.Component {
     ) : (
       <IconButton
         icon="add"
-        onPress={() => addUserContact(item).then(() => getUserContacts())}
+        onPress={() => {
+          addUserContact(item).then(() => getUserContacts());
+        }}
       />
     );
 
@@ -84,69 +65,97 @@ export default class SearchUsersScreen extends React.Component {
     );
   };
 
-  render() {
-    const { searchText, searchResults } = this.state;
-    const { searching } = this.props;
-    return (
-      <View style={{ flex: 1 }}>
+  renderItem.propTypes = {
+    item: PropTypes.shape({
+      displayName: PropTypes.string.isRequired,
+      personId: PropTypes.string.isRequired,
+      division: PropTypes.string.isRequired
+    }).isRequired
+  };
+
+  return (
+    <View style={{ flex: 1 }}>
+      <View
+        style={{
+          flexDirection: 'row'
+        }}
+      >
+        <View style={{ flex: 3, justifyContent: 'space-around' }}>
+          <SearchBar
+            placeholder="Search for users"
+            onChangeText={onChangeText}
+            value={searchText}
+            style={{ backgroundColor: 'none' }}
+            onClear={() => {
+              setSearchText('');
+              setSearchResults([]);
+            }}
+            lightTheme
+          />
+        </View>
         <View
           style={{
-            flexDirection: 'row'
+            flex: 1,
+            justifyContent: 'center',
+            backgroundColor: '#E1E8EE',
+            paddingRight: 10
           }}
         >
-          <View style={{ flex: 3, justifyContent: 'space-around' }}>
-            <SearchBar
-              placeholder="Search for users"
-              onChangeText={this.onChangeText}
-              value={searchText}
-              style={{ backgroundColor: 'none' }}
-              onClear={() =>
-                this.setState({ searchText: '', searchResults: [] })
-              }
-              lightTheme
-            />
-          </View>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: 'center',
-              backgroundColor: '#E1E8EE',
-              paddingRight: 10
-            }}
-          >
-            <Button
-              title="Search"
-              onPress={this.onPress}
-              loading={searching}
-              disabled={!searchText || searchText.length < 3}
-            />
-          </View>
-        </View>
-        <View>
-          <FlatList
-            keyExtractor={this.keyExtractor}
-            data={searchResults}
-            renderItem={this.renderItem}
-            refreshing={searching}
-            ListEmptyComponent={() =>
-              searching ? (
-                <ActivityIndicator size="large" style={{ paddingTop: 100 }} />
-              ) : (
-                <Text
-                  style={{
-                    display: 'flex',
-                    alignSelf: 'center',
-                    marginTop: 10,
-                    marginBottom: 10
-                  }}
-                >
-                  There are no users matching your search criterion
-                </Text>
-              )
-            }
+          <Button
+            title="Search"
+            onPress={onPress}
+            loading={searching}
+            disabled={!searchText || searchText.length < 3}
           />
         </View>
       </View>
-    );
-  }
+      <View>
+        <FlatList
+          keyExtractor={keyExtractor}
+          data={searchResults}
+          renderItem={renderItem}
+          refreshing={searching}
+          ListEmptyComponent={() =>
+            searching ? (
+              <ActivityIndicator size="large" style={{ paddingTop: 100 }} />
+            ) : (
+              <Text
+                style={{
+                  display: 'flex',
+                  alignSelf: 'center',
+                  marginTop: 10,
+                  marginBottom: 10
+                }}
+              >
+                There are no users matching your search criterion
+              </Text>
+            )
+          }
+        />
+      </View>
+    </View>
+  );
 }
+
+SearchUsersScreen.navigationOptions = {
+  title: 'Search users'
+};
+
+SearchUsersScreen.propTypes = {
+  searching: PropTypes.bool,
+  searchUsers: PropTypes.func.isRequired,
+  addUserContact: PropTypes.func.isRequired,
+  getUserContacts: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      displayName: PropTypes.string,
+      personId: PropTypes.string,
+      division: PropTypes.string
+    })
+  )
+};
+
+SearchUsersScreen.defaultProps = {
+  contacts: [],
+  searching: false
+};

@@ -8,7 +8,7 @@ import dialBackendApi from '../../../services/api';
 function mapStateToProps({ search, contacts }) {
   return {
     searching: search.searching,
-    contacts: contacts.getContacts.contacts
+    contacts: contacts.getContacts.contacts.contacts
   };
 }
 
