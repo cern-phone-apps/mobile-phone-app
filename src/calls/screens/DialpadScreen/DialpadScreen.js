@@ -82,7 +82,13 @@ const DialpadScreen = ({
 };
 
 DialpadScreen.propTypes = {
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  calling: PropTypes.bool.isRequired,
+  onCall: PropTypes.bool.isRequired,
+  connected: PropTypes.bool.isRequired,
+  recipient: PropTypes.shape({
+    phoneNumber: PropTypes.string.isRequired
+  }).isRequired
 };
 
 DialpadScreen.defaultProps = {
