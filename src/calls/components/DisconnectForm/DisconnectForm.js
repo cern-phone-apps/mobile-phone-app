@@ -5,38 +5,30 @@ import { ListItem } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 
-export class DisconnectForm extends React.Component {
-  static propTypes = {
-    phoneService: PropTypes.shape({
-      disconnectUser: PropTypes.func.isRequired
-    }).isRequired
-  };
-
+export function DisconnectForm({ phoneService, navigation }) {
   /**
    * Register the user in the Telephony Backend
    */
-  disconnectUserAction = async () => {
-    // const { phoneNumber } = this.state;
-    const { phoneService, navigation } = this.props;
-    console.log(`Disconnecting user`);
+  const disconnectUserAction = async () => {
     await phoneService.disconnectUser();
     navigation.navigate('Register');
   };
 
-  /**
-   * Render the component
-   * @returns {*}
-   */
-  render() {
-    return (
-      <ListItem
-        onPress={this.disconnectUserAction}
-        key="changeNumber"
-        title="Change registered phone number"
-        leftIcon={{ name: 'phone' }}
-      />
-    );
-  }
+  return (
+    <ListItem
+      onPress={disconnectUserAction}
+      key="changeNumber"
+      title="Change registered phone number"
+      leftIcon={{ name: 'phone' }}
+      bottomDivider
+    />
+  );
 }
+
+DisconnectForm.propTypes = {
+  phoneService: PropTypes.shape({
+    disconnectUser: PropTypes.func.isRequired
+  }).isRequired
+};
 
 export default withNavigation(withPhoneService(DisconnectForm));
