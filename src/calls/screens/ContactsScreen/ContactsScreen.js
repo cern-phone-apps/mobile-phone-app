@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ListItem, Text } from 'react-native-elements';
 import { FlatList, View } from 'react-native';
@@ -10,6 +10,10 @@ export default function ContactsScreen({
   removeUserContact,
   navigation
 }) {
+  useEffect(() => {
+    getUserContacts();
+  }, []);
+
   const keyExtractor = item => item.personId.toString();
 
   const renderItem = ({ item }) => {
