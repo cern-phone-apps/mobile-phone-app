@@ -29,9 +29,9 @@ const LogoutListComponent = ({ logout, navigation, phoneService }) => {
     <ListItem
       key="logout"
       title="Log out"
-      topDivider
       leftIcon={{ name: 'logout', type: 'material-community' }}
       onPress={() => logoutFunc(logout, navigation, phoneService)}
+      bottomDivider
     />
   );
 };
