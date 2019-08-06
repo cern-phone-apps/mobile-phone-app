@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from 'react-native-elements';
 
 import { IconButton } from 'react-native-paper';
 import { createStackNavigator } from 'react-navigation';
@@ -7,7 +6,6 @@ import ContactsScreenContainer from '../screens/ContactsScreen/ContactsScreenCon
 import SearchUsersScreenContainer from '../screens/SearchUsersScreen/SearchUsersScreenContainer';
 import UserDetailsScreenContainer from '../screens/ContactsScreen/UserDetailsScreenContainer';
 import ColorPalette from '../../styles/ColorPalette';
-
 
 export default createStackNavigator({
   Contacts: {
@@ -56,7 +54,7 @@ export default createStackNavigator({
       },
       title: 'User Details',
       headerStyle: {
-        backgroundColor: '#2196F3'
+        backgroundColor: ColorPalette.primary
       },
       headerTintColor: 'white'
     })
