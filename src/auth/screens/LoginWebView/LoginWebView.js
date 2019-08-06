@@ -49,7 +49,9 @@ const LoginWebView = ({
   console.debug('WebView loading:', url);
   return (
     <WebView
-      ref={ref => (webview = ref)}
+      ref={ref => {
+        webview = ref;
+      }}
       source={{ uri: url }}
       onNavigationStateChange={onNavigationStateChange}
     />
