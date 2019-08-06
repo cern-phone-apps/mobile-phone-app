@@ -12,6 +12,8 @@ import App from './App';
 import configureStore from './store';
 
 import PhoneProvider from './src/calls/providers/PhoneProvider/PhoneProviderContainer';
+
+console.disableYellowBox = true;
 /**
  * Set up the store and the history
  */
