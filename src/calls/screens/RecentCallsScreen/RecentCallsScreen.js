@@ -6,19 +6,10 @@ import moment from 'moment';
 
 import ColorPalette from '../../../styles/ColorPalette';
 
-export class RecentCallsScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Recent Calls'
-  };
+export function RecentCallsScreen({ navigation, recentCalls }) {
+  const keyExtractor = (item, index) => index.toString();
 
-  static propTypes = {
-    recentCalls: PropTypes.arrayOf(PropTypes.object).isRequired
-  };
-
-  keyExtractor = (item, index) => index.toString();
-
-  renderItem = ({ item }) => {
-    const { navigation } = this.props;
+  const renderItem = ({ item }) => {
     const printableDate = moment(item.endTime).calendar();
     const duration = moment.duration(
       moment(item.endTime).diff(moment(item.startTime))
@@ -57,19 +48,35 @@ export class RecentCallsScreen extends React.Component {
     );
   };
 
-  render() {
-    const { recentCalls } = this.props;
-    return (
-      <View style={{ flex: 1 }}>
-        {/* other code from before here */}
-        <FlatList
-          keyExtractor={this.keyExtractor}
-          data={recentCalls}
-          renderItem={this.renderItem}
-        />
-      </View>
-    );
-  }
+  renderItem.propTypes = {
+    item: PropTypes.shape({
+      phoneNumber: PropTypes.string.isRequired,
+      missed: PropTypes.string.isRequired,
+      incoming: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      startTime: PropTypes.string.isRequired,
+      endTime: PropTypes.string.isRequired
+    }).isRequired
+  };
+
+  return (
+    <View style={{ flex: 1 }}>
+      {/* other code from before here */}
+      <FlatList
+        keyExtractor={keyExtractor}
+        data={recentCalls}
+        renderItem={renderItem}
+      />
+    </View>
+  );
 }
+
+RecentCallsScreen.navigationOptions = {
+  title: 'Recent Calls'
+};
+
+RecentCallsScreen.propTypes = {
+  recentCalls: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default RecentCallsScreen;
