@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { ListItem } from 'react-native-elements';
-import DisconnectForm from '../../../calls/components/DisconnectForm/DisconnectForm';
+import DisconnectFormWithNavigation from '../../../calls/components/DisconnectForm/DisconnectForm';
 import LogoutListComponentContainer from '../../components/logout/LogoutListComponentContainer';
 
 export default class SettingsScreen extends React.Component {
@@ -29,9 +29,11 @@ export default class SettingsScreen extends React.Component {
             title={item.title}
             leftIcon={{ name: item.icon, type: item.type }}
             onPress={() => item.onPress()}
+            bottomDivider
+            chevron
           />
         ))}
-        <DisconnectForm />
+        <DisconnectFormWithNavigation />
         <LogoutListComponentContainer />
       </View>
     );

@@ -31,4 +31,8 @@ DisconnectForm.propTypes = {
   }).isRequired
 };
 
-export default withNavigation(withPhoneService(DisconnectForm));
+const DisconnectFormWithNavigation = withNavigation(
+  withPhoneService(DisconnectForm)
+);
+
+export default DisconnectFormWithNavigation;
