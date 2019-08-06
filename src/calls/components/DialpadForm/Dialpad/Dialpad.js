@@ -1,22 +1,9 @@
 import React from 'react';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = StyleSheet.create({
-  mainText: {
-    fontSize: 25,
-    color: 'black',
-    textAlign: 'center'
-  },
-  subText: {
-    fontSize: 10,
-    textAlign: 'center'
-  },
-  disabled: {
-    opacity: 0.3
-  }
-});
+import styles from './DialpadStyles';
 
 const Dialpad = ({ updatePhoneNumber, disabled }) => {
   const pad = [
