@@ -1,27 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Icon, Text } from 'react-native-elements';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import moment from 'moment';
 import MakeCallButton from '../../components/MakeCallButton/MakeCallButton';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: 10
-  },
-  icon: {
-    display: 'flex'
-  },
-  iconTextContainer: {
-    paddingVertical: 15,
-    paddingHorizontal: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+import styles from './RecentCallDetailsStyles';
 
 function getPrintableDate(recentCall) {
   let printableDate;
@@ -44,46 +27,43 @@ function getDuration(recentCall) {
 /**
  * We use this to set the Navigation title
  */
-class RecentCallDetails extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: navigation.getParam('phoneNumber', 'Recent Call Details')
-    };
-  };
+function RecentCallDetails({ navigation }) {
+  const { recentCall } = navigation.state.params;
 
-  render() {
-    const { navigation } = this.props;
-    const { recentCall } = navigation.state.params;
+  const printableDate = getPrintableDate(recentCall);
+  const duration = getDuration(recentCall);
 
-    const printableDate = getPrintableDate(recentCall);
-    const duration = getDuration(recentCall);
+  const missedColor = recentCall.missed ? 'red' : 'green';
+  const iconName = recentCall.incoming ? 'arrow-downward' : 'arrow-upward';
 
-    const missedColor = recentCall.missed ? 'red' : 'green';
-    const iconName = recentCall.incoming ? 'arrow-downward' : 'arrow-upward';
-
-    return (
-      <View style={styles.container}>
-        <View style={[styles.iconTextContainer]}>
-          <Icon name="phone" size={40} />
-          <Text h2>{recentCall.phoneNumber}</Text>
-        </View>
-        <View style={[styles.iconTextContainer]}>
-          <Icon name="clock" type="evilicon" size={40} />
-          <Icon name={iconName} color={missedColor} type="ionicons" size={20} />
-          {recentCall.missed ? (
-            <Text>Missed</Text>
-          ) : (
-            <Text>{duration ? duration.humanize() : ''}</Text>
-          )}
-        </View>
-        <View style={[styles.iconTextContainer]}>
-          <Icon name="calendar" type="evilicon" size={40} />
-          <Text>{printableDate}</Text>
-        </View>
-        <MakeCallButton phoneNumber={recentCall.phoneNumber} />
+  return (
+    <View style={styles.container}>
+      <View style={[styles.iconTextContainer]}>
+        <Icon name="phone" size={40} />
+        <Text h2>{recentCall.phoneNumber}</Text>
       </View>
-    );
-  }
+      <View style={[styles.iconTextContainer]}>
+        <Icon name="clock" type="evilicon" size={40} />
+        <Icon name={iconName} color={missedColor} type="ionicons" size={20} />
+        {recentCall.missed ? (
+          <Text>Missed</Text>
+        ) : (
+          <Text>{duration ? duration.humanize() : ''}</Text>
+        )}
+      </View>
+      <View style={[styles.iconTextContainer]}>
+        <Icon name="calendar" type="evilicon" size={40} />
+        <Text>{printableDate}</Text>
+      </View>
+      <MakeCallButton phoneNumber={recentCall.phoneNumber} />
+    </View>
+  );
 }
+
+RecentCallDetails.navigationOptions = ({ navigation }) => {
+  return {
+    title: navigation.getParam('phoneNumber', 'Recent Call Details')
+  };
+};
 
 export default RecentCallDetails;
