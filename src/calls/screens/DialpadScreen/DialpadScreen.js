@@ -74,7 +74,6 @@ const DialpadScreen = ({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>CERN Phone Mobile</Text>
       <View style={styles.makeCallForm}>
         <MakeCallForm disabled={disabled} />
       </View>
