@@ -5,10 +5,6 @@ import { recentCallsActions } from 'dial-core';
 import { withNavigation } from 'react-navigation';
 import RecentCallsMenu from './RecentCallsMenu';
 
-function mapStateToProps() {
-  return {};
-}
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
@@ -19,6 +15,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(withNavigation(RecentCallsMenu));
