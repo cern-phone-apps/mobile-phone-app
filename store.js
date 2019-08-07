@@ -14,8 +14,6 @@ const createCustomStore = () => {
     'error',
     'authInProgress',
     'requestingToken'
-    // "loggedIn",
-    // "token"
   ]);
 
   const persistConfig = {

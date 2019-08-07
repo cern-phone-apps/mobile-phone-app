@@ -1,6 +1,6 @@
 import { apiMiddleware, isRSAA, RSAA } from 'redux-api-middleware';
 
-import { authActions, authActionFactory } from 'dial-core';
+import { authActions } from 'dial-core';
 
 import JwtTokenHandlerMobile from './src/auth/utils/token-mobile-handler';
 
