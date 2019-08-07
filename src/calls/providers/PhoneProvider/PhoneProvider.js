@@ -1,9 +1,12 @@
 import React, { Children } from 'react';
+import { Platform, Alert } from 'react-native';
+
 import PropTypes from 'prop-types';
 import { Dial } from 'tone-api-mobile';
-import { Alert } from 'react-native';
+
 import RNCallKeep from 'react-native-callkeep';
 import uuid4 from 'uuid/v4';
+import Sound from '../../utils/sound/Sound';
 
 import {
   errorMessage,
@@ -41,16 +44,21 @@ export class PhoneProvider extends React.Component {
     toneToken: PropTypes.string.isRequired,
     // call info
     call: PropTypes.shape({
-      remote: PropTypes.shape({}),
+      remote: PropTypes.shape({
+        callId: PropTypes.string
+      }),
+      tempRemote: PropTypes.shape({
+        callId: PropTypes.string
+      }),
       startTime: PropTypes.number,
-      onCall: PropTypes.bool
+      onCall: PropTypes.bool,
+      additionalCalls: PropTypes.number.isRequired
     }),
     // state setters
     setToneToken: PropTypes.func.isRequired,
     setRegistrationSuccess: PropTypes.func.isRequired,
     setIsCalling: PropTypes.func.isRequired,
     setIsReceivingCall: PropTypes.func.isRequired,
-    setCallFinished: PropTypes.func.isRequired,
     setCallFailed: PropTypes.func.isRequired,
     setCallMissed: PropTypes.func.isRequired,
     setCallAccepted: PropTypes.func.isRequired,
@@ -60,20 +68,22 @@ export class PhoneProvider extends React.Component {
     requestRegistration: PropTypes.func.isRequired,
     requestDisconnection: PropTypes.func.isRequired,
     addRecentCall: PropTypes.func.isRequired,
-    addAdditionalCall: PropTypes.func.isRequired,
-    removeAdditionalCall: PropTypes.func.isRequired,
     clearAuthToken: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired
+    setRegistrationFailure: PropTypes.func.isRequired,
+    setTempCallFinished: PropTypes.func.isRequired,
+    setOngoingCallFinished: PropTypes.func.isRequired,
+    incrementAdditionalCallsNumber: PropTypes.func.isRequired,
+    decrementAdditionalCallsNumber: PropTypes.func.isRequired,
+    setCallId: PropTypes.func.isRequired
   };
 
   static defaultProps = {
     call: {},
-    authToken: ''
+    authToken: null
   };
 
   state = {
-    phoneService: this,
-    currentCallId: ''
+    phoneService: this
   };
 
   static childContextTypes = {
@@ -114,7 +124,7 @@ export class PhoneProvider extends React.Component {
         );
         RNCallKeep.addEventListener('answerCall', () => {
           logMessage('Received answerCall event');
-          this.onAnswerCallAction();
+          this.acceptToneCall();
         });
         RNCallKeep.addEventListener('endCall', this.hangUpCurrentCallAction);
         RNCallKeep.addEventListener(
@@ -169,7 +179,6 @@ export class PhoneProvider extends React.Component {
       tempToken = authToken;
     } else {
       tempToken = toneToken;
-      tokenUsed = 'hashedToken';
     }
     try {
       const eToken = toneAPI.authenticate(username, tempToken);
@@ -178,8 +187,6 @@ export class PhoneProvider extends React.Component {
          * If the authToken was used, we clear the original auth token as we will use the encrypted token from now on.
          */
         clearAuthToken();
-        logMessage('eToken is');
-        logMessage(eToken);
         setToneToken(eToken);
       }
     } catch (error) {
@@ -202,7 +209,7 @@ export class PhoneProvider extends React.Component {
     const {
       requestDisconnection,
       setDisconnectionSuccess,
-      call: onCall
+      call: { onCall }
     } = this.props;
     const { toneAPI } = this.state;
 
@@ -229,63 +236,51 @@ export class PhoneProvider extends React.Component {
    * @returns {*}
    */
   makeCall = (name = 'Unknown', phoneNumber) => {
-    const { setMakeCallRequest, setIsCalling } = this.props;
+    const { setMakeCallRequest, setIsCalling, setCallId } = this.props;
     const { toneAPI } = this.state;
 
     logMessage('makeCall has been called');
-    setMakeCallRequest(
-      {
-        name,
-        phoneNumber
-      },
-      this.getCurrentCallId()
-    );
+    setMakeCallRequest({
+      name,
+      phoneNumber
+    });
     setIsCalling();
-    // RNCallKeep.startCall(this.getCurrentCallId(), phoneNumber);
-    toneAPI.call(phoneNumber);
+    const callSessionId = toneAPI.call(phoneNumber);
+    setCallId(callSessionId);
+    RNCallKeep.startCall(callSessionId, phoneNumber);
   };
 
   onNativeCall = ({ handle }) => {
-    const { toneAPI } = this.state;
-
-    // Your normal start call action
-    logMessage('Calling onNativeCall');
-    // RNCallKeep.startCall('12345', handle);
-    toneAPI.call(handle);
+    this.makeCall(handle, handle);
   };
 
-  hangUpCurrentCallAction = () => {
-    const { setTempCallFinished } = this.props;
-    const {
-      call: { uuid }
-    } = this.props;
+  hangUpCurrentCallAction = (hangupDefault = false) => {
     const { toneAPI } = this.state;
-    toneOutMessage(`Hang up current call`);
-    RNCallKeep.endCall(uuid);
+    toneOutMessage(`Hang up current call from hangUpCurrentCallAction`);
+    if (hangupDefault) {
+      this.hangupDefault = true;
+      logMessage('hangupDefault is true');
+    }
     try {
       toneAPI.hangUp();
     } catch (error) {
-      setTempCallFinished();
+      console.error(error);
     }
   };
 
   hangUpCallEvent = () => {
     // const { username } = this.state;
-    const { setCallFinished } = this.props;
+    const {
+      setTempCallFinished,
+      call: { onCall },
+      setOngoingCallFinished
+    } = this.props;
     // logEvent("calls", `hangUp`, `remote: ${username}.`);
-    setCallFinished();
-  };
-
-  onAnswerCallAction = () => {
-    // called when the user answers the incoming call
-    this.answer();
-  };
-
-  answer = () => {
-    const { toneAPI } = this.state;
-    toneOutMessage(`Accepting incoming call`);
-    RNCallKeep.setCurrentCallActive();
-    toneAPI.answer();
+    if (onCall) {
+      setOngoingCallFinished();
+    } else {
+      setTempCallFinished();
+    }
   };
 
   sendDtmfCommand = tone => {
@@ -305,56 +300,26 @@ export class PhoneProvider extends React.Component {
    * It performs all the actions needed by this action.
    */
   rejectIncomingCall = () => {
+    const { call: tempRemote } = this.props;
     const { toneAPI } = this.state;
     logMessage('PhoneProvider -> rejectIncomingCall');
-    RNCallKeep.endCall(this.getCurrentCallId());
-    toneAPI.hangUp();
+    RNCallKeep.endCall(tempRemote.callId);
+    try {
+      toneAPI.hangUp();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // acceptIncomingCallAction = () => {
-  //   const { toneAPI } = this.state;
-  //   toneOutMessage(`Accepting incoming call`);
-  //   toneAPI.answer();
-  // };
+  acceptToneCall = () => {
+    const { toneAPI } = this.state;
+    toneOutMessage(`Accepting incoming call`);
+    toneAPI.answer();
+  };
 
-  addCallToRecentCalls = (remoteToAdd = null) => {
-    logMessage(`addCallToRecentCalls`);
-    const {
-      addRecentCall,
-      call: {
-        remote,
-        receivingCall,
-        startTime,
-        onCall,
-        additionalCalls,
-        missed
-      }
-    } = this.props;
-
-    let isMissed = onCall;
-    let incoming = false;
-    let tempRemote;
-
-    if (remoteToAdd) {
-      tempRemote = remoteToAdd;
-      // It's not the current ongoing call
-      if (additionalCalls > 0) {
-        isMissed = true;
-        incoming = true;
-      } else {
-        isMissed = missed;
-      }
-    } else {
-      tempRemote = remote;
-      isMissed = !onCall;
-    }
-
-    logMessage(tempRemote);
-    logMessage(`Receiving call: ${receivingCall}`);
-    logMessage(`Is missed? ${isMissed}`);
-    logMessage(startTime);
-
-    addRecentCall(remoteToAdd, incoming, isMissed, startTime);
+  acceptIncomingCall = () => {
+    this.acceptToneCall();
+    RNCallKeep.setCurrentCallActive();
   };
 
   /**
@@ -375,25 +340,84 @@ export class PhoneProvider extends React.Component {
     setDisconnectionSuccess();
   };
 
+  handleRegistationFailedEvent = event => {
+    const { setRegistrationFailure } = this.props;
+    if (event.error !== undefined) {
+      setRegistrationFailure(event.error);
+    }
+  };
+
   /**
    * Logs the user out of TONE
    */
   unAuthenticateUser = () => {
-    const { setTempCallFinished, requestDisconnection, call: onCall } = this.props;
+    const {
+      requestDisconnection,
+      call: onCall,
+      setOngoingCallFinished
+    } = this.props;
     const { toneAPI } = this.state;
     toneOutMessage(`UnAuthenticating user`);
 
     if (onCall) {
-      setTempCallFinished();
+      setOngoingCallFinished();
     }
     requestDisconnection(true);
-    return toneAPI.stopAgent();
+    try {
+      toneAPI.stopAgent();
+    } catch (error) {
+      errorMessage(error);
+    }
+  };
+
+  handleInviteReceivedWithAdditionalCalls = () => {
+    const {
+      call: { onCall },
+      incrementAdditionalCallsNumber
+    } = this.props;
+    if (onCall) {
+      incrementAdditionalCallsNumber();
+    }
   };
 
   /**
-   * Terminated is received every time a call is terminated, no matter if it was
-   * successful or it failed
+   * If we receive a terminated event, it can happen for the ongoing call or for the additional call.
+   * If there are additional calls (more than 1 at the time) and there is a 'terminate' event.
+   * - One of the calls has been removed.
+   * - We need to determine which call was it: the ongoing call (the user hangup and answer the new call)
+   *  or the new incoming call (the user rejected the call)
    */
+  handleTerminatedEventWithAdditionalCalls = () => {
+    const {
+      setTempCallFinished,
+      addRecentCall,
+      setOngoingCallFinished,
+      call: { additionalCalls, remote, tempRemote },
+      decrementAdditionalCallsNumber
+    } = this.props;
+
+    if (additionalCalls > 0) {
+      decrementAdditionalCallsNumber();
+
+      if (this.hangupDefault) {
+        logMessage('Hanging up default call...');
+        // We want to hangup the ongoing call
+        addRecentCall(remote);
+        // We keep the additional call
+        setOngoingCallFinished();
+        // This must be after addCallToRecentCalls
+        this.hangupDefault = false;
+      } else {
+        logMessage('Hanging up temp call');
+        // We want to hangup the additionalCall
+        logMessage(tempRemote);
+        addRecentCall(tempRemote);
+        // We keep the remote
+        setTempCallFinished();
+      }
+    }
+  };
+
   handleTerminatedEvent = () => {
     const {
       addRecentCall,
@@ -409,10 +433,12 @@ export class PhoneProvider extends React.Component {
       // We handle the ongoing call
       addRecentCall(remote);
       setOngoingCallFinished();
+      RNCallKeep.endCall(remote.callId);
     } else {
       // We handle the temp call
       addRecentCall(tempRemote);
       setTempCallFinished();
+      RNCallKeep.endCall(tempRemote.callId);
     }
   };
 
@@ -425,37 +451,38 @@ export class PhoneProvider extends React.Component {
     const {
       setIsReceivingCall,
       call: { onCall },
-      addAdditionalCall
+      setCallId
     } = this.props;
+    const { toneAPI } = this.state;
     logMessage(`handleInviteReceivedEvent with onCall: ${onCall}`);
     logMessage(onCall);
     if (onCall) {
-      addAdditionalCall();
+      this.handleInviteReceivedWithAdditionalCalls();
     }
     // Retrieve the remote user information from the event data
     const { uri } = event.data.session.remoteIdentity;
-    const phoneNumber = uri.user;
-    setIsReceivingCall(phoneNumber, null, this.getCurrentCallId());
-    RNCallKeep.displayIncomingCall(this.getCurrentCallId(), phoneNumber);
-  };
-
-  /**
-   * When a call is accepted, we stop all the sounds and start the call timer
-   */
-  handleAcceptedEvent = () => {
-    const { setCallAccepted } = this.props;
-    // Sound.stop();
-    setCallAccepted();
-    RNCallKeep.setCurrentCallActive();
-
-    // RNCallKeep.startCall('12345', '65508');
+    setIsReceivingCall(uri.user, null);
+    setCallId(toneAPI.getMostRecentSession().id);
+    RNCallKeep.displayIncomingCall(this.getCurrentCallId(), uri.user);
   };
 
   handleRejectedEvent = () => {
     const { setCallMissed } = this.props;
-
-    // Sound.stop();
+    if (Platform.OS === 'ios') {
+      Sound.stopRingbacktone();
+      Sound.stopRingTone();
+    }
     setCallMissed();
+  };
+
+  handleAcceptedEvent = () => {
+    const { setCallAccepted } = this.props;
+    if (Platform.OS === 'ios') {
+      Sound.stopRingbacktone();
+      Sound.stopRingTone();
+    }
+    setCallAccepted();
+    RNCallKeep.setCurrentCallActive();
   };
 
   handleFailedEvent = () => {
@@ -480,7 +507,7 @@ export class PhoneProvider extends React.Component {
   };
 
   handleCancelEvent = () => {
-    // Sound.stop();
+    console.warn('Cancel event triggered but doing nothing');
   };
 
   handleRegistrationFailedEvent = () => {
@@ -506,7 +533,7 @@ export class PhoneProvider extends React.Component {
     };
     displayErrorAlert(
       errorToDisplay.code.status_code,
-      errorToDisplay.code.description
+      errorToDisplay.description
     );
 
     setRegistrationFailure(errorToDisplay);
