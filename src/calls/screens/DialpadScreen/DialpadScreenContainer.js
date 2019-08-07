@@ -7,7 +7,7 @@ function mapStateToProps({ call, connection }) {
     onCall: call.onCall,
     disabled: call.onCall,
     calling: call.calling,
-    recipient: call.tempRemote,
+    tempRemote: call.tempRemote,
     connected: connection.connected
   };
 }

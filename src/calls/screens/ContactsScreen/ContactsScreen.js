@@ -72,7 +72,11 @@ ContactsScreen.navigationOptions = {
 };
 
 ContactsScreen.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object),
   getUserContacts: PropTypes.func.isRequired,
   removeUserContact: PropTypes.func.isRequired
+};
+
+ContactsScreen.defaultProps = {
+  contacts: []
 };

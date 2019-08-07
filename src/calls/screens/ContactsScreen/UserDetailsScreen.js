@@ -101,7 +101,7 @@ WaitingForUserDetails.propTypes = {
   physicalDeliveryOfficeName: PropTypes.string.isRequired,
   phones: PropTypes.arrayOf(
     PropTypes.shape({
-      number: PropTypes.string.isRequired
+      number: PropTypes.string
     })
   ).isRequired,
   email: PropTypes.string.isRequired
@@ -160,8 +160,12 @@ UserDetailsScreen.propTypes = {
   }).isRequired,
   findUserById: PropTypes.func.isRequired,
   profile: PropTypes.shape({
-    physicalDeliveryOfficeName: PropTypes.string.isRequired,
-    phones: PropTypes.string.isRequired,
-    mail: PropTypes.string.isRequired
+    physicalDeliveryOfficeName: PropTypes.string,
+    phones: PropTypes.arrayOf(
+      PropTypes.shape({
+        number: PropTypes.string
+      })
+    ),
+    mail: PropTypes.string
   }).isRequired
 };

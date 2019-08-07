@@ -43,7 +43,7 @@ const callingStyles = StyleSheet.create({
 const DialpadScreen = ({
   disabled,
   calling,
-  recipient,
+  tempRemote,
   onCall,
   connected,
   navigation
@@ -65,7 +65,7 @@ const DialpadScreen = ({
         </View>
         <View style={[callingStyles.iconTextContainer]}>
           <Icon name="phone" size={30} />
-          <Text h4>{recipient.phoneNumber}</Text>
+          <Text h4>{tempRemote.phoneNumber}</Text>
         </View>
         <HangupButton />
       </View>
@@ -86,13 +86,14 @@ DialpadScreen.propTypes = {
   calling: PropTypes.bool.isRequired,
   onCall: PropTypes.bool.isRequired,
   connected: PropTypes.bool.isRequired,
-  recipient: PropTypes.shape({
-    phoneNumber: PropTypes.string.isRequired
-  }).isRequired
+  tempRemote: PropTypes.shape({
+    phoneNumber: PropTypes.string
+  })
 };
 
 DialpadScreen.defaultProps = {
-  disabled: false
+  disabled: false,
+  tempRemote: {}
 };
 
 export default withNavigation(DialpadScreen);

@@ -22,8 +22,8 @@ Profile.propTypes = {
     lastName: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
-    mobile: PropTypes.string.isRequired
+    phone: PropTypes.string,
+    mobile: PropTypes.string
   }).isRequired
 };
 
