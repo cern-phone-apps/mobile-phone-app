@@ -7,6 +7,7 @@ import { AppRegistry, View, Text } from 'react-native';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
+import FlashMessage from 'react-native-flash-message';
 import { name as appName } from './app.json';
 import App from './App';
 import configureStore from './store';
@@ -34,6 +35,7 @@ const PhoneMobile = () => (
         <App />
       </PhoneProvider>
     </PersistGate>
+    <FlashMessage position="top" />
   </Provider>
 );
 

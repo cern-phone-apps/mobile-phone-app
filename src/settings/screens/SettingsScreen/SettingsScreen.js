@@ -1,7 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
 import { ListItem } from 'react-native-elements';
-import DisconnectFormWithNavigation from '../../../calls/components/DisconnectForm/DisconnectForm';
 import LogoutListComponentContainer from '../../components/logout/LogoutListComponentContainer';
 
 export default class SettingsScreen extends React.Component {
@@ -18,6 +17,13 @@ export default class SettingsScreen extends React.Component {
         onPress: () => {
           navigation.navigate('Profile');
         }
+      },
+      {
+        title: 'Call Forwarding',
+        icon: 'phone-forwarded',
+        onPress: () => {
+          navigation.navigate('CallForwarding');
+        }
       }
     ];
 
@@ -33,7 +39,6 @@ export default class SettingsScreen extends React.Component {
             chevron
           />
         ))}
-        <DisconnectFormWithNavigation />
         <LogoutListComponentContainer />
       </View>
     );

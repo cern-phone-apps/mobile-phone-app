@@ -9,7 +9,8 @@ export default function RegisterScreen({
   connected,
   navigation,
   numbers,
-  token
+  token,
+  setActiveNumber
 }) {
   const [overlayVisible, setOverlayVisible] = useState(false);
 
@@ -24,7 +25,13 @@ export default function RegisterScreen({
   const keyExtractor = (item, index) => index.toString();
 
   const renderItem = ({ item }) => {
-    return <RegisterForm phoneNumber={item.phoneNumber} token={token} />;
+    return (
+      <RegisterForm
+        phoneNumber={item.phoneNumber}
+        token={token}
+        setActiveNumber={setActiveNumber}
+      />
+    );
   };
 
   renderItem.propTypes = {
@@ -124,7 +131,8 @@ RegisterScreen.propTypes = {
   connected: PropTypes.bool.isRequired,
   numbers: PropTypes.arrayOf(PropTypes.object),
   getUserPhoneNumbers: PropTypes.func.isRequired,
-  token: PropTypes.string
+  token: PropTypes.string,
+  setActiveNumber: PropTypes.func.isRequired
 };
 
 RegisterScreen.defaultProps = {

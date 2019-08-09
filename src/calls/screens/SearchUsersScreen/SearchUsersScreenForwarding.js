@@ -5,17 +5,22 @@ import PropTypes from 'prop-types';
 
 import { Button, ListItem, SearchBar, Text } from 'react-native-elements';
 
-import { contactsFormatter } from '../../../common/utils/formatters';
+import { formatResultsOneLinePerPhone } from '../../../common/utils/formatters';
 
 export default function SearchUsersScreen({
-  addUserContact,
   searchUsers,
-  getUserContacts,
-  contacts,
-  searching
+  searching,
+  navigation,
+  localRingingList,
+  localForwardList
 }) {
   const [searchText, setSearchText] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
+
+  const mode = navigation.getParam('mode', 'NOT_VALID');
+  const saveAction = navigation.getParam('saveAction', () =>
+    console.log('Not implemented saveAction')
+  );
 
   const keyExtractor = item => item.id;
 
@@ -52,11 +57,14 @@ export default function SearchUsersScreen({
     }).isRequired
   };
 
-  const formattedSearchResults = contactsFormatter(
+  const passingProps = {
+    saveAction,
+    localList: mode === 'simultaneous' ? localRingingList : localForwardList
+  };
+
+  const formattedSearchResults = formatResultsOneLinePerPhone(
     searchResults,
-    contacts,
-    addUserContact,
-    getUserContacts
+    passingProps
   );
 
   return (
@@ -129,19 +137,9 @@ SearchUsersScreen.navigationOptions = {
 
 SearchUsersScreen.propTypes = {
   searching: PropTypes.bool,
-  searchUsers: PropTypes.func.isRequired,
-  addUserContact: PropTypes.func.isRequired,
-  getUserContacts: PropTypes.func.isRequired,
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      displayName: PropTypes.string,
-      personId: PropTypes.string,
-      division: PropTypes.string
-    })
-  )
+  searchUsers: PropTypes.func.isRequired
 };
 
 SearchUsersScreen.defaultProps = {
-  contacts: [],
   searching: false
 };

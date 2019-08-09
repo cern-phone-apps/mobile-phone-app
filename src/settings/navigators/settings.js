@@ -1,8 +1,15 @@
+import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 import SettingsScreen from '../screens/SettingsScreen/SettingsScreen';
 import ColorPalette from '../../styles/ColorPalette';
 import ProfileContainer from '../components/profile/ProfileContainer';
 import RegisterScreenContainer from '../../calls/screens/RegisterScreen/RegisterScreenContainer';
+import CallForwardingScreenContainer from '../screens/CallForwardingScreen/CallForwardingScreenContainer';
+import SearchUsersScreenForwardingContainer from '../../calls/screens/SearchUsersScreen/SearchUsersScreenForwardingContainer';
+import DestinationsRingingListContainer from '../screens/CallForwardingScreen/DestinationsListRingingContainer';
+import DestinationsListForwardContainer from '../screens/CallForwardingScreen/DestinationsListForwardContainer';
+import RingingListMenuContainer from '../components/RingingListMenu/RingingListMenuContainer';
+import ForwardListMenuContainer from '../components/ForwardListMenu/ForwardListMenuContainer';
 
 const SettingsStack = createStackNavigator({
   Settings: {
@@ -32,7 +39,54 @@ const SettingsStack = createStackNavigator({
       };
     }
   },
-
+  CallForwarding: {
+    screen: CallForwardingScreenContainer,
+    navigationOptions: () => {
+      return {
+        title: `Call Forwarding Settings`,
+        headerStyle: {
+          backgroundColor: ColorPalette.primary
+        },
+        headerTintColor: 'white'
+      };
+    }
+  },
+  DestinationsRingingList: {
+    screen: DestinationsRingingListContainer,
+    navigationOptions: () => {
+      return {
+        title: `Forward list`,
+        headerStyle: {
+          backgroundColor: ColorPalette.primary
+        },
+        headerTintColor: 'white',
+        headerRight: <RingingListMenuContainer />
+      };
+    }
+  },
+  DestinationsForwardList: {
+    screen: DestinationsListForwardContainer,
+    navigationOptions: () => {
+      return {
+        title: `Forward list`,
+        headerStyle: {
+          backgroundColor: ColorPalette.primary
+        },
+        headerTintColor: 'white',
+        headerRight: <ForwardListMenuContainer />
+      };
+    }
+  },
+  SearchUsersCallForwarding: {
+    screen: SearchUsersScreenForwardingContainer,
+    navigationOptions: () => ({
+      title: 'Search for users',
+      headerStyle: {
+        backgroundColor: ColorPalette.primary
+      },
+      headerTintColor: 'white'
+    })
+  },
   RegisterNumber: {
     screen: RegisterScreenContainer,
     navigationOptions: () => {
