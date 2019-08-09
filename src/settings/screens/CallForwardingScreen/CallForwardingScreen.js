@@ -205,6 +205,7 @@ function CallForwardingScreen(props) {
       <Button
         icon={<Icon name="save" color="white" />}
         iconLeft
+        backgroundColor={ColorPalette.primary}
         title="Save"
         buttonStyle={[styles.button]}
         onPress={() => save()}
