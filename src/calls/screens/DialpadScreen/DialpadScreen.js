@@ -6,6 +6,7 @@ import { withNavigation } from 'react-navigation';
 import MakeCallForm from '../../components/DialpadForm/DialpadForm';
 import HangupButton from '../../components/HangupButton/HangupButton';
 import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
+import CallForwardingBanner from '../../components/CallForwarding/CallForwardingBanner';
 
 const styles = StyleSheet.create({
   container: {
@@ -46,7 +47,8 @@ const DialpadScreen = ({
   tempRemote,
   onCall,
   connected,
-  navigation
+  navigation,
+  callForwarding
 }) => {
   useEffect(() => {
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
@@ -74,6 +76,7 @@ const DialpadScreen = ({
 
   return (
     <View style={styles.container}>
+      <CallForwardingBanner status={callForwarding}/>
       <View style={styles.makeCallForm}>
         <MakeCallForm disabled={disabled} />
       </View>
@@ -88,7 +91,8 @@ DialpadScreen.propTypes = {
   connected: PropTypes.bool.isRequired,
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string
-  })
+  }),
+  callForwarding: PropTypes.bool.isRequired
 };
 
 DialpadScreen.defaultProps = {
