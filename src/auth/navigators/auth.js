@@ -8,7 +8,8 @@ export default createStackNavigator({
     screen: LoginScreenContainer,
     navigationOptions: () => ({
       headerTitleStyle: {
-        color: 'white'
+        color: 'white',
+        flex: 3
       },
       title: `Sign in`,
       headerStyle: {
@@ -21,7 +22,8 @@ export default createStackNavigator({
     screen: LoginWebViewContainer,
     navigationOptions: () => ({
       headerTitleStyle: {
-        color: 'white'
+        color: 'white',
+        flex: 3
       },
       title: `Input your credentials`,
       headerStyle: {

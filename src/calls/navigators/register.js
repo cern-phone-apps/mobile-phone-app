@@ -11,7 +11,8 @@ const RegisterStack = createStackNavigator({
     navigationOptions: () => {
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         title: `Select your number`,
         headerStyle: {
