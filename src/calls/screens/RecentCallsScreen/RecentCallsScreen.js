@@ -57,8 +57,7 @@ export function RecentCallsScreen({ navigation, recentCalls }) {
       name: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired
-    }).isRequired,
-    callForwarding: PropTypes.bool.isRequired
+    }).isRequired
   };
 
   return (
