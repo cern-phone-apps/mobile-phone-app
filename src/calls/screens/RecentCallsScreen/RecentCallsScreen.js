@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ListItem } from 'react-native-elements';
 import { FlatList, View } from 'react-native';
 import moment from 'moment';
+import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 
 import ColorPalette from '../../../styles/ColorPalette';
 
@@ -62,6 +63,7 @@ export function RecentCallsScreen({ navigation, recentCalls }) {
   return (
     <View style={{ flex: 1 }}>
       {/* other code from before here */}
+      <CallForwardingBannerContainer/>
       <FlatList
         keyExtractor={keyExtractor}
         data={recentCalls}

@@ -6,6 +6,7 @@ import { withNavigation } from 'react-navigation';
 import MakeCallForm from '../../components/DialpadForm/DialpadForm';
 import HangupButton from '../../components/HangupButton/HangupButton';
 import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
+import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 
 const styles = StyleSheet.create({
   container: {
@@ -74,6 +75,7 @@ const DialpadScreen = ({
 
   return (
     <View style={styles.container}>
+      <CallForwardingBannerContainer/>
       <View style={styles.makeCallForm}>
         <MakeCallForm disabled={disabled} />
       </View>
