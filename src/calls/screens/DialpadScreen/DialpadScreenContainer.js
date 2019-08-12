@@ -8,8 +8,7 @@ function mapStateToProps({ call, connection, callForwarding }) {
     disabled: call.onCall,
     calling: call.calling,
     tempRemote: call.tempRemote,
-    connected: connection.connected,
-    callForwarding: callForwarding.status
+    connected: connection.connected
   };
 }
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ListItem, Text } from 'react-native-elements';
 import { FlatList, View } from 'react-native';
 import { IconButton } from 'react-native-paper';
+import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 
 export default function ContactsScreen({
   contacts,
@@ -46,6 +47,7 @@ export default function ContactsScreen({
 
   return (
     <View style={{ flex: 1 }}>
+      <CallForwardingBannerContainer/>
       <FlatList
         keyExtractor={keyExtractor}
         data={contacts}

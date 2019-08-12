@@ -113,7 +113,8 @@ function CallForwardingScreen(props) {
         message: 'Call forwarding set',
         description: result.payload.message,
         type: 'success'
-      });
+      });  
+    getCallForwardingStatus(activeNumber);
     }
   };
 
@@ -122,7 +123,7 @@ function CallForwardingScreen(props) {
       fetchData();
       setDataFetched(true);
     }
-  }, [enabledRingingList]);
+  }, [enabledRingingList, enabledForwardNumber]);
 
   const onChange = val => {
     toggleCallForwarding(val);
