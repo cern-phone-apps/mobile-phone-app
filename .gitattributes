@@ -19,6 +19,7 @@
 *.mov binary
 *.mp4 binary
 *.mp3 binary
+*.wav binary
 *.flv binary
 *.fla binary
 *.swf binary
@@ -33,3 +34,4 @@
 *.ez binary
 *.bz2 binary
 *.swp binary
+*.jar binary
