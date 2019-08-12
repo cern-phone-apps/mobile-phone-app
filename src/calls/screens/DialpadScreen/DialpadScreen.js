@@ -90,8 +90,8 @@ const DialpadScreen = ({
           style={{
             textAlign: 'center',
             padding: 5,
+            paddingHorizontal: 10,
             backgroundColor: ColorPalette.callBtnGreen,
-            width: '20%',
             borderRadius: 10,
             color: 'white',
             overflow: 'hidden',
