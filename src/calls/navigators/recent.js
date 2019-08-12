@@ -12,7 +12,8 @@ const RecentStack = createStackNavigator({
     navigationOptions: () => {
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         title: `Recent Calls`,
         headerStyle: {
@@ -30,7 +31,8 @@ const RecentStack = createStackNavigator({
       // console.log(param);
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         // title: `Recent Call Details`,
         headerStyle: {

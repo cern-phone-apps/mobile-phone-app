@@ -13,7 +13,8 @@ export default createStackNavigator({
     navigationOptions: ({ navigation }) => {
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         title: `Contacts`,
         headerStyle: {
@@ -37,7 +38,8 @@ export default createStackNavigator({
     screen: SearchUsersScreenContainer,
     navigationOptions: () => ({
       headerTitleStyle: {
-        color: 'white'
+        color: 'white',
+        flex: 3
       },
       title: 'Search for users',
       headerStyle: {
@@ -50,7 +52,8 @@ export default createStackNavigator({
     screen: UserDetailsScreenContainer,
     navigationOptions: () => ({
       headerTitleStyle: {
-        color: 'white'
+        color: 'white',
+        flex: 3
       },
       title: 'User Details',
       headerStyle: {

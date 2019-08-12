@@ -17,7 +17,8 @@ const SettingsStack = createStackNavigator({
     navigationOptions: () => {
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         title: `Settings`,
         headerStyle: {
@@ -35,6 +36,9 @@ const SettingsStack = createStackNavigator({
         headerStyle: {
           backgroundColor: ColorPalette.primary
         },
+        headerTitleStyle: {
+          flex: 3
+        },
         headerTintColor: 'white'
       };
     }
@@ -44,8 +48,12 @@ const SettingsStack = createStackNavigator({
     navigationOptions: () => {
       return {
         title: `Call Forwarding Settings`,
+        headerTitleStyle: {
+          flex: 3
+        },
         headerStyle: {
-          backgroundColor: ColorPalette.primary
+          backgroundColor: ColorPalette.primary,
+          flex: 3
         },
         headerTintColor: 'white'
       };
