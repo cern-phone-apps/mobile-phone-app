@@ -90,8 +90,7 @@ DialpadScreen.propTypes = {
   connected: PropTypes.bool.isRequired,
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string
-  }),
-  callForwarding: PropTypes.bool.isRequired
+  })
 };
 
 DialpadScreen.defaultProps = {
