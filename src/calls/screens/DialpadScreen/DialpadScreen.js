@@ -49,11 +49,19 @@ const DialpadScreen = ({
   onCall,
   connected,
   navigation,
-  activeNumber
+  activeNumber,
+  getCallForwardingStatus
 }) => {
   useEffect(() => {
+    let timer = setInterval(() => {
+      console.log('Getting callforwarding status');
+      getCallForwardingStatus(activeNumber);
+    }, 60000);
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
     console.log('Running useEffect -> DialpadScreen()');
+    return function cleanup() {
+      clearInterval(timer);
+    };
   }, [connected]);
 
   if (onCall) {
@@ -115,7 +123,7 @@ DialpadScreen.propTypes = {
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string
   }),
-  activeNumber: PropTypes.bool.isRequired
+  activeNumber: PropTypes.string.isRequired
 };
 
 DialpadScreen.defaultProps = {
