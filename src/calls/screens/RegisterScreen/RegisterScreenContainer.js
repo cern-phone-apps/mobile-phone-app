@@ -10,6 +10,7 @@ function mapStateToProps({ connection, numbers, auth }) {
   return {
     connected: connection ? connection.connected : false,
     numbers: numbers.numbers,
+    activeNumber: numbers.activeNumber,
     token: auth.token
   };
 }
