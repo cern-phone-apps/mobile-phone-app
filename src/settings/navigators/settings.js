@@ -10,7 +10,7 @@ import DestinationsRingingListContainer from '../screens/CallForwardingScreen/De
 import DestinationsListForwardContainer from '../screens/CallForwardingScreen/DestinationsListForwardContainer';
 import RingingListMenuContainer from '../components/RingingListMenu/RingingListMenuContainer';
 import ForwardListMenuContainer from '../components/ForwardListMenu/ForwardListMenuContainer';
-import AutoRegisterContainer from '../components/AutoRegister/AutoRegisterContainer';
+import AutoRegisterContainer from '../screens/AutoRegister/AutoRegisterContainer';
 
 const SettingsStack = createStackNavigator({
   Settings: {
