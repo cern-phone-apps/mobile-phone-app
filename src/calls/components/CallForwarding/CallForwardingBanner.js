@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-function CallForwardingBanner({ callForwarding }) {
+const CallForwardingBanner = ({ callForwarding }) => {
   if (
     callForwarding['simultaneous-ring'] ||
     callForwarding['call-forwarding']
@@ -32,6 +32,6 @@ function CallForwardingBanner({ callForwarding }) {
     );
   }
   return null;
-}
+};
 
 export default CallForwardingBanner;
