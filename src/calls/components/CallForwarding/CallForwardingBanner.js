@@ -3,14 +3,16 @@ import { View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 function CallForwardingBanner({ callForwarding }) {
-  if (callForwarding['simultaneous-ring'] || callForwarding['call-forwarding']) {
+  if (
+    callForwarding['simultaneous-ring'] ||
+    callForwarding['call-forwarding']
+  ) {
     return (
       <View
         style={{
           backgroundColor: 'yellow',
           width: '100%',
           height: 50,
-          padding: 5,
           flexDirection: 'row',
           padding: 15
         }}

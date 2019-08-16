@@ -63,7 +63,7 @@ export function RecentCallsScreen({ navigation, recentCalls }) {
   return (
     <View style={{ flex: 1 }}>
       {/* other code from before here */}
-      <CallForwardingBannerContainer/>
+      <CallForwardingBannerContainer />
       <FlatList
         keyExtractor={keyExtractor}
         data={recentCalls}
