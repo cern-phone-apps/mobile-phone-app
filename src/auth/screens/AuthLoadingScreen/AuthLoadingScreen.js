@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ActivityIndicator, StatusBar, View } from 'react-native';
+import { ActivityIndicator, StatusBar, View, PermissionsAndroid } from 'react-native';
 
 /**
  * Check if the user is logged in and redirect him to the correct screen
@@ -30,6 +30,31 @@ export class AuthLoadingScreen extends React.Component {
 
   // Render any loading content that you like here
   render() {
+    PermissionsAndroid.requestMultiple([
+      PermissionsAndroid.PERMISSIONS.READ_CALENDAR,
+      PermissionsAndroid.PERMISSIONS.WRITE_CALENDAR,
+      PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+      PermissionsAndroid.PERMISSIONS.WRITE_CONTACTS,
+      PermissionsAndroid.PERMISSIONS.GET_ACCOUNTS,
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION,
+      PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+      PermissionsAndroid.PERMISSIONS.READ_PHONE_STATE,
+      PermissionsAndroid.PERMISSIONS.CALL_PHONE,
+      PermissionsAndroid.PERMISSIONS.READ_CALL_LOG,
+      PermissionsAndroid.PERMISSIONS.WRITE_CALL_LOG,
+      PermissionsAndroid.PERMISSIONS.ADD_VOICEMAIL,
+      PermissionsAndroid.PERMISSIONS.USE_SIP,
+      PermissionsAndroid.PERMISSIONS.PROCESS_OUTGOING_CALLS,
+      PermissionsAndroid.PERMISSIONS.BODY_SENSORS,
+      PermissionsAndroid.PERMISSIONS.SEND_SMS,
+      PermissionsAndroid.PERMISSIONS.RECEIVE_SMS,
+      PermissionsAndroid.PERMISSIONS.READ_SMS,
+      PermissionsAndroid.PERMISSIONS.RECEIVE_WAP_PUSH,
+      PermissionsAndroid.PERMISSIONS.RECEIVE_MMS,
+      PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+      PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE
+    ]);
     return (
       <View>
         <ActivityIndicator />
