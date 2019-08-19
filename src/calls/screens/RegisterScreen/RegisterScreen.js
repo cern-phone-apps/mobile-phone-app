@@ -11,7 +11,8 @@ export default function RegisterScreen({
   numbers,
   token,
   setActiveNumber,
-  activeNumber
+  activeNumber,
+  rememberNumber
 }) {
   const [overlayVisible, setOverlayVisible] = useState(false);
 
@@ -31,7 +32,7 @@ export default function RegisterScreen({
         phoneNumber={item.phoneNumber}
         token={token}
         setActiveNumber={setActiveNumber}
-        autoRegister={(activeNumber === item.phoneNumber) ? true : false}
+        autoRegister={(rememberNumber && activeNumber === item.phoneNumber) ? true : false}
       />
     );
   };

@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import AutoRegister from './AutoRegister';
-import * as meActions from '../../../../modules/core/src/actions/me';
+import { meActions } from 'dial-core';
 
 function mapStateToProps({ user }) {
   return {
-    autoRegister: user.autoRegister
+    autoRegister: user.rememberNumber
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      toggle_autoregister: meActions.setAutoRegisterValue
+      setRememberNumber: meActions.setRemberNumber
     },
     dispatch
   );

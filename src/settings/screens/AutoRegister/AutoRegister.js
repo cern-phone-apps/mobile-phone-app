@@ -3,9 +3,7 @@ import { Text, Card } from 'react-native-elements';
 import { ListItem, Button, Icon } from 'react-native-elements';
 
 const AutoRegister = (props) => {
-  console.log("props passed to autoregister 0000000000000000", props);
-  const { autoRegister, toggle_autoregister } = props;
-  console.log(autoRegister, toggle_autoregister);
+  const { autoRegister, setRememberNumber } = props;
   return (
     <Card>
       <Text style={{ fontWeight: 'bold' }}>
@@ -14,7 +12,7 @@ const AutoRegister = (props) => {
       <ListItem
         title="Auto-register on start"
         switch={{
-          onValueChange: () => toggle_autoregister(!autoRegister),
+          onValueChange: () => setRememberNumber(!autoRegister),
           value: autoRegister
         }}
       />
