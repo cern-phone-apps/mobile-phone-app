@@ -8,6 +8,8 @@ import HangupButton from '../../components/HangupButton/HangupButton';
 import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
 import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 import ColorPalette from '../../../styles/ColorPalette';
+import Dialpad from '../../components/DialpadForm/Dialpad/Dialpad';
+import { phoneService } from '../../providers/PhoneProvider/PhoneService';
 
 const styles = StyleSheet.create({
   container: {
@@ -50,12 +52,18 @@ const DialpadScreen = ({
   connected,
   navigation,
   activeNumber,
-  getCallForwardingStatus
+  getCallForwardingStatus,
+  phoneService
 }) => {
   useEffect(() => {
     let timer = setInterval(() => {
-      console.log('Getting callforwarding status');
-      getCallForwardingStatus(activeNumber);
+      try {
+        console.log('Getting callforwarding status');
+        getCallForwardingStatus(activeNumber);
+      }
+      catch {
+        console.log("Get callforwarding status failed");
+      }
     }, 60000);
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
     console.log('Running useEffect -> DialpadScreen()');
@@ -69,6 +77,7 @@ const DialpadScreen = ({
   }
 
   if (calling) {
+    console.log("=====================================\n\n\n",phoneService);
     return (
       <View style={[callingStyles.container]}>
         <View style={[callingStyles.iconTextContainer]}>
@@ -78,6 +87,7 @@ const DialpadScreen = ({
           <Icon name="phone" size={30} />
           <Text h4>{tempRemote.phoneNumber}</Text>
         </View>
+        <Dialpad updatePhoneNumber={(e) => phoneService.sendDtmfCommand(e)}/>
         <HangupButton />
       </View>
     );
@@ -131,4 +141,4 @@ DialpadScreen.defaultProps = {
   tempRemote: {}
 };
 
-export default withNavigation(DialpadScreen);
+export default withNavigation(phoneService(DialpadScreen));
