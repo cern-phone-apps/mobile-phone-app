@@ -52,8 +52,7 @@ const DialpadScreen = ({
   connected,
   navigation,
   activeNumber,
-  getCallForwardingStatus,
-  phoneService
+  getCallForwardingStatus
 }) => {
   useEffect(() => {
     let timer = setInterval(() => {
@@ -77,7 +76,6 @@ const DialpadScreen = ({
   }
 
   if (calling) {
-    console.log("=====================================\n\n\n",phoneService);
     return (
       <View style={[callingStyles.container]}>
         <View style={[callingStyles.iconTextContainer]}>
@@ -87,7 +85,6 @@ const DialpadScreen = ({
           <Icon name="phone" size={30} />
           <Text h4>{tempRemote.phoneNumber}</Text>
         </View>
-        <Dialpad updatePhoneNumber={(e) => phoneService.sendDtmfCommand(e)}/>
         <HangupButton />
       </View>
     );
