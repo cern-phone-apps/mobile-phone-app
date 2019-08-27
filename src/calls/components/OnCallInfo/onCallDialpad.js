@@ -37,15 +37,14 @@ function DialpadButton({ display, onPress, updatePhoneNumber }) {
       <View
         style={{
           width: '100%',
-          top: dialpadstyles.DialpadButtonContainer.top,
-          flex: 1
+          top: '30%'
         }}
       >
         <View
           style={{
             alignItems: 'center',
             width: '100%',
-            marginBottom: 20
+            marginBottom: '1%'
           }}
         >
           <TouchableOpacity
@@ -58,6 +57,7 @@ function DialpadButton({ display, onPress, updatePhoneNumber }) {
           </TouchableOpacity>
         </View>
         <Dialpad
+          height={"60%"}
           updatePhoneNumber={e => {
             updatePhoneNumber(e);
           }}

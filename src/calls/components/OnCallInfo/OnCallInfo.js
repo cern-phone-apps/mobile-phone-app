@@ -23,7 +23,7 @@ function OnCallInfo({ remote, phoneService }) {
       <View
         style={{
           position: 'absolute',
-          bottom: '10%'
+          bottom: '5%'
         }}
       >
         <HangupButton />
