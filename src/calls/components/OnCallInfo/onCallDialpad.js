@@ -12,7 +12,7 @@ const dialpadstyles = StyleSheet.create({
     },
     DialpadButtonContainer: {
         alignItems: 'center',
-        top: "42%"
+        top: "35%"
     },
     DialpadButton: {
         alignItems: 'center',
@@ -21,11 +21,35 @@ const dialpadstyles = StyleSheet.create({
         height: 70,
         backgroundColor: ColorPalette.primary,
         borderRadius: 50
+    },
+    CloseDialpadButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 40,
+        height: 40,
+        backgroundColor: ColorPalette.primary,
+        borderRadius: 50
     }
   });
 
 function DialpadButton({ display, onPress, updatePhoneNumber }) {
-  if (display) return <View style={{ width: "100%", top: "42%", flex: 1 }}><Dialpad updatePhoneNumber={(e) => { updatePhoneNumber(e) }}/></View>;
+  if (display) return <View style={{ width: "100%", top: dialpadstyles.DialpadButtonContainer.top, flex: 1 }}>
+      <View style={{
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: 20
+      }}>
+        <TouchableOpacity style={dialpadstyles.CloseDialpadButton} onPress={() => { onPress(); }}>
+          <Icon
+            name="close"
+            size={15}
+            color="white"
+            type="ionicons"
+          />
+        </TouchableOpacity>
+      </View>            
+            <Dialpad updatePhoneNumber={(e) => { updatePhoneNumber(e) }}/>
+                      </View>;
   return (
     <View style={dialpadstyles.DialpadButtonContainer}>
       <TouchableOpacity style={dialpadstyles.DialpadButton} onPress={() => { onPress(); }}>

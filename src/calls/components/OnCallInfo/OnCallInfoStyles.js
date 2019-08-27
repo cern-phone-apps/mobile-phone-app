@@ -6,13 +6,13 @@ export default StyleSheet.create({
     fontSize: 20,
     opacity: 0.6,
     position: 'absolute',
-    top: '20%'
+    top: '10%'
   },
   remoteInfo: {
     alignItems: 'center',
     position: 'absolute',
     transform: [{ translateY: 0.5 }],
-    top: '30%'
+    top: '20%'
   },
   remoteName: {
     fontSize: 25
