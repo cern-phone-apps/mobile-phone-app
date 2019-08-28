@@ -11,6 +11,7 @@ import DestinationsListForwardContainer from '../screens/CallForwardingScreen/De
 import RingingListMenuContainer from '../components/RingingListMenu/RingingListMenuContainer';
 import ForwardListMenuContainer from '../components/ForwardListMenu/ForwardListMenuContainer';
 import AutoRegisterContainer from '../screens/AutoRegister/AutoRegisterContainer';
+import SendStatsContainer from '../screens/SendStats/SendStatsContainer';
 
 const SettingsStack = createStackNavigator({
   Settings: {
@@ -116,6 +117,18 @@ const SettingsStack = createStackNavigator({
     navigationOptions: () => {
       return {
         title: 'Select your number',
+        headerStyle: {
+          backgroundColor: ColorPalette.primary
+        },
+        headerTintColor: 'white'
+      };
+    }
+  },
+  SendStats: {
+    screen: SendStatsContainer,
+    navigationOptions: () => {
+      return {
+        title: 'SendStats',
         headerStyle: {
           backgroundColor: ColorPalette.primary
         },
