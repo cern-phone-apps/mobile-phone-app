@@ -57,7 +57,7 @@ function DialpadButton({ display, onPress, updatePhoneNumber }) {
           </TouchableOpacity>
         </View>
         <Dialpad
-          height={"60%"}
+          height="60%"
           updatePhoneNumber={e => {
             updatePhoneNumber(e);
           }}

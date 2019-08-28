@@ -56,13 +56,10 @@ const DialpadScreen = ({
 }) => {
   useEffect(() => {
     let timer = setInterval(() => {
-      try {
-        console.log('Getting callforwarding status');
+      try
         getCallForwardingStatus(activeNumber);
-      }
-      catch {
+      catch
         console.log("Get callforwarding status failed");
-      }
     }, 60000);
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
     console.log('Running useEffect -> DialpadScreen()');

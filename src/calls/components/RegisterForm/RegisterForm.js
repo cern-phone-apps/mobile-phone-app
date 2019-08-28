@@ -4,7 +4,13 @@ import { ListItem } from 'react-native-elements';
 
 import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 
-function RegisterForm({ phoneNumber, phoneService, token, setActiveNumber, autoRegister, connected }) {
+function RegisterForm({
+  phoneNumber,
+  phoneService,
+  token,
+  setActiveNumber,
+  autoRegister
+}) {
   /**
    * Register the user in the Telephony Backend
    */
