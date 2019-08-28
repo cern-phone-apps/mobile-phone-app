@@ -10,6 +10,7 @@ import DestinationsRingingListContainer from '../screens/CallForwardingScreen/De
 import DestinationsListForwardContainer from '../screens/CallForwardingScreen/DestinationsListForwardContainer';
 import RingingListMenuContainer from '../components/RingingListMenu/RingingListMenuContainer';
 import ForwardListMenuContainer from '../components/ForwardListMenu/ForwardListMenuContainer';
+import AutoRegisterContainer from '../screens/AutoRegister/AutoRegisterContainer';
 
 const SettingsStack = createStackNavigator({
   Settings: {
@@ -17,7 +18,8 @@ const SettingsStack = createStackNavigator({
     navigationOptions: () => {
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         title: `Settings`,
         headerStyle: {
@@ -35,6 +37,24 @@ const SettingsStack = createStackNavigator({
         headerStyle: {
           backgroundColor: ColorPalette.primary
         },
+        headerTitleStyle: {
+          flex: 3
+        },
+        headerTintColor: 'white'
+      };
+    }
+  },
+  AutoRegister: {
+    screen: AutoRegisterContainer,
+    navigationOptions: () => {
+      return {
+        title: 'AutoRegister',
+        headerStyle: {
+          backgroundColor: ColorPalette.primary
+        },
+        headerTitleStyle: {
+          flex: 3
+        },
         headerTintColor: 'white'
       };
     }
@@ -44,8 +64,12 @@ const SettingsStack = createStackNavigator({
     navigationOptions: () => {
       return {
         title: `Call Forwarding Settings`,
+        headerTitleStyle: {
+          flex: 3
+        },
         headerStyle: {
-          backgroundColor: ColorPalette.primary
+          backgroundColor: ColorPalette.primary,
+          flex: 3
         },
         headerTintColor: 'white'
       };

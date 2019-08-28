@@ -6,6 +6,8 @@ import { withNavigation } from 'react-navigation';
 import MakeCallForm from '../../components/DialpadForm/DialpadForm';
 import HangupButton from '../../components/HangupButton/HangupButton';
 import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
+import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
+import ColorPalette from '../../../styles/ColorPalette';
 
 const styles = StyleSheet.create({
   container: {
@@ -46,11 +48,20 @@ const DialpadScreen = ({
   tempRemote,
   onCall,
   connected,
-  navigation
+  navigation,
+  activeNumber,
+  getCallForwardingStatus
 }) => {
   useEffect(() => {
+    let timer = setInterval(() => {
+      console.log('Getting callforwarding status');
+      getCallForwardingStatus(activeNumber);
+    }, 60000);
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
     console.log('Running useEffect -> DialpadScreen()');
+    return function cleanup() {
+      clearInterval(timer);
+    };
   }, [connected]);
 
   if (onCall) {
@@ -74,6 +85,29 @@ const DialpadScreen = ({
 
   return (
     <View style={styles.container}>
+      <CallForwardingBannerContainer />
+      <View
+        style={{
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: 10
+        }}
+      >
+        <Text
+          style={{
+            textAlign: 'center',
+            padding: 5,
+            paddingHorizontal: 10,
+            backgroundColor: ColorPalette.callBtnGreen,
+            borderRadius: 10,
+            color: 'white',
+            overflow: 'hidden',
+          }}
+        >
+          {activeNumber}
+        </Text>
+      </View>
       <View style={styles.makeCallForm}>
         <MakeCallForm disabled={disabled} />
       </View>
@@ -88,7 +122,8 @@ DialpadScreen.propTypes = {
   connected: PropTypes.bool.isRequired,
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string
-  })
+  }),
+  activeNumber: PropTypes.string.isRequired
 };
 
 DialpadScreen.defaultProps = {

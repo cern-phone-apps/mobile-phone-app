@@ -8,7 +8,8 @@ const DialpadStack = createStackNavigator({
     navigationOptions: () => {
       return {
         headerTitleStyle: {
-          color: 'white'
+          color: 'white',
+          flex: 3
         },
         title: `CERN Phone Mobile`,
         headerStyle: {

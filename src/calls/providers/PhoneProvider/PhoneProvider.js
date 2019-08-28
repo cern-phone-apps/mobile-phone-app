@@ -536,7 +536,7 @@ export class PhoneProvider extends React.Component {
       errorToDisplay.description
     );
 
-    setRegistrationFailure(errorToDisplay);
+   setRegistrationFailure(errorToDisplay);
   };
 
   /**

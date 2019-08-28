@@ -10,7 +10,9 @@ export default function RegisterScreen({
   navigation,
   numbers,
   token,
-  setActiveNumber
+  setActiveNumber,
+  activeNumber,
+  rememberNumber
 }) {
   const [overlayVisible, setOverlayVisible] = useState(false);
 
@@ -30,6 +32,7 @@ export default function RegisterScreen({
         phoneNumber={item.phoneNumber}
         token={token}
         setActiveNumber={setActiveNumber}
+        autoRegister={(rememberNumber && activeNumber === item.phoneNumber) ? true : false}
       />
     );
   };
@@ -39,7 +42,6 @@ export default function RegisterScreen({
       phoneNumber: PropTypes.string.isRequired
     }).isRequired
   };
-
   return (
     <View
       style={{
@@ -81,7 +83,6 @@ export default function RegisterScreen({
           <Button title="Close" onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
-
       <FlatList
         keyExtractor={keyExtractor}
         data={numbers}
@@ -99,7 +100,7 @@ export default function RegisterScreen({
                 borderBottomWidth: 1
               }}
             >
-              <Icon name="info-circle" type="font-awesome" />
+            <Icon name="info-circle" type="font-awesome" />
               <Text
                 style={{
                   fontSize: 16,
@@ -132,7 +133,8 @@ RegisterScreen.propTypes = {
   numbers: PropTypes.arrayOf(PropTypes.object),
   getUserPhoneNumbers: PropTypes.func.isRequired,
   token: PropTypes.string,
-  setActiveNumber: PropTypes.func.isRequired
+  setActiveNumber: PropTypes.func.isRequired,
+  activeNumber: PropTypes.string
 };
 
 RegisterScreen.defaultProps = {
