@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from './DialpadStyles';
 
-const Dialpad = ({ updatePhoneNumber, disabled }) => {
+const Dialpad = ({ updatePhoneNumber, disabled, height=250 }) => {
   const pad = [
     {
       key: '123',
@@ -46,7 +46,7 @@ const Dialpad = ({ updatePhoneNumber, disabled }) => {
   ];
 
   return (
-    <View style={{ height: 250 }}>
+    <View style={{ height: height }}>
       <Grid>
         {pad.map(row => (
           <Row key={row.key}>

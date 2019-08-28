@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ListItem } from 'react-native-elements';
 
 import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 
-function RegisterForm({ phoneNumber, phoneService, token, setActiveNumber, autoRegister }) {
+function RegisterForm({ phoneNumber, phoneService, token, setActiveNumber, autoRegister, connected }) {
   /**
    * Register the user in the Telephony Backend
    */
@@ -12,12 +12,7 @@ function RegisterForm({ phoneNumber, phoneService, token, setActiveNumber, autoR
     setActiveNumber(phoneNumber);
     phoneService.authenticateUser(phoneNumber, token);
   };
-
-  if (autoRegister) {
-    console.log("registering User phone number", phoneNumber);
-    registerUser();
-  }
-
+  if (autoRegister) registerUser();
   return (
     <ListItem
       title={`${phoneNumber}`}
@@ -37,7 +32,7 @@ RegisterForm.propTypes = {
   phoneNumber: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
   setActiveNumber: PropTypes.func.isRequired,
-  autoRegister: PropTypes.bool
+  autoRegister: PropTypes.bool.isRequired
 };
 
 export default withPhoneService(RegisterForm);

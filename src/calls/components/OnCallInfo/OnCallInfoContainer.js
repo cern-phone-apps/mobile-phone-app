@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import OnCallInfo from './OnCallInfo';
+import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 
 function mapStateToProps({ call }) {
   return {
@@ -14,4 +15,4 @@ function mapDispatchToProps() {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(OnCallInfo);
+)(withPhoneService(OnCallInfo));
