@@ -55,11 +55,12 @@ const DialpadScreen = ({
   getCallForwardingStatus
 }) => {
   useEffect(() => {
-    let timer = setInterval(() => {
-      try
+    const timer = setInterval(() => {
+      try {
         getCallForwardingStatus(activeNumber);
-      catch
-        console.log("Get callforwarding status failed");
+      } catch {
+        console.log('Get callforwarding status failed');
+      }
     }, 60000);
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
     console.log('Running useEffect -> DialpadScreen()');
@@ -106,7 +107,7 @@ const DialpadScreen = ({
             backgroundColor: ColorPalette.callBtnGreen,
             borderRadius: 10,
             color: 'white',
-            overflow: 'hidden',
+            overflow: 'hidden'
           }}
         >
           {activeNumber}
