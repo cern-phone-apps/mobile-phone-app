@@ -8,7 +8,6 @@ import HangupButton from '../../components/HangupButton/HangupButton';
 import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
 import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 import ColorPalette from '../../../styles/ColorPalette';
-import Dialpad from '../../components/DialpadForm/Dialpad/Dialpad';
 import { phoneService } from '../../providers/PhoneProvider/PhoneService';
 
 const styles = StyleSheet.create({
@@ -128,7 +127,8 @@ DialpadScreen.propTypes = {
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string
   }),
-  activeNumber: PropTypes.string.isRequired
+  activeNumber: PropTypes.string.isRequired,
+  getCallForwardingStatus: PropTypes.func.isRequired
 };
 
 DialpadScreen.defaultProps = {

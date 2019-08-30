@@ -32,7 +32,7 @@ export default function RegisterScreen({
         phoneNumber={item.phoneNumber}
         token={token}
         setActiveNumber={setActiveNumber}
-        autoRegister={(rememberNumber && activeNumber === item.phoneNumber) ? true : false}
+        autoRegister={!!(rememberNumber && activeNumber === item.phoneNumber)}
       />
     );
   };
@@ -100,7 +100,7 @@ export default function RegisterScreen({
                 borderBottomWidth: 1
               }}
             >
-            <Icon name="info-circle" type="font-awesome" />
+              <Icon name="info-circle" type="font-awesome" />
               <Text
                 style={{
                   fontSize: 16,
