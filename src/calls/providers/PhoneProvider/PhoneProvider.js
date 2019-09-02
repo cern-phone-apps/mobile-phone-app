@@ -126,7 +126,7 @@ export class PhoneProvider extends React.Component {
           logMessage('Received answerCall event');
           this.acceptToneCall();
         });
-        //RNCallKeep.addEventListener('endCall', this.hangUpCurrentCallAction);
+        RNCallKeep.addEventListener('endCall', this.hangUpCurrentCallAction);
         RNCallKeep.addEventListener(
           'didDisplayIncomingCall',
           this.onIncomingCallDisplayed
