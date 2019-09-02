@@ -38,36 +38,29 @@ export default function RegisterScreen({
     );
   };
 
-  const NumberSectionList = (keyExtractor, numbers, renderItem, title) => {
+  const NumberSectionList = ({ keyExtractor, data, renderItem, title }) => {
     const Title = () => (
       <Text
         style={{
           padding: 10,
-          textAlign: 'center',
-          fontSize: 20,
-          backgroundColor: ColorPalette.primary,
-          color: 'white'
+          fontSize: 13,
+          color: '#AAAAAA',
+          backgroundColor: '#EEEEEE'
         }}
       >
         {title}
       </Text>
     );
-    if (!numbers) {
-      return (
-        <React.Fragment>
-          <Title />
-          <Text style={{ textAlign: 'center', fontSize: 20 }} keyExtractor={keyExtractor}>
-            There are no numbers in this section
-          </Text>
-        </React.Fragment>
-      );
+    let ret = [];
+    ret.push(<Title />);
+    if (!data || data.length === 0) {
+      ret.push(<Text style={{ textAlign: 'center', fontSize: 14, paddingTop: 20, paddingBottom: 20, color: '#BBBBBB' }} keyExtractor={keyExtractor}>
+          There are no numbers in this section
+    </Text>);
+      return ret;
     }
-    return (
-      <React.Fragment>
-        <Title />
-        <FlatList keyExtractor={keyExtractor} data={numbers} renderItem={renderItem} />
-      </React.Fragment>
-    );
+    ret.push(<FlatList keyExtractor={keyExtractor} data={data} renderItem={renderItem} />);
+    return (ret);
   };
 
   renderItem.propTypes = {
@@ -120,13 +113,13 @@ export default function RegisterScreen({
         keyExtractor={keyExtractor}
         data={numbers.personal}
         renderItem={renderItem}
-        title="Personal"
+        title={"Personal"}
       />
       <NumberSectionList
         keyExtractor={keyExtractor}
         data={numbers.shared}
         renderItem={renderItem}
-        title="Shared"
+        title={"Shared"}
       />
       <View style={{ flex: 1, backgroundColor: '000' }}>
         <Card
