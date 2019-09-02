@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FlatList, View, Text, Linking } from 'react-native';
-import { Card, Button, Icon, Overlay } from 'react-native-elements';
+import { Card, Button, Icon, Overlay, Badge } from 'react-native-elements';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import ColorPalette from '../../../styles/ColorPalette';
 
 export default function RegisterScreen({
   getUserPhoneNumbers,
@@ -29,12 +30,37 @@ export default function RegisterScreen({
   const renderItem = ({ item }) => {
     return (
       <RegisterForm
-        phoneNumber={item.phoneNumber}
+        phoneNumber={item}
         token={token}
         setActiveNumber={setActiveNumber}
-        autoRegister={!!(rememberNumber && activeNumber === item.phoneNumber)}
+        autoRegister={!!(rememberNumber && activeNumber === item)}
       />
     );
+  };
+
+  const NumberSectionList = ({ keyExtractor, data, renderItem, title }) => {
+    const Title = () => (
+      <Text
+        style={{
+          padding: 10,
+          fontSize: 13,
+          color: '#AAAAAA',
+          backgroundColor: '#EEEEEE'
+        }}
+      >
+        {title}
+      </Text>
+    );
+    let ret = [];
+    ret.push(<Title />);
+    if (!data || data.length === 0) {
+      ret.push(<Text style={{ textAlign: 'center', fontSize: 14, paddingTop: 20, paddingBottom: 20, color: '#BBBBBB' }} keyExtractor={keyExtractor}>
+          There are no numbers in this section
+    </Text>);
+      return ret;
+    }
+    ret.push(<FlatList keyExtractor={keyExtractor} data={data} renderItem={renderItem} />);
+    return (ret);
   };
 
   renderItem.propTypes = {
@@ -83,10 +109,17 @@ export default function RegisterScreen({
           <Button title="Close" onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
-      <FlatList
+      <NumberSectionList
         keyExtractor={keyExtractor}
-        data={numbers}
+        data={numbers.personal}
         renderItem={renderItem}
+        title={"Personal"}
+      />
+      <NumberSectionList
+        keyExtractor={keyExtractor}
+        data={numbers.shared}
+        renderItem={renderItem}
+        title={"Shared"}
       />
       <View style={{ flex: 1, backgroundColor: '000' }}>
         <Card
