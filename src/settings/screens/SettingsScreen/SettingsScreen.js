@@ -24,6 +24,20 @@ export default class SettingsScreen extends React.Component {
         onPress: () => {
           navigation.navigate('CallForwarding');
         }
+      },
+      {
+        title: 'auto-register',
+        icon: 'confirmation-number',
+        onPress: () => {
+          navigation.navigate('AutoRegister');
+        }
+      },
+      {
+        title: 'Statistics sends',
+        icon: 'cloud-upload',
+        onPress: () => {
+          navigation.navigate('SendStats');
+        }
       }
     ];
 

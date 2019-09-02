@@ -8,6 +8,7 @@ import HangupButton from '../../components/HangupButton/HangupButton';
 import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
 import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 import ColorPalette from '../../../styles/ColorPalette';
+import { phoneService } from '../../providers/PhoneProvider/PhoneService';
 
 const styles = StyleSheet.create({
   container: {
@@ -53,9 +54,12 @@ const DialpadScreen = ({
   getCallForwardingStatus
 }) => {
   useEffect(() => {
-    let timer = setInterval(() => {
-      console.log('Getting callforwarding status');
-      getCallForwardingStatus(activeNumber);
+    const timer = setInterval(() => {
+      try {
+        getCallForwardingStatus(activeNumber);
+      } catch {
+        console.log('Get callforwarding status failed');
+      }
     }, 60000);
     navigation.navigate(connected ? 'AppRegistered' : 'Register');
     console.log('Running useEffect -> DialpadScreen()');
@@ -102,7 +106,7 @@ const DialpadScreen = ({
             backgroundColor: ColorPalette.callBtnGreen,
             borderRadius: 10,
             color: 'white',
-            overflow: 'hidden',
+            overflow: 'hidden'
           }}
         >
           {activeNumber}
@@ -123,7 +127,8 @@ DialpadScreen.propTypes = {
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string
   }),
-  activeNumber: PropTypes.string.isRequired
+  activeNumber: PropTypes.string.isRequired,
+  getCallForwardingStatus: PropTypes.func.isRequired
 };
 
 DialpadScreen.defaultProps = {
@@ -131,4 +136,4 @@ DialpadScreen.defaultProps = {
   tempRemote: {}
 };
 
-export default withNavigation(DialpadScreen);
+export default withNavigation(phoneService(DialpadScreen));
