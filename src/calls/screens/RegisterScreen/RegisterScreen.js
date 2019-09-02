@@ -38,17 +38,36 @@ export default function RegisterScreen({
     );
   };
 
-  const NumberSectionList = (keyExtractor, numbers, renderItem, section) => {
-    const Title = () => (<Text style={{ padding: 10, textAlign: 'center', fontSize: 20, backgroundColor: ColorPalette.primary, color: 'white' }}>{section}</Text>);
-    
-    return (<React.Fragment>
-      <Title />
-      <FlatList
-      keyExtractor={keyExtractor}
-      data={numbers}
-      renderItem={renderItem}
-    />
-    </React.Fragment>);
+  const NumberSectionList = (keyExtractor, numbers, renderItem, title) => {
+    const Title = () => (
+      <Text
+        style={{
+          padding: 10,
+          textAlign: 'center',
+          fontSize: 20,
+          backgroundColor: ColorPalette.primary,
+          color: 'white'
+        }}
+      >
+        {title}
+      </Text>
+    );
+    if (!numbers) {
+      return (
+        <React.Fragment>
+          <Title />
+          <Text style={{ textAlign: 'center', fontSize: 20 }} keyExtractor={keyExtractor}>
+            There are no numbers in this section
+          </Text>
+        </React.Fragment>
+      );
+    }
+    return (
+      <React.Fragment>
+        <Title />
+        <FlatList keyExtractor={keyExtractor} data={numbers} renderItem={renderItem} />
+      </React.Fragment>
+    );
   };
 
   renderItem.propTypes = {
@@ -97,8 +116,18 @@ export default function RegisterScreen({
           <Button title="Close" onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
-      <NumberSectionList keyExtractor={keyExtractor} data={numbers.personal} renderItem={renderItem} title={"Personal"}/>
-      <NumberSectionList keyExtractor={keyExtractor} data={numbers.shared} renderItem={renderItem} title={"Shared"}/>
+      <NumberSectionList
+        keyExtractor={keyExtractor}
+        data={numbers.personal}
+        renderItem={renderItem}
+        title="Personal"
+      />
+      <NumberSectionList
+        keyExtractor={keyExtractor}
+        data={numbers.shared}
+        renderItem={renderItem}
+        title="Shared"
+      />
       <View style={{ flex: 1, backgroundColor: '000' }}>
         <Card
           title={
