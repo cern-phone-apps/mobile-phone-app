@@ -10,6 +10,10 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage; // <-- Add this line
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage; // <-- Add this line
+
+
 import java.util.List;
 
 
@@ -35,6 +39,8 @@ public class MainApplication extends Application implements ReactApplication {
       // packages.add(new RNCWebViewPackage());
       // packages.add(new VectorIconsPackage());
       // packages.add(new RNGestureHandlerPackage());
+      packages.add(new RNFirebaseMessagingPackage());
+      packages.add(new RNFirebaseNotificationsPackage()); // <-- Add this line
 
       return packages;
     }
@@ -43,6 +49,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected String getJSMainModuleName() {
       return "index";
     }
+
   };
 
   @Override
