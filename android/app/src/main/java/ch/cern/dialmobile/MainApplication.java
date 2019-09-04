@@ -2,19 +2,14 @@ package ch.cern.dialmobile;
 
 import android.app.Application;
 
+import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.oney.WebRTCModule.WebRTCModulePackage;
 import io.wazo.callkeep.RNCallKeepPackage;
-import com.zmxv.RNSound.RNSoundPackage;
-import com.reactnativecommunity.webview.RNCWebViewPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -28,15 +23,20 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-            new WebRTCModulePackage(),
-            new RNCallKeepPackage(),
-            new RNSoundPackage(),
-            new RNCWebViewPackage(),
-            new VectorIconsPackage(),
-            new RNGestureHandlerPackage()
-      );
+
+      @SuppressWarnings("UnnecessaryLocalVariable")
+      List<ReactPackage> packages = new PackageList(this).getPackages();
+      // Packages that cannot be autolinked yet can be added manually here, for example:
+      // packages.add(new MyReactNativePackage());
+
+      // packages.add(new WebRTCModulePackage());
+      // packages.add(new RNCallKeepPackage());
+      // packages.add(new RNSoundPackage());
+      // packages.add(new RNCWebViewPackage());
+      // packages.add(new VectorIconsPackage());
+      // packages.add(new RNGestureHandlerPackage());
+
+      return packages;
     }
 
     @Override
