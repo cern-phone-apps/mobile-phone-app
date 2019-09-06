@@ -14,6 +14,7 @@ import { name as appName } from './app.json';
 import App from './App';
 import configureStore from './store';
 import FirebaseNotifications from './firebase-notifications';
+import bgMessaging from './bgMessaging'; // <-- Import the file you created in (2)
 
 import PhoneProvider from './src/calls/providers/PhoneProvider/PhoneProviderContainer';
 
@@ -65,10 +66,24 @@ const LoadingComponent = () => {
   );
 };
 
+const getFirebaseDeviceToken = async () => {
+  const fcmToken = await firebase.messaging().getToken();
+  if (fcmToken) {
+    console.log(fcmToken);
+    // user has a device token
+  } else {
+    console.log('No FCM token');
+    // user doesn't have a device token yet
+  }
+};
+
 const PhoneMobile = () => {
   useEffect(() => {
-    FirebaseNotifications.checkPermission();
+    if (FirebaseNotifications.checkPermission()) {
+      getFirebaseDeviceToken();
+    }
     FirebaseNotifications.createNotificationListeners();
+
     return () => {
       FirebaseNotifications.notificationListener();
       FirebaseNotifications.notificationOpenedListener();
@@ -88,3 +103,8 @@ const PhoneMobile = () => {
 };
 
 AppRegistry.registerComponent(appName, () => PhoneMobile);
+
+AppRegistry.registerHeadlessTask(
+  'RNFirebaseBackgroundMessage',
+  () => bgMessaging
+); // <-- Add this line

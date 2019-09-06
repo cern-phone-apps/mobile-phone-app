@@ -1,5 +1,5 @@
-import { Alert } from "react-native";
-import firebase from "react-native-firebase";
+import firebase from 'react-native-firebase';
+import { showMessage } from 'react-native-flash-message';
 
 class FirebaseNotifications {
   static notificationListener;
@@ -11,7 +11,7 @@ class FirebaseNotifications {
       await firebase.messaging().requestPermission();
     } catch (error) {
       // User has rejected permissions
-      console.log("permission rejected");
+      console.log('permission rejected');
     }
   }
 
@@ -21,6 +21,7 @@ class FirebaseNotifications {
     if (!enabled) {
       FirebaseNotifications.requestPermission();
     }
+    return enabled;
   }
 
   static async createNotificationListeners() {
@@ -59,17 +60,18 @@ class FirebaseNotifications {
      * */
     this.messageListener = firebase.messaging().onMessage(message => {
       // process data message
+      console.log('Receiving a PUSH notification. App on foreground');
       console.log(JSON.stringify(message));
     });
   }
 
   static showAlert(title, body) {
-    Alert.alert(
-      title,
-      body,
-      [{ text: "OK", onPress: () => console.log("OK Pressed") }],
-      { cancelable: false }
-    );
+    showMessage({
+      message: title,
+      description: body,
+      type: 'default',
+      duration: 3000
+    });
   }
 }
 
