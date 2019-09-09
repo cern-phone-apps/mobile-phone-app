@@ -13,15 +13,16 @@ const createCustomStore = () => {
     'loginInProgress',
     'error',
     'authInProgress',
-    'requestingToken'
+    'requestingToken',
   ]);
 
   const persistConfig = {
     key: 'phone-webapp',
+    timeout: 10000, // Added to avoid some errors with the Rehydrate on app load
     storage,
     blacklist: ['connection', 'search', 'call', 'dialpad'],
     transforms: [blacklistLoginFilter],
-    stateReconciler: autoMergeLevel2
+    stateReconciler: autoMergeLevel2,
   };
 
   const persistedReducers = persistReducer(persistConfig, rootReducer);
@@ -32,8 +33,8 @@ const createCustomStore = () => {
     compose(
       applyMiddleware(apiMiddleware),
       applyMiddleware(thunk),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
-    )
+      window.devToolsExtension ? window.devToolsExtension() : (f) => f,
+    ),
   );
 };
 

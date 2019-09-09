@@ -138,5 +138,5 @@ RNTester/build
 /template/ios/Pods/
 /template/ios/Podfile.lock
 RNTester/RNTesterPods.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-ios/Pods
+/ios/Pods
 src/config.js
