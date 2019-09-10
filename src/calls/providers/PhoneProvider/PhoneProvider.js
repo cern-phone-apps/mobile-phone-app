@@ -10,6 +10,7 @@ import Sound from '../../utils/sound/Sound';
 
 import {
   errorMessage,
+  warnMessage,
   logMessage,
   toneInMessage,
   toneOutMessage
@@ -265,7 +266,7 @@ export class PhoneProvider extends React.Component {
     try {
       toneAPI.hangUp();
     } catch (error) {
-      console.error(error);
+      logMessage(error);
     }
   };
 
@@ -308,7 +309,7 @@ export class PhoneProvider extends React.Component {
     try {
       toneAPI.hangUp();
     } catch (error) {
-      console.log(error);
+      logMessage(error);
     }
   };
 
@@ -498,7 +499,7 @@ export class PhoneProvider extends React.Component {
   };
 
   testFunction = () => {
-    console.log('Hello World');
+    logMessage('Hello World');
   };
 
   handleProgressEvent = () => {
@@ -508,7 +509,7 @@ export class PhoneProvider extends React.Component {
   };
 
   handleCancelEvent = () => {
-    console.warn('Cancel event triggered but doing nothing');
+    warnMessage('Cancel event triggered but doing nothing');
   };
 
   handleRegistrationFailedEvent = () => {
