@@ -7,6 +7,6 @@ module.exports = {
     'no-console': 0,
     'space-before-function-paren': ['error', 'always'],
     'react/jsx-closing-bracket-location': 0,
-    'comma-dangle': ['error', 'always'],
+    'comma-dangle': ['error', 'never'],
   },
 };

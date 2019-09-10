@@ -93,53 +93,41 @@ export class PhoneProvider extends React.Component {
     }).isRequired
   };
 
-  getChildContext() {
+  getChildContext = () => {
     const { phoneService } = this.state;
     return { phoneService };
-  }
+  };
 
-  /**
-   * Class functionality
-   */
+  componentDidMount = () => {
+    this.initializeToneAPI();
+  };
 
-  /**
-   * When the component is mounted we load Dial
-   */
-  componentDidMount() {
-    const { authToken } = this.props;
-
-    const firstRegister = !!authToken;
+  initializeToneAPI = async () => {
     const devMode = false;
-
     RNCallKeep.setup(options);
     this.setState(
       {
-        toneAPI: new Dial(devMode, firstRegister)
+        toneAPI: new Dial(devMode)
       },
       () => {
         this.addListeners();
-        RNCallKeep.addEventListener(
-          'didReceiveStartCallAction',
-          this.onNativeCall
-        );
+        RNCallKeep.addEventListener('didReceiveStartCallAction', this.onNativeCall);
         RNCallKeep.addEventListener('answerCall', () => {
           logMessage('Received answerCall event');
           this.acceptToneCall();
         });
         RNCallKeep.addEventListener('endCall', this.hangUpCurrentCallAction);
-        RNCallKeep.addEventListener(
-          'didDisplayIncomingCall',
-          this.onIncomingCallDisplayed
-        );
+        RNCallKeep.addEventListener('didDisplayIncomingCall', this.onIncomingCallDisplayed);
       }
     );
-  }
+    return true;
+  };
 
   addListeners = () => {
     const { toneAPI } = this.state;
     this.notifier = toneAPI.getNotifier();
     if (this.notifier) {
-      this.notifier.on('ToneEvent', event => {
+      this.notifier.on('ToneEvent', (event) => {
         this.eventHandler(event);
       });
     }
@@ -158,7 +146,7 @@ export class PhoneProvider extends React.Component {
    * @param phoneNumber
    * @returns {boolean|void|*}
    */
-  authenticateUser = username => {
+  authenticateUser = async (username) => {
     const {
       authToken,
       toneToken,
@@ -167,37 +155,43 @@ export class PhoneProvider extends React.Component {
       clearAuthToken,
       setRegistrationFailure
     } = this.props;
+    await this.initializeToneAPI();
+
     const { toneAPI } = this.state;
 
-    toneOutMessage(`Authenticating user: ${username}/*****`);
     requestRegistration();
     /**
-     * If there is an authToken, we use that token. Else, we use the already encrypted token provided by the api
+     * If there is an authToken, we use that token.
+     * Else, we use the already encrypted token provided by the api
      */
     let tempToken;
     if (authToken) {
       tempToken = authToken;
+      toneOutMessage(`Authenticating user: ${username} with authToken`);
+      toneOutMessage(`Authenticating user with authToken ${authToken}`);
     } else {
       tempToken = toneToken;
+      toneOutMessage(`Authenticating user: ${username} with toneToken`);
     }
     try {
-      const eToken = toneAPI.authenticate(username, tempToken);
+      const eToken = toneAPI.authenticate(username, tempToken, !!authToken);
       if (authToken) {
         /**
-         * If the authToken was used, we clear the original auth token as we will use the encrypted token from now on.
+         * If the authToken was used, we clear the original auth token as we will
+         *  use the encrypted token from now on.
          */
         clearAuthToken();
         setToneToken(eToken);
       }
     } catch (error) {
-      errorMessage(`Unable to authenticate the user`);
+      errorMessage('Unable to authenticate the user');
       errorMessage(error);
 
       const errorToDisplay = {
         code: {
           status_code: 'UA-1'
         },
-        description: `Unable to authenticate the user on TONE`
+        description: 'Unable to authenticate the user on TONE'
       };
 
       setRegistrationFailure(errorToDisplay);
@@ -213,7 +207,7 @@ export class PhoneProvider extends React.Component {
     } = this.props;
     const { toneAPI } = this.state;
 
-    toneOutMessage(`UnAuthenticating user`);
+    toneOutMessage('UnAuthenticating user');
 
     if (onCall === true) {
       logMessage('Hanging up current call');
@@ -224,7 +218,7 @@ export class PhoneProvider extends React.Component {
     try {
       toneAPI.stopAgent();
     } catch (error) {
-      errorMessage(`Agent is not connected`);
+      errorMessage('Agent is not connected');
       setDisconnectionSuccess();
     }
   };
@@ -256,7 +250,7 @@ export class PhoneProvider extends React.Component {
 
   hangUpCurrentCallAction = (hangupDefault = false) => {
     const { toneAPI } = this.state;
-    toneOutMessage(`Hang up current call from hangUpCurrentCallAction`);
+    toneOutMessage('Hang up current call from hangUpCurrentCallAction');
     if (hangupDefault) {
       this.hangupDefault = true;
       logMessage('hangupDefault is true');
@@ -283,7 +277,7 @@ export class PhoneProvider extends React.Component {
     }
   };
 
-  sendDtmfCommand = tone => {
+  sendDtmfCommand = (tone) => {
     const { toneAPI } = this.state;
     toneAPI.sendDTMF(tone);
   };
@@ -313,7 +307,7 @@ export class PhoneProvider extends React.Component {
 
   acceptToneCall = () => {
     const { toneAPI } = this.state;
-    toneOutMessage(`Accepting incoming call`);
+    toneOutMessage('Accepting incoming call');
     toneAPI.answer();
   };
 
@@ -340,7 +334,7 @@ export class PhoneProvider extends React.Component {
     setDisconnectionSuccess();
   };
 
-  handleRegistationFailedEvent = event => {
+  handleRegistationFailedEvent = (event) => {
     const { setRegistrationFailure } = this.props;
     if (event.error !== undefined) {
       setRegistrationFailure(event.error);
@@ -351,13 +345,9 @@ export class PhoneProvider extends React.Component {
    * Logs the user out of TONE
    */
   unAuthenticateUser = () => {
-    const {
-      requestDisconnection,
-      call: onCall,
-      setOngoingCallFinished
-    } = this.props;
+    const { requestDisconnection, call: onCall, setOngoingCallFinished } = this.props;
     const { toneAPI } = this.state;
-    toneOutMessage(`UnAuthenticating user`);
+    toneOutMessage('UnAuthenticating user');
 
     if (onCall) {
       setOngoingCallFinished();
@@ -381,10 +371,12 @@ export class PhoneProvider extends React.Component {
   };
 
   /**
-   * If we receive a terminated event, it can happen for the ongoing call or for the additional call.
+   * If we receive a terminated event, it can happen
+   *  for the ongoing call or for the additional call.
    * If there are additional calls (more than 1 at the time) and there is a 'terminate' event.
    * - One of the calls has been removed.
-   * - We need to determine which call was it: the ongoing call (the user hangup and answer the new call)
+   * - We need to determine which call was it: the ongoing
+   *  call (the user hangup and answer the new call)
    *  or the new incoming call (the user rejected the call)
    */
   handleTerminatedEventWithAdditionalCalls = () => {
@@ -447,7 +439,7 @@ export class PhoneProvider extends React.Component {
    * update the redux state
    * @param event
    */
-  handleInviteReceivedEvent = event => {
+  handleInviteReceivedEvent = (event) => {
     const {
       setIsReceivingCall,
       call: { onCall },
@@ -510,33 +502,23 @@ export class PhoneProvider extends React.Component {
     console.warn('Cancel event triggered but doing nothing');
   };
 
-  handleRegistrationFailedEvent = () => {
-    displayErrorAlert(
-      'Error',
-      'Unable to register the selected number. Please, logout and try again in a few minutes.'
-    );
-  };
-
   onIncomingCallDisplayed = () => {
     logMessage('Calling onIncomingCallDisplayed');
     // You will get this event after RNCallKeep finishes showing incoming call UI
     // You can check if there was an error while displaying
   };
 
-  handlRegistrationFailedEvent = () => {
+  handleRegistrationFailedEvent = () => {
     const { setRegistrationFailure } = this.props;
     const errorToDisplay = {
       code: {
         status_code: 'UA-2-registration-failed'
       },
-      description: `Unable to authenticate the user on TONE`
+      description: 'Unable to authenticate the user on TONE'
     };
-    displayErrorAlert(
-      errorToDisplay.code.status_code,
-      errorToDisplay.description
-    );
+    displayErrorAlert(errorToDisplay.code.status_code, errorToDisplay.description);
 
-   setRegistrationFailure(errorToDisplay);
+    setRegistrationFailure(errorToDisplay);
   };
 
   /**
@@ -545,13 +527,13 @@ export class PhoneProvider extends React.Component {
    * =======
    */
 
-  eventHandler = event => {
+  eventHandler = (event) => {
     toneInMessage(`Tone Event received: ${event.name}`);
     toneInMessage(event);
 
     const handler = {
       registered: this.handleRegisteredEvent,
-      registrationFailed: this.handlRegistrationFailedEvent,
+      registrationFailed: this.handleRegistrationFailedEvent,
       unregistered: this.handleUnregisteredEvent,
       terminated: this.handleTerminatedEvent,
       accepted: this.handleAcceptedEvent,
@@ -569,11 +551,11 @@ export class PhoneProvider extends React.Component {
     }
   };
 
-  render() {
+  render = () => {
     const { children } = this.props;
     // `Children.only` enables us not to add a <div /> for nothing
     return Children.only(children);
-  }
+  };
 }
 
 export default PhoneProvider;
