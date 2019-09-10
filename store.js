@@ -13,7 +13,7 @@ const createCustomStore = () => {
     'loginInProgress',
     'error',
     'authInProgress',
-    'requestingToken',
+    'requestingToken'
   ]);
 
   const persistConfig = {
@@ -22,7 +22,7 @@ const createCustomStore = () => {
     storage,
     blacklist: ['connection', 'search', 'call', 'dialpad'],
     transforms: [blacklistLoginFilter],
-    stateReconciler: autoMergeLevel2,
+    stateReconciler: autoMergeLevel2
   };
 
   const persistedReducers = persistReducer(persistConfig, rootReducer);
@@ -33,8 +33,8 @@ const createCustomStore = () => {
     compose(
       applyMiddleware(apiMiddleware),
       applyMiddleware(thunk),
-      window.devToolsExtension ? window.devToolsExtension() : (f) => f,
-    ),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
   );
 };
 

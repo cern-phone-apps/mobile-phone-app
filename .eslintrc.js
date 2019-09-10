@@ -8,5 +8,6 @@ module.exports = {
     'space-before-function-paren': ['error', 'always'],
     'react/jsx-closing-bracket-location': 0,
     'comma-dangle': ['error', 'never'],
-  },
+    'eslint arrow-parens': ['error', 'as-needed']
+  }
 };

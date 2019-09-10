@@ -64,34 +64,25 @@ class DialpadForm extends React.Component {
         <View style={styles.phoneNumberRow}>
           <View style={styles.phoneNumberSideColumn} />
           <View style={styles.phoneNumberCenterColumn}>
-            <TextInput
-              style={styles.phoneNumberInput}
-              value={phoneNumber}
-              editable={false}
-            />
+            <TextInput style={styles.phoneNumberInput} value={phoneNumber} editable={false} />
           </View>
           <View style={styles.phoneNumberSideColumn}>
             <TouchableOpacity
               disabled={disabled}
               activeOpacity={0.5}
               onPress={this.deleteOneNumber}
-              onLongPress={this.deleteWholeNumber}
-            >
+              onLongPress={this.deleteWholeNumber}>
               <Icon name="backspace" />
             </TouchableOpacity>
           </View>
         </View>
-        <Dialpad
-          updatePhoneNumber={this.updatePhoneNumber}
-          disabled={disabled}
-        />
+        <Dialpad updatePhoneNumber={this.updatePhoneNumber} disabled={disabled} />
         <View style={styles.callButtonContainer}>
           <TouchableOpacity
             disabled={disabled}
             activeOpacity={0.5}
             style={[styles.callButton, disabled ? styles.disabled : null]}
-            onPress={() => phoneNumber && this.makeCall()}
-          >
+            onPress={() => phoneNumber && this.makeCall()}>
             <Icon name="phone" size={25} color="white" />
           </TouchableOpacity>
         </View>
