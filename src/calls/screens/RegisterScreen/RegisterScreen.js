@@ -4,16 +4,16 @@ import { FlatList, View, Text, Linking } from 'react-native';
 import { Card, Button, Icon, Overlay, Badge } from 'react-native-elements';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import ColorPalette from '../../../styles/ColorPalette';
+import { logMessage } from '../../../common/utils/logging';
 
 export default function RegisterScreen({
   getUserPhoneNumbers,
   connected,
   navigation,
   numbers,
-  token,
   setActiveNumber,
   activeNumber,
-  rememberNumber
+  rememberNumber,
 }) {
   const [overlayVisible, setOverlayVisible] = useState(false);
 
@@ -31,7 +31,6 @@ export default function RegisterScreen({
     return (
       <RegisterForm
         phoneNumber={item}
-        token={token}
         setActiveNumber={setActiveNumber}
         autoRegister={!!(rememberNumber && activeNumber === item)}
       />
@@ -41,85 +40,89 @@ export default function RegisterScreen({
   const NumberSectionList = ({ keyExtractor, data, renderItem, title }) => {
     const Title = () => (
       <Text
+        key={`${title}`}
         style={{
           padding: 10,
           fontSize: 13,
           color: '#AAAAAA',
-          backgroundColor: '#EEEEEE'
-        }}
-      >
+          backgroundColor: '#EEEEEE',
+        }}>
         {title}
       </Text>
     );
     let ret = [];
     ret.push(<Title />);
     if (!data || data.length === 0) {
-      ret.push(<Text style={{ textAlign: 'center', fontSize: 14, paddingTop: 20, paddingBottom: 20, color: '#BBBBBB' }} keyExtractor={keyExtractor}>
+      ret.push(
+        <Text
+          style={{
+            textAlign: 'center',
+            fontSize: 14,
+            paddingTop: 20,
+            paddingBottom: 20,
+            color: '#BBBBBB',
+          }}
+          keyExtractor={keyExtractor}>
           There are no numbers in this section
-    </Text>);
+        </Text>,
+      );
       return ret;
     }
     ret.push(<FlatList keyExtractor={keyExtractor} data={data} renderItem={renderItem} />);
-    return (ret);
+    return ret;
   };
 
   renderItem.propTypes = {
     item: PropTypes.shape({
-      phoneNumber: PropTypes.string.isRequired
-    }).isRequired
+      phoneNumber: PropTypes.string.isRequired,
+    }).isRequired,
   };
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: 'white'
-      }}
-    >
-      <Overlay
-        isVisible={overlayVisible}
-        onBackdropPress={() => setOverlayVisible(false)}
-      >
+        backgroundColor: 'white',
+      }}>
+      <Overlay isVisible={overlayVisible} onBackdropPress={() => setOverlayVisible(false)}>
         <View
           style={{
             flex: 1,
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
+            alignItems: 'center',
+          }}>
           <Text style={{ fontSize: 34 }}>About Certificates</Text>
           <Text
             style={{
-              textAlign: 'justify'
-            }}
-          >
-            This application requires CERN Certificates to work. Please, follow
-            the steps to install them from the following link and come back to
-            the application. You may need to restart the application afterwards.
+              textAlign: 'justify',
+            }}>
+            This application requires CERN Certificates to work. Please, follow the steps to install
+            them from the following link and come back to the application. You may need to restart
+            the application afterwards.
           </Text>
           <Button
             title="https://cafiles.cern.ch/cafiles/certificates/Grid.aspx"
             type="clear"
             onPress={() => {
-              Linking.openURL(
-                'https://cafiles.cern.ch/cafiles/certificates/Grid.aspx'
-              );
+              Linking.openURL('https://cafiles.cern.ch/cafiles/certificates/Grid.aspx');
             }}
           />
           <Button title="Close" onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
       <NumberSectionList
+        key="personal"
         keyExtractor={keyExtractor}
         data={numbers.personal}
         renderItem={renderItem}
-        title={"Personal"}
+        title={'Personal'}
       />
       <NumberSectionList
+        key="shared"
         keyExtractor={keyExtractor}
         data={numbers.shared}
         renderItem={renderItem}
-        title={"Shared"}
+        title={'Shared'}
       />
       <View style={{ flex: 1, backgroundColor: '000' }}>
         <Card
@@ -130,31 +133,24 @@ export default function RegisterScreen({
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderBottomColor: '#d4d4d4',
-                borderBottomWidth: 1
-              }}
-            >
+                borderBottomWidth: 1,
+              }}>
               <Icon name="info-circle" type="font-awesome" />
               <Text
                 style={{
                   fontSize: 16,
-                  fontWeight: 'bold'
-                }}
-              >
+                  fontWeight: 'bold',
+                }}>
                 {' '}
                 About Certificates
               </Text>
             </View>
-          }
-        >
+          }>
           <Text style={{ marginTop: 5 }}>
-            Please, install the CERN certificates and come back to this screen
-            if you haven&apos;t done it yet.
+            Please, install the CERN certificates and come back to this screen if you haven&apos;t
+            done it yet.
           </Text>
-          <Button
-            title="More info"
-            onPress={() => setOverlayVisible(true)}
-            type="clear"
-          />
+          <Button title="More info" onPress={() => setOverlayVisible(true)} type="clear" />
         </Card>
       </View>
     </View>
@@ -167,14 +163,14 @@ RegisterScreen.propTypes = {
   getUserPhoneNumbers: PropTypes.func.isRequired,
   token: PropTypes.string,
   setActiveNumber: PropTypes.func.isRequired,
-  activeNumber: PropTypes.string
+  activeNumber: PropTypes.string,
 };
 
 RegisterScreen.defaultProps = {
   token: '',
-  numbers: []
+  numbers: [],
 };
 
 RegisterScreen.navigationOptions = {
-  title: 'Select a phone number'
+  title: 'Select a phone number',
 };
