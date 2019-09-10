@@ -106,15 +106,16 @@ export class PhoneProvider extends React.Component {
    * When the component is mounted we load Dial
    */
   componentDidMount() {
-    const { authToken } = this.props;
+    this.initializeToneApi();
+  }
 
-    const firstRegister = !!authToken;
+  initializeToneApi = () => {
     const devMode = false;
 
     RNCallKeep.setup(options);
     this.setState(
       {
-        toneAPI: new Dial(devMode, firstRegister)
+        toneAPI: new Dial(devMode)
       },
       () => {
         this.addListeners();
@@ -133,7 +134,7 @@ export class PhoneProvider extends React.Component {
         );
       }
     );
-  }
+  };
 
   addListeners = () => {
     const { toneAPI } = this.state;
@@ -181,7 +182,7 @@ export class PhoneProvider extends React.Component {
       tempToken = toneToken;
     }
     try {
-      const eToken = toneAPI.authenticate(username, tempToken);
+      const eToken = toneAPI.authenticate(username, tempToken, !!authToken);
       if (authToken) {
         /**
          * If the authToken was used, we clear the original auth token as we will use the encrypted token from now on.
@@ -536,7 +537,7 @@ export class PhoneProvider extends React.Component {
       errorToDisplay.description
     );
 
-   setRegistrationFailure(errorToDisplay);
+    setRegistrationFailure(errorToDisplay);
   };
 
   /**
