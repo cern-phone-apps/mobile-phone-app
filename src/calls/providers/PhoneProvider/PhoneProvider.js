@@ -10,6 +10,7 @@ import Sound from '../../utils/sound/Sound';
 
 import {
   errorMessage,
+  warnMessage,
   logMessage,
   toneInMessage,
   toneOutMessage
@@ -106,15 +107,16 @@ export class PhoneProvider extends React.Component {
    * When the component is mounted we load Dial
    */
   componentDidMount() {
-    const { authToken } = this.props;
+    this.initializeToneApi();
+  }
 
-    const firstRegister = !!authToken;
+  initializeToneApi = () => {
     const devMode = false;
 
     RNCallKeep.setup(options);
     this.setState(
       {
-        toneAPI: new Dial(devMode, firstRegister)
+        toneAPI: new Dial(devMode)
       },
       () => {
         this.addListeners();
@@ -133,7 +135,7 @@ export class PhoneProvider extends React.Component {
         );
       }
     );
-  }
+  };
 
   addListeners = () => {
     const { toneAPI } = this.state;
@@ -181,7 +183,7 @@ export class PhoneProvider extends React.Component {
       tempToken = toneToken;
     }
     try {
-      const eToken = toneAPI.authenticate(username, tempToken);
+      const eToken = toneAPI.authenticate(username, tempToken, !!authToken);
       if (authToken) {
         /**
          * If the authToken was used, we clear the original auth token as we will use the encrypted token from now on.
@@ -264,7 +266,7 @@ export class PhoneProvider extends React.Component {
     try {
       toneAPI.hangUp();
     } catch (error) {
-      console.error(error);
+      logMessage(error);
     }
   };
 
@@ -307,7 +309,7 @@ export class PhoneProvider extends React.Component {
     try {
       toneAPI.hangUp();
     } catch (error) {
-      console.log(error);
+      logMessage(error);
     }
   };
 
@@ -497,7 +499,7 @@ export class PhoneProvider extends React.Component {
   };
 
   testFunction = () => {
-    console.log('Hello World');
+    logMessage('Hello World');
   };
 
   handleProgressEvent = () => {
@@ -507,7 +509,7 @@ export class PhoneProvider extends React.Component {
   };
 
   handleCancelEvent = () => {
-    console.warn('Cancel event triggered but doing nothing');
+    warnMessage('Cancel event triggered but doing nothing');
   };
 
   handleRegistrationFailedEvent = () => {
@@ -536,7 +538,7 @@ export class PhoneProvider extends React.Component {
       errorToDisplay.description
     );
 
-   setRegistrationFailure(errorToDisplay);
+    setRegistrationFailure(errorToDisplay);
   };
 
   /**
