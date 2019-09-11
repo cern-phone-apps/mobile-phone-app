@@ -1,17 +1,15 @@
 import React, { Children } from 'react';
-import { Platform, Alert } from 'react-native';
+import { Alert } from 'react-native';
 
 import PropTypes from 'prop-types';
 import { Dial } from 'tone-api-mobile';
 
 import RNCallKeep from 'react-native-callkeep';
 import uuid4 from 'uuid/v4';
-import Sound from '../../utils/sound/Sound';
 import eventHandler from './tone-event-handler';
 
 import {
   errorMessage,
-  warnMessage,
   logMessage,
   toneOutMessage
 } from '../../../common/utils/logging';
@@ -24,18 +22,6 @@ const displayErrorAlert = (header = 'Error', message) => {
       style: 'cancel'
     }
   ]);
-};
-
-const options = {
-  ios: {
-    appName: 'CERN Phone App'
-  },
-  android: {
-    alertTitle: 'Permissions required',
-    alertDescription: 'This application needs to access your phone accounts',
-    cancelButton: 'Cancel',
-    okButton: 'ok'
-  }
 };
 
 export class PhoneProvider extends React.Component {
@@ -108,13 +94,27 @@ export class PhoneProvider extends React.Component {
    * When the component is mounted we load Dial
    */
   componentDidMount() {
+    const options = {
+      ios: {
+        appName: 'CERN Phone App'
+      },
+      android: {
+        appName: 'CERN Phone App',
+        alertTitle: 'Permissions required',
+        alertDescription:
+          'This application needs to access your phone accounts',
+        cancelButton: 'Cancel',
+        okButton: 'ok'
+      }
+    };
     this.initializeToneApi();
+
+    RNCallKeep.setup(options);
   }
 
   initializeToneApi = () => {
     const devMode = false;
 
-    RNCallKeep.setup(options);
     this.setState(
       {
         toneAPI: new Dial(devMode)
@@ -250,7 +250,7 @@ export class PhoneProvider extends React.Component {
     setIsCalling();
     const callSessionId = toneAPI.call(phoneNumber);
     setCallId(callSessionId);
-    RNCallKeep.startCall(callSessionId, phoneNumber);
+    RNCallKeep.startCall(callSessionId, phoneNumber, 'Contact Name');
   };
 
   onNativeCall = ({ handle }) => {
