@@ -43,6 +43,7 @@
             <action android:name="android.telecom.ConnectionService" />
         </intent-filter>
       </service>
+      <service android:name="io.wazo.callkeep.RNCallKeepBackgroundMessagingService" />
       <!-- END react-native-callkeep -->
 
       <service android:name="io.invertase.firebase.messaging.RNFirebaseMessagingService">
