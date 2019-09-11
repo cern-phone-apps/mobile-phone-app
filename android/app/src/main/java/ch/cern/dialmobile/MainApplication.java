@@ -3,6 +3,9 @@ package ch.cern.dialmobile;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage; // <-- Add this line
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage; // <-- Add this line
 import com.oney.WebRTCModule.WebRTCModulePackage;
 import io.wazo.callkeep.RNCallKeepPackage;
 import com.zmxv.RNSound.RNSoundPackage;
@@ -30,6 +33,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            // Firebase
+            new RNFirebasePackage(),
+            new RNFirebaseMessagingPackage(),
+            new RNFirebaseNotificationsPackage(),
+            // Other
             new WebRTCModulePackage(),
             new RNCallKeepPackage(),
             new RNSoundPackage(),
