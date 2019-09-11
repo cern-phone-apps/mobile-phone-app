@@ -10,7 +10,8 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 import FlashMessage from 'react-native-flash-message';
 import { name as appName } from './app.json';
 import App from './App';
-import configureStore from './store';
+// import configureStore from './store';
+import { store, persistor } from './store';
 
 import PhoneProvider from './src/calls/providers/PhoneProvider/PhoneProviderContainer';
 
@@ -18,7 +19,6 @@ console.disableYellowBox = true;
 /**
  * Set up the store and the history
  */
-const { store, persistor } = configureStore();
 
 const LoadingComponent = () => {
   return (
