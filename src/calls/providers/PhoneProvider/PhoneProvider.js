@@ -7,15 +7,16 @@ import { Dial } from 'tone-api-mobile';
 import RNCallKeep from 'react-native-callkeep';
 import uuid4 from 'uuid/v4';
 import Sound from '../../utils/sound/Sound';
+import eventHandler from './tone-event-handler';
 
 import {
   errorMessage,
   warnMessage,
   logMessage,
-  toneInMessage,
   toneOutMessage
 } from '../../../common/utils/logging';
 
+// TODO REMOVE
 const displayErrorAlert = (header = 'Error', message) => {
   Alert.alert(header, message, [
     {
@@ -142,7 +143,7 @@ export class PhoneProvider extends React.Component {
     this.notifier = toneAPI.getNotifier();
     if (this.notifier) {
       this.notifier.on('ToneEvent', event => {
-        this.eventHandler(event);
+        eventHandler(event, toneAPI);
       });
     }
   };
@@ -324,24 +325,6 @@ export class PhoneProvider extends React.Component {
     RNCallKeep.setCurrentCallActive();
   };
 
-  /**
-   * When the user connects to tone, we trigger a redux action to set the
-   * state as connected
-   */
-  handleRegisteredEvent = () => {
-    const { setRegistrationSuccess } = this.props;
-    setRegistrationSuccess();
-    RNCallKeep.setAvailable(true);
-  };
-
-  /**
-   * When we receive a disconnected event, we update the redux state
-   */
-  handleUnregisteredEvent = () => {
-    const { setDisconnectionSuccess } = this.props;
-    setDisconnectionSuccess();
-  };
-
   handleRegistationFailedEvent = event => {
     const { setRegistrationFailure } = this.props;
     if (event.error !== undefined) {
@@ -372,144 +355,8 @@ export class PhoneProvider extends React.Component {
     }
   };
 
-  handleInviteReceivedWithAdditionalCalls = () => {
-    const {
-      call: { onCall },
-      incrementAdditionalCallsNumber
-    } = this.props;
-    if (onCall) {
-      incrementAdditionalCallsNumber();
-    }
-  };
-
-  /**
-   * If we receive a terminated event, it can happen for the ongoing call or for the additional call.
-   * If there are additional calls (more than 1 at the time) and there is a 'terminate' event.
-   * - One of the calls has been removed.
-   * - We need to determine which call was it: the ongoing call (the user hangup and answer the new call)
-   *  or the new incoming call (the user rejected the call)
-   */
-  handleTerminatedEventWithAdditionalCalls = () => {
-    const {
-      setTempCallFinished,
-      addRecentCall,
-      setOngoingCallFinished,
-      call: { additionalCalls, remote, tempRemote },
-      decrementAdditionalCallsNumber
-    } = this.props;
-
-    if (additionalCalls > 0) {
-      decrementAdditionalCallsNumber();
-
-      if (this.hangupDefault) {
-        logMessage('Hanging up default call...');
-        // We want to hangup the ongoing call
-        addRecentCall(remote);
-        // We keep the additional call
-        setOngoingCallFinished();
-        // This must be after addCallToRecentCalls
-        this.hangupDefault = false;
-      } else {
-        logMessage('Hanging up temp call');
-        // We want to hangup the additionalCall
-        logMessage(tempRemote);
-        addRecentCall(tempRemote);
-        // We keep the remote
-        setTempCallFinished();
-      }
-    }
-  };
-
-  handleTerminatedEvent = () => {
-    const {
-      addRecentCall,
-      setTempCallFinished,
-      setOngoingCallFinished,
-      call: { additionalCalls, tempRemote, remote, onCall }
-    } = this.props;
-
-    if (additionalCalls > 0) {
-      // We need to handle the additionalCalls
-      this.handleTerminatedEventWithAdditionalCalls();
-    } else if (onCall) {
-      // We handle the ongoing call
-      addRecentCall(remote);
-      setOngoingCallFinished();
-      RNCallKeep.endCall(remote.callId);
-    } else {
-      // We handle the temp call
-      addRecentCall(tempRemote);
-      setTempCallFinished();
-      RNCallKeep.endCall(tempRemote.callId);
-    }
-  };
-
-  /**
-   * When we receive an inviteReceivedEvent, we want to play a ringtone and
-   * update the redux state
-   * @param event
-   */
-  handleInviteReceivedEvent = event => {
-    const {
-      setIsReceivingCall,
-      call: { onCall },
-      setCallId
-    } = this.props;
-    const { toneAPI } = this.state;
-    logMessage(`handleInviteReceivedEvent with onCall: ${onCall}`);
-    logMessage(onCall);
-    if (onCall) {
-      this.handleInviteReceivedWithAdditionalCalls();
-    }
-    // Retrieve the remote user information from the event data
-    const { uri } = event.data.session.remoteIdentity;
-    setIsReceivingCall(uri.user, null);
-    setCallId(toneAPI.getMostRecentSession().id);
-    RNCallKeep.displayIncomingCall(this.getCurrentCallId(), uri.user);
-  };
-
-  handleRejectedEvent = () => {
-    const { setCallMissed } = this.props;
-    if (Platform.OS === 'ios') {
-      Sound.stopRingbacktone();
-      Sound.stopRingTone();
-    }
-    setCallMissed();
-  };
-
-  handleAcceptedEvent = () => {
-    const { setCallAccepted } = this.props;
-    if (Platform.OS === 'ios') {
-      Sound.stopRingbacktone();
-      Sound.stopRingTone();
-    }
-    setCallAccepted();
-    RNCallKeep.setCurrentCallActive();
-  };
-
-  handleFailedEvent = () => {
-    const { setCallFailed } = this.props;
-    const tempFailedMessage = {
-      code: {
-        status_code: 'NI'
-      },
-      description: 'Call failed'
-    };
-    setCallFailed(tempFailedMessage);
-  };
-
   testFunction = () => {
     logMessage('Hello World');
-  };
-
-  handleProgressEvent = () => {
-    const { setIsCalling } = this.props;
-    // Sound.playRingbackTone();
-    setIsCalling(true);
-  };
-
-  handleCancelEvent = () => {
-    warnMessage('Cancel event triggered but doing nothing');
   };
 
   handleRegistrationFailedEvent = () => {
@@ -523,52 +370,6 @@ export class PhoneProvider extends React.Component {
     logMessage('Calling onIncomingCallDisplayed');
     // You will get this event after RNCallKeep finishes showing incoming call UI
     // You can check if there was an error while displaying
-  };
-
-  handlRegistrationFailedEvent = () => {
-    const { setRegistrationFailure } = this.props;
-    const errorToDisplay = {
-      code: {
-        status_code: 'UA-2-registration-failed'
-      },
-      description: `Unable to authenticate the user on TONE`
-    };
-    displayErrorAlert(
-      errorToDisplay.code.status_code,
-      errorToDisplay.description
-    );
-
-    setRegistrationFailure(errorToDisplay);
-  };
-
-  /**
-   * =======
-   * EVENTS
-   * =======
-   */
-
-  eventHandler = event => {
-    toneInMessage(`Tone Event received: ${event.name}`);
-    toneInMessage(event);
-
-    const handler = {
-      registered: this.handleRegisteredEvent,
-      registrationFailed: this.handlRegistrationFailedEvent,
-      unregistered: this.handleUnregisteredEvent,
-      terminated: this.handleTerminatedEvent,
-      accepted: this.handleAcceptedEvent,
-      rejected: this.handleRejectedEvent,
-      inviteReceived: this.handleInviteReceivedEvent,
-      failed: this.handleFailedEvent,
-      progress: this.handleProgressEvent,
-      cancel: this.handleCancelEvent
-    }[event.name];
-
-    if (handler) {
-      handler(event);
-    } else {
-      errorMessage(`Unhandled event: ${event.name}`);
-    }
   };
 
   render() {

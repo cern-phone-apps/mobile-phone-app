@@ -37,8 +37,13 @@ const createCustomStore = () => {
   );
 };
 
-export default () => {
+const configureStore = () => {
   const store = createCustomStore();
   const persistor = persistStore(store);
   return { store, persistor };
 };
+
+/**
+ * Set up the store and the history
+ */
+export const { store, persistor } = configureStore();
