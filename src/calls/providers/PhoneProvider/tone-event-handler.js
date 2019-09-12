@@ -103,9 +103,13 @@ const handleInviteReceivedEvent = (event, toneAPI) => {
 
   // Retrieve the remote user information from the event data
   store.dispatch(callActions.setIsReceivingCall(uri.user, null));
-  store.dispatch(callActions.setCallId(currentCallId));
+  store.dispatch(callActions.setCallId(currentCallId.toLowerCase()));
 
-  RNCallKeep.displayIncomingCall(currentCallId, uri.user);
+  RNCallKeep.displayIncomingCall(
+    currentCallId.toLowerCase(),
+    uri.user,
+    uri.user
+  );
 };
 /**
  * When we receive a disconnected event, we update the redux state
