@@ -2,11 +2,9 @@ import React, { Children } from 'react';
 import { Alert } from 'react-native';
 
 import PropTypes from 'prop-types';
-import { Dial } from 'tone-api-mobile';
 
 import RNCallKeep from 'react-native-callkeep';
 import uuid4 from 'uuid/v4';
-import eventHandler from './tone-event-handler';
 
 import {
   errorMessage,
@@ -94,58 +92,12 @@ export class PhoneProvider extends React.Component {
    * When the component is mounted we load Dial
    */
   componentDidMount() {
-    const options = {
-      ios: {
-        appName: 'CERN Phone App'
-      },
-      android: {
-        appName: 'CERN Phone App',
-        alertTitle: 'Permissions required',
-        alertDescription:
-          'This application needs to access your phone accounts',
-        cancelButton: 'Cancel',
-        okButton: 'ok'
-      }
-    };
+    console.log(this.props);
     this.initializeToneApi();
-
-    RNCallKeep.setup(options);
   }
 
   initializeToneApi = () => {
     const devMode = false;
-
-    this.setState(
-      {
-        toneAPI: new Dial(devMode)
-      },
-      () => {
-        this.addListeners();
-        RNCallKeep.addEventListener(
-          'didReceiveStartCallAction',
-          this.onNativeCall
-        );
-        RNCallKeep.addEventListener('answerCall', () => {
-          logMessage('Received answerCall event');
-          this.acceptToneCall();
-        });
-        RNCallKeep.addEventListener('endCall', this.hangUpCurrentCallAction);
-        RNCallKeep.addEventListener(
-          'didDisplayIncomingCall',
-          this.onIncomingCallDisplayed
-        );
-      }
-    );
-  };
-
-  addListeners = () => {
-    const { toneAPI } = this.state;
-    this.notifier = toneAPI.getNotifier();
-    if (this.notifier) {
-      this.notifier.on('ToneEvent', event => {
-        eventHandler(event, toneAPI);
-      });
-    }
   };
 
   getCurrentCallId = () => {
@@ -168,9 +120,10 @@ export class PhoneProvider extends React.Component {
       requestRegistration,
       setToneToken,
       clearAuthToken,
-      setRegistrationFailure
+      setRegistrationFailure,
+      toneAPI
     } = this.props;
-    const { toneAPI } = this.state;
+    console.log(toneAPI);
 
     toneOutMessage(`Authenticating user: ${username}/*****`);
     requestRegistration();
@@ -184,6 +137,7 @@ export class PhoneProvider extends React.Component {
       tempToken = toneToken;
     }
     try {
+      logMessage(toneAPI);
       const eToken = toneAPI.authenticate(username, tempToken, !!authToken);
       if (authToken) {
         /**
@@ -212,9 +166,9 @@ export class PhoneProvider extends React.Component {
     const {
       requestDisconnection,
       setDisconnectionSuccess,
-      call: { onCall }
+      call: { onCall },
+      toneAPI
     } = this.props;
-    const { toneAPI } = this.state;
 
     toneOutMessage(`UnAuthenticating user`);
 
@@ -239,8 +193,7 @@ export class PhoneProvider extends React.Component {
    * @returns {*}
    */
   makeCall = (name = 'Unknown', phoneNumber) => {
-    const { setMakeCallRequest, setIsCalling, setCallId } = this.props;
-    const { toneAPI } = this.state;
+    const { setMakeCallRequest, setIsCalling, setCallId, toneAPI } = this.props;
 
     logMessage('makeCall has been called');
     setMakeCallRequest({
@@ -258,7 +211,7 @@ export class PhoneProvider extends React.Component {
   };
 
   hangUpCurrentCallAction = (hangupDefault = false) => {
-    const { toneAPI } = this.state;
+    const { toneAPI } = this.props;
     toneOutMessage(`Hang up current call from hangUpCurrentCallAction`);
     if (hangupDefault) {
       this.hangupDefault = true;
@@ -287,7 +240,7 @@ export class PhoneProvider extends React.Component {
   };
 
   sendDtmfCommand = tone => {
-    const { toneAPI } = this.state;
+    const { toneAPI } = this.props;
     toneAPI.sendDTMF(tone);
   };
 
@@ -303,8 +256,7 @@ export class PhoneProvider extends React.Component {
    * It performs all the actions needed by this action.
    */
   rejectIncomingCall = () => {
-    const { call: tempRemote } = this.props;
-    const { toneAPI } = this.state;
+    const { call: tempRemote, toneAPI } = this.props;
     logMessage('PhoneProvider -> rejectIncomingCall');
     RNCallKeep.endCall(tempRemote.callId);
     try {
@@ -315,7 +267,7 @@ export class PhoneProvider extends React.Component {
   };
 
   acceptToneCall = () => {
-    const { toneAPI } = this.state;
+    const { toneAPI } = this.props;
     toneOutMessage(`Accepting incoming call`);
     toneAPI.answer();
   };
@@ -339,9 +291,9 @@ export class PhoneProvider extends React.Component {
     const {
       requestDisconnection,
       call: onCall,
-      setOngoingCallFinished
+      setOngoingCallFinished,
+      toneAPI
     } = this.props;
-    const { toneAPI } = this.state;
     toneOutMessage(`UnAuthenticating user`);
 
     if (onCall) {
