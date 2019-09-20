@@ -89,7 +89,7 @@ const handleInviteReceivedWithAdditionalCalls = () => {
  * update the redux state
  * @param event
  */
-const handleInviteReceivedEvent = (event, toneAPI) => {
+const handleInviteReceivedEvent = (event, toneAPI, isInBackground) => {
   const { onCall } = store.getState().call;
   const { uri } = event.data.session.remoteIdentity;
   const currentCallId = toneAPI.getMostRecentSession().id;
@@ -105,11 +105,15 @@ const handleInviteReceivedEvent = (event, toneAPI) => {
   store.dispatch(callActions.setIsReceivingCall(uri.user, null));
   store.dispatch(callActions.setCallId(currentCallId.toLowerCase()));
 
-  RNCallKeep.displayIncomingCall(
-    currentCallId.toLowerCase(),
-    uri.user,
-    uri.user
-  );
+  if (!isInBackground) {
+    RNCallKeep.displayIncomingCall(
+      currentCallId.toLowerCase(),
+      uri.user,
+      uri.user
+    );
+  } else {
+    toneAPI.answer();
+  }
 };
 /**
  * When we receive a disconnected event, we update the redux state
@@ -187,7 +191,7 @@ const handleAcceptedEvent = () => {
  * EVENTS
  * =======
  */
-const eventHandler = (event, toneAPI) => {
+const eventHandler = (event, toneAPI, isInBackground = false) => {
   toneInMessage(`Tone Event received: ${event.name}`);
   toneInMessage(event);
 
@@ -199,13 +203,14 @@ const eventHandler = (event, toneAPI) => {
     accepted: handleAcceptedEvent,
     rejected: handleRejectedEvent,
     inviteReceived: handleInviteReceivedEvent,
+    inviteAccepted: handleAcceptedEvent,
     failed: handleFailedEvent,
     progress: handleProgressEvent,
     cancel: handleCancelEvent
   }[event.name];
 
   if (handler) {
-    handler(event, toneAPI);
+    handler(event, toneAPI, isInBackground);
   } else {
     errorMessage(`Unhandled event: ${event.name}`);
   }

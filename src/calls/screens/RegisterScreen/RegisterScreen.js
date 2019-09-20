@@ -4,20 +4,28 @@ import { FlatList, View, Text, Linking } from 'react-native';
 import { Card, Button, Icon, Overlay, Badge } from 'react-native-elements';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 import ColorPalette from '../../../styles/ColorPalette';
+import { Input } from 'react-native-elements';
+import firebase from 'react-native-firebase';
 
 export default function RegisterScreen({
   getUserPhoneNumbers,
   connected,
   navigation,
   numbers,
-  token,
+  toneToken,
   setActiveNumber,
   activeNumber,
   rememberNumber
 }) {
   const [overlayVisible, setOverlayVisible] = useState(false);
+  const [deviceToken, setDeviceToken] = useState('');
 
+  const getDeviceToken = async () => {
+    const fcmToken = await firebase.messaging().getToken();
+    setDeviceToken(fcmToken);
+  };
   useEffect(() => {
+    getDeviceToken();
     if (connected) {
       navigation.navigate('AppRegistered');
     } else {
@@ -31,7 +39,6 @@ export default function RegisterScreen({
     return (
       <RegisterForm
         phoneNumber={item}
-        token={token}
         setActiveNumber={setActiveNumber}
         autoRegister={!!(rememberNumber && activeNumber === item)}
       />
@@ -114,6 +121,8 @@ export default function RegisterScreen({
             the steps to install them from the following link and come back to
             the application. You may need to restart the application afterwards.
           </Text>
+          <Input placeholder="Token" value={deviceToken} />
+          <Input placeholder="Token" value={toneToken} />
           <Button
             title="https://cafiles.cern.ch/cafiles/certificates/Grid.aspx"
             type="clear"
