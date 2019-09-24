@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FlatList, View, Text, Linking } from 'react-native';
-import { Card, Button, Icon, Overlay, Badge } from 'react-native-elements';
-import RegisterForm from '../../components/RegisterForm/RegisterForm';
-import ColorPalette from '../../../styles/ColorPalette';
-import { Input } from 'react-native-elements';
+import { Card, Button, Icon, Overlay, Input } from 'react-native-elements';
 import firebase from 'react-native-firebase';
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
 
 export default function RegisterScreen({
   getUserPhoneNumbers,
@@ -45,46 +43,41 @@ export default function RegisterScreen({
     );
   };
 
-  const NumberSectionList = ({ keyExtractor, data, renderItem, title }) => {
-    const Title = () => (
-      <Text
-        style={{
-          padding: 10,
-          fontSize: 13,
-          color: '#AAAAAA',
-          backgroundColor: '#EEEEEE'
-        }}
-      >
-        {title}
-      </Text>
-    );
-    let ret = [];
-    ret.push(<Title />);
-    if (!data || data.length === 0) {
-      ret.push(
+  const NumberSectionList = ({ data, title }) => {
+    return (
+      <React.Fragment>
         <Text
           style={{
-            textAlign: 'center',
-            fontSize: 14,
-            paddingTop: 20,
-            paddingBottom: 20,
-            color: '#BBBBBB'
+            padding: 10,
+            fontSize: 13,
+            color: '#AAAAAA',
+            backgroundColor: '#EEEEEE'
           }}
-          keyExtractor={keyExtractor}
         >
-          There are no numbers in this section
+          {title}
         </Text>
-      );
-      return ret;
-    }
-    ret.push(
-      <FlatList
-        keyExtractor={keyExtractor}
-        data={data}
-        renderItem={renderItem}
-      />
+        {!data || data.length === 0 ? (
+          <Text
+            style={{
+              textAlign: 'center',
+              fontSize: 14,
+              paddingTop: 20,
+              paddingBottom: 20,
+              color: '#BBBBBB'
+            }}
+            keyExtractor={keyExtractor}
+          >
+            There are no numbers in this section
+          </Text>
+        ) : (
+          <FlatList
+            keyExtractor={keyExtractor}
+            data={data}
+            renderItem={renderItem}
+          />
+        )}
+      </React.Fragment>
     );
-    return ret;
   };
 
   renderItem.propTypes = {
@@ -135,18 +128,8 @@ export default function RegisterScreen({
           <Button title="Close" onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
-      <NumberSectionList
-        keyExtractor={keyExtractor}
-        data={numbers.personal}
-        renderItem={renderItem}
-        title={'Personal'}
-      />
-      <NumberSectionList
-        keyExtractor={keyExtractor}
-        data={numbers.shared}
-        renderItem={renderItem}
-        title={'Shared'}
-      />
+      <NumberSectionList data={numbers.personal} title="Personal" />
+      <NumberSectionList data={numbers.shared} title="Shared" />
       <View style={{ flex: 1, backgroundColor: '000' }}>
         <Card
           title={
@@ -189,15 +172,16 @@ export default function RegisterScreen({
 
 RegisterScreen.propTypes = {
   connected: PropTypes.bool.isRequired,
-  numbers: PropTypes.arrayOf(PropTypes.object),
+  numbers: PropTypes.shape({
+    personal: PropTypes.arrayOf(PropTypes.string),
+    shared: PropTypes.arrayOf(PropTypes.string)
+  }),
   getUserPhoneNumbers: PropTypes.func.isRequired,
-  token: PropTypes.string,
   setActiveNumber: PropTypes.func.isRequired,
   activeNumber: PropTypes.string
 };
 
 RegisterScreen.defaultProps = {
-  token: '',
   numbers: []
 };
 

@@ -1,4 +1,6 @@
 import RNCallKeep from 'react-native-callkeep';
+import uuid4 from 'uuid/v4';
+
 import { Alert, Platform } from 'react-native';
 import { connectionActions, callActions, recentCallsActions } from 'dial-core';
 import {
@@ -59,7 +61,7 @@ const handleTerminatedEventWithAdditionalCalls = () => {
  */
 const handleTerminatedEvent = () => {
   const { additionalCalls, tempRemote, remote, onCall } = store.getState().call;
-
+  logMessage(`Remote callID: ${remote.callId}`);
   if (additionalCalls > 0) {
     // We need to handle the additionalCalls
     handleTerminatedEventWithAdditionalCalls();
@@ -92,25 +94,23 @@ const handleInviteReceivedWithAdditionalCalls = () => {
 const handleInviteReceivedEvent = (event, toneAPI, isInBackground) => {
   const { onCall } = store.getState().call;
   const { uri } = event.data.session.remoteIdentity;
-  const currentCallId = toneAPI.getMostRecentSession().id;
 
   logMessage(`handleInviteReceivedEvent with onCall: ${onCall}`);
-  logMessage(onCall);
 
   if (onCall) {
     handleInviteReceivedWithAdditionalCalls();
   }
 
   // Retrieve the remote user information from the event data
+
   store.dispatch(callActions.setIsReceivingCall(uri.user, null));
-  store.dispatch(callActions.setCallId(currentCallId.toLowerCase()));
+  const currentCallId = toneAPI.getMostRecentSession().id;
+  store.dispatch(callActions.setToneCallId(currentCallId.toLowerCase()));
 
   if (!isInBackground) {
-    RNCallKeep.displayIncomingCall(
-      currentCallId.toLowerCase(),
-      uri.user,
-      uri.user
-    );
+    const callId = uuid4();
+    RNCallKeep.displayIncomingCall(callId, uri.user, uri.user);
+    store.dispatch(callActions.setCallId(callId));
   } else {
     toneAPI.answer();
   }
@@ -148,9 +148,12 @@ const handleRegisteredEvent = () => {
   // toneInMessage(store.getState());
   // const authToken = store.getState().auth.toneToken;
   // toneInMessage(authToken);
-  toneInMessage('Calling handleRegisteredEvent');
-  store.dispatch(connectionActions.setRegistrationSuccess());
-  RNCallKeep.setAvailable(true);
+  const { connected } = store.getState().connection;
+  if (!connected) {
+    toneInMessage('Calling handleRegisteredEvent');
+    store.dispatch(connectionActions.setRegistrationSuccess());
+    RNCallKeep.setAvailable(true);
+  }
 };
 /**
  *
@@ -178,22 +181,31 @@ const handleProgressEvent = () => {
 const handleCancelEvent = () => {
   warnMessage('Cancel event triggered but doing nothing');
 };
-const handleAcceptedEvent = () => {
-  if (Platform.OS === 'ios') {
-    Sound.stopRingbacktone();
-    Sound.stopRingTone();
+const handleAcceptedEvent = (event, toneAPI, isInBackground) => {
+  const { tempRemote } = store.getState().call;
+
+  if (tempRemote && tempRemote.callId) {
+    if (Platform.OS === 'ios') {
+      Sound.stopRingbacktone();
+      Sound.stopRingTone();
+    }
+    store.dispatch(callActions.setCallAccepted());
+    if (!isInBackground) {
+      RNCallKeep.setCurrentCallActive(tempRemote.callId);
+    }
+  } else {
+    warnMessage('Trying to accept a call without callId');
   }
-  store.dispatch(callActions.setCallAccepted());
-  RNCallKeep.setCurrentCallActive();
 };
 /**
  * =======
  * EVENTS
  * =======
  */
-const eventHandler = (event, toneAPI, isInBackground = false) => {
+const eventHandler = (event, toneAPI) => {
   toneInMessage(`Tone Event received: ${event.name}`);
   toneInMessage(event);
+  const { isInBackground } = store.getState().settings;
 
   const handler = {
     registered: handleRegisteredEvent,
