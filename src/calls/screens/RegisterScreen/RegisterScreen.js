@@ -51,16 +51,33 @@ export default function RegisterScreen({
         {title}
       </Text>
     );
-    let ret = [];
+    const ret = [];
     ret.push(<Title />);
     if (!data || data.length === 0) {
-      ret.push(<Text style={{ textAlign: 'center', fontSize: 14, paddingTop: 20, paddingBottom: 20, color: '#BBBBBB' }} keyExtractor={keyExtractor}>
+      ret.push(
+        <Text
+          style={{
+            textAlign: 'center',
+            fontSize: 14,
+            paddingTop: 20,
+            paddingBottom: 20,
+            color: '#BBBBBB'
+          }}
+          keyExtractor={keyExtractor}
+        >
           There are no numbers in this section
-    </Text>);
+        </Text>
+      );
       return ret;
     }
-    ret.push(<FlatList keyExtractor={keyExtractor} data={data} renderItem={renderItem} />);
-    return (ret);
+    ret.push(
+      <FlatList
+        keyExtractor={keyExtractor}
+        data={data}
+        renderItem={renderItem}
+      />
+    );
+    return ret;
   };
 
   renderItem.propTypes = {
@@ -113,15 +130,22 @@ export default function RegisterScreen({
         keyExtractor={keyExtractor}
         data={numbers.personal}
         renderItem={renderItem}
-        title={"Personal"}
+        title="Personal"
       />
       <NumberSectionList
         keyExtractor={keyExtractor}
         data={numbers.shared}
         renderItem={renderItem}
-        title={"Shared"}
+        title="Shared"
       />
-      <View style={{ flex: 2, backgroundColor: '000', bottom: '10%', position: 'absolute' }}>
+      <View
+        style={{
+          flex: 2,
+          backgroundColor: '000',
+          bottom: '10%',
+          position: 'absolute'
+        }}
+      >
         <Card
           title={
             <View
