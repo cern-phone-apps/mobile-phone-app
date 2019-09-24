@@ -3,6 +3,8 @@ import java.util.Arrays;
 
 import com.facebook.react.ReactActivity;
 import io.wazo.callkeep.RNCallKeepModule; // Add these import lines
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 // START react-navigation
 import com.facebook.react.ReactActivityDelegate;
@@ -33,11 +35,11 @@ public class MainActivity extends ReactActivity {
 
     // Permission results
     @Override
-    public void onRequestPermissionsResult(int permsRequestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(permsRequestCode, permissions, grantResults);
-        switch (permsRequestCode) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
             case RNCallKeepModule.REQUEST_READ_PHONE_STATE:
-                RNCallKeepModule.onRequestPermissionsResult(grantResults);
+                RNCallKeepModule.onRequestPermissionsResult(requestCode, permissions, grantResults);
                 break;
         }
     }

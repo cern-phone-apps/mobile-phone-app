@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { ListItem } from 'react-native-elements';
 
@@ -7,7 +7,6 @@ import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 function RegisterForm({
   phoneNumber,
   phoneService,
-  token,
   setActiveNumber,
   autoRegister
 }) {
@@ -16,11 +15,12 @@ function RegisterForm({
    */
   const registerUser = () => {
     setActiveNumber(phoneNumber);
-    phoneService.authenticateUser(phoneNumber, token);
+    phoneService.authenticateUser(phoneNumber);
   };
   if (autoRegister) registerUser();
   return (
     <ListItem
+      key={`${phoneNumber}`}
       title={`${phoneNumber}`}
       chevron
       leftIcon={{ name: 'phone', type: 'font-awesome' }}
@@ -36,7 +36,6 @@ RegisterForm.propTypes = {
     authenticateUser: PropTypes.func.isRequired
   }).isRequired,
   phoneNumber: PropTypes.string.isRequired,
-  token: PropTypes.string.isRequired,
   setActiveNumber: PropTypes.func.isRequired,
   autoRegister: PropTypes.bool.isRequired
 };

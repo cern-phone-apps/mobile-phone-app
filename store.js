@@ -19,7 +19,7 @@ const createCustomStore = () => {
   const persistConfig = {
     key: 'phone-webapp',
     storage,
-    blacklist: ['connection', 'search', 'call', 'dialpad'],
+    blacklist: ['connection', 'search', 'call', 'dialpad', 'settings'],
     transforms: [blacklistLoginFilter],
     stateReconciler: autoMergeLevel2
   };

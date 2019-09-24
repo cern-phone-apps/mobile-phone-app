@@ -3,7 +3,13 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import { AppRegistry, View, Text } from 'react-native';
+import {
+  AppRegistry,
+  View,
+  AppState,
+  ActivityIndicator,
+  StatusBar
+} from 'react-native';
 import RNCallKeep from 'react-native-callkeep';
 
 import React, { useEffect } from 'react';
@@ -25,10 +31,16 @@ import { name as appName } from './app.json';
 import App from './App';
 import { store, persistor } from './store';
 import PhoneProviderContainer from './src/calls/providers/PhoneProvider/PhoneProviderContainer';
+import { settingsActions } from './src/settings/actions/app-state';
 
 import { toneAPI } from './configure-tone-api';
-import './configure-callkeep';
+import callKeepOptions from './configure-callkeep';
+import { logMessage, warnMessage } from './src/common/utils/logging';
 
+/**
+ * We initialize the webrtc capabilities here in order to import them directly on React Native.
+ * These are used in the Tone JS API Session Description Handler
+ */
 // Polyfill WebRTC
 global.MediaStream = MediaStream;
 global.RTCSessionDescription = RTCSessionDescription;
@@ -36,51 +48,56 @@ global.RTCPeerConnection = RTCPeerConnection;
 global.navigator = {};
 global.navigator.mediaDevices = mediaDevices;
 
+/**
+ * We are not displaying warnings in the app itself
+ */
 // eslint-disable-next-line no-console
 console.disableYellowBox = true;
-/**
- * Set up the store and the history
- */
 
+/**
+ * This component is displayed when the store has not been rehydrated yet
+ */
 const LoadingComponent = () => {
   return (
     <View>
-      <Text>Loading...</Text>
+      <ActivityIndicator />
+      <StatusBar barStyle="default" />
     </View>
   );
 };
 
+/**
+ * Main Class
+ */
 const PhoneMobile = () => {
+  /**
+   * Obtains the Firebase token to receive push notifications.
+   * TODO: Save the token in the backend
+   */
   const getFirebaseDeviceToken = async () => {
     const fcmToken = await firebase.messaging().getToken();
     if (fcmToken) {
-      console.log(fcmToken);
+      logMessage(`Firebase device token: ${fcmToken}`);
       // user has a device token
     } else {
-      console.log('No FCM token');
+      warnMessage('No FCM token');
       // user doesn't have a device token yet
     }
   };
 
   useEffect(() => {
+    /**
+     * The the application to work on the foreground
+     */
+    const isInBackground = !!AppState.currentState.match(/inactive|background/);
+    store.dispatch(settingsActions.setAppState(isInBackground));
+
     if (FirebaseNotifications.checkPermission()) {
       getFirebaseDeviceToken();
     }
     FirebaseNotifications.createNotificationListeners();
 
-    const options = {
-      ios: {
-        appName: 'CERN Phone App'
-      },
-      android: {
-        alertTitle: 'Permissions required',
-        alertDescription:
-          'This application needs to access your phone accounts',
-        cancelButton: 'Cancel',
-        okButton: 'ok'
-      }
-    };
-    RNCallKeep.setup(options);
+    RNCallKeep.setup(callKeepOptions);
 
     return () => {
       FirebaseNotifications.notificationListener();

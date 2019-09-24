@@ -31,10 +31,12 @@ export class PhoneProvider extends React.Component {
     // call info
     call: PropTypes.shape({
       remote: PropTypes.shape({
-        callId: PropTypes.string
+        callId: PropTypes.string,
+        toneCallId: PropTypes.string
       }),
       tempRemote: PropTypes.shape({
-        callId: PropTypes.string
+        callId: PropTypes.string,
+        toneCallId: PropTypes.string
       }),
       startTime: PropTypes.number,
       onCall: PropTypes.bool,
@@ -47,7 +49,6 @@ export class PhoneProvider extends React.Component {
     setIsReceivingCall: PropTypes.func.isRequired,
     setCallFailed: PropTypes.func.isRequired,
     setCallMissed: PropTypes.func.isRequired,
-    setCallAccepted: PropTypes.func.isRequired,
     setMakeCallRequest: PropTypes.func.isRequired,
     setDisconnectionSuccess: PropTypes.func.isRequired,
     // actions
@@ -60,6 +61,7 @@ export class PhoneProvider extends React.Component {
     setOngoingCallFinished: PropTypes.func.isRequired,
     incrementAdditionalCallsNumber: PropTypes.func.isRequired,
     decrementAdditionalCallsNumber: PropTypes.func.isRequired,
+    setToneCallId: PropTypes.func.isRequired,
     setCallId: PropTypes.func.isRequired
   };
 
@@ -98,14 +100,6 @@ export class PhoneProvider extends React.Component {
 
   initializeToneApi = () => {
     const devMode = false;
-  };
-
-  getCurrentCallId = () => {
-    if (!this.currentCallId) {
-      this.currentCallId = uuid4();
-    }
-
-    return this.currentCallId;
   };
 
   /**
@@ -193,7 +187,13 @@ export class PhoneProvider extends React.Component {
    * @returns {*}
    */
   makeCall = (name = 'Unknown', phoneNumber) => {
-    const { setMakeCallRequest, setIsCalling, setCallId, toneAPI } = this.props;
+    const {
+      setMakeCallRequest,
+      setIsCalling,
+      setToneCallId,
+      setCallId,
+      toneAPI
+    } = this.props;
 
     logMessage('makeCall has been called');
     setMakeCallRequest({
@@ -202,8 +202,11 @@ export class PhoneProvider extends React.Component {
     });
     setIsCalling();
     const callSessionId = toneAPI.call(phoneNumber);
-    setCallId(callSessionId);
-    RNCallKeep.startCall(callSessionId, phoneNumber, 'Contact Name');
+    setToneCallId(callSessionId);
+    const callId = uuid4();
+    setCallId(callId);
+
+    RNCallKeep.startCall(callId, phoneNumber, 'Contact Name');
   };
 
   onNativeCall = ({ handle }) => {
@@ -273,8 +276,9 @@ export class PhoneProvider extends React.Component {
   };
 
   acceptIncomingCall = () => {
+    const { setCallId, tempRemote } = this.props;
     this.acceptToneCall();
-    RNCallKeep.setCurrentCallActive();
+    RNCallKeep.setCurrentCallActive(tempRemote.callId);
   };
 
   handleRegistationFailedEvent = event => {
@@ -322,6 +326,11 @@ export class PhoneProvider extends React.Component {
     logMessage('Calling onIncomingCallDisplayed');
     // You will get this event after RNCallKeep finishes showing incoming call UI
     // You can check if there was an error while displaying
+  };
+
+  componentWillUnmount = () => {
+    logMessage('Unmounting PhoneProvider');
+    this.unAuthenticateUser();
   };
 
   render() {
