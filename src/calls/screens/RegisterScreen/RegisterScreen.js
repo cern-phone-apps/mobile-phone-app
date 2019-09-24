@@ -121,7 +121,7 @@ export default function RegisterScreen({
         renderItem={renderItem}
         title={"Shared"}
       />
-      <View style={{ flex: 9, backgroundColor: '000', bottom: '10%', position: 'absolute' }}>
+      <View style={{ flex: 2, backgroundColor: '000', bottom: '10%', position: 'absolute' }}>
         <Card
           title={
             <View
