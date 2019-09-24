@@ -1,20 +1,23 @@
-import { AppState } from 'react-native';
 import { DialSingleton } from 'tone-api-mobile';
 import eventHandler from './src/calls/providers/PhoneProvider/tone-event-handler';
+import { logMessage } from './src/common/utils/logging';
 
-const isInBackground = AppState.currentState.match(/inactive|background/);
-
+/**
+ * Initializes the Tone JS API to make and receive calls
+ */
 const configureToneApi = () => {
-  console.log('configureToneApi');
+  logMessage('configureToneApi');
   const toneAPI = DialSingleton.getInstance();
   if (toneAPI.getNotifier()) {
     toneAPI.getNotifier().on('ToneEvent', event => {
-      eventHandler(event, toneAPI, isInBackground);
+      eventHandler(event, toneAPI);
     });
   }
   return toneAPI;
 };
-
+/**
+ * Export the toneAPI already initialized
+ */
 const toneAPI = configureToneApi();
 
-export { toneAPI, isInBackground };
+export { toneAPI };
