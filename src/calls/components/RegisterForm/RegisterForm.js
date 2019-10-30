@@ -8,7 +8,9 @@ function RegisterForm({
   phoneNumber,
   phoneService,
   setActiveNumber,
-  autoRegister
+  autoRegister,
+  addPushDevice,
+  pushDeviceToken
 }) {
   /**
    * Register the user in the Telephony Backend
@@ -16,6 +18,7 @@ function RegisterForm({
   const registerUser = () => {
     setActiveNumber(phoneNumber);
     phoneService.authenticateUser(phoneNumber);
+    addPushDevice(pushDeviceToken, phoneNumber, 'Test Phone');
   };
   if (autoRegister) registerUser();
   return (
@@ -37,7 +40,9 @@ RegisterForm.propTypes = {
   }).isRequired,
   phoneNumber: PropTypes.string.isRequired,
   setActiveNumber: PropTypes.func.isRequired,
-  autoRegister: PropTypes.bool.isRequired
+  autoRegister: PropTypes.bool.isRequired,
+  addPushDevice: PropTypes.func.isRequired,
+  pushDeviceToken: PropTypes.string.isRequired
 };
 
 export default withPhoneService(RegisterForm);
