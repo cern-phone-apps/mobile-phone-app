@@ -18,7 +18,7 @@ function RegisterForm({
   const registerUser = () => {
     setActiveNumber(phoneNumber);
     phoneService.authenticateUser(phoneNumber);
-    addPushDevice(pushDeviceToken, phoneNumber, 'Test Phone');
+    addPushDevice(pushDeviceToken, phoneNumber, 'Android Phone');
   };
   if (autoRegister) registerUser();
   return (
