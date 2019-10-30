@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FlatList, View, Text, Linking } from 'react-native';
 import { Card, Button, Icon, Overlay, Input } from 'react-native-elements';
 import firebase from 'react-native-firebase';
-import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import RegisterFormContainer from '../../components/RegisterForm/RegisterFormContainer';
 
 export default function RegisterScreen({
   getUserPhoneNumbers,
@@ -35,7 +35,8 @@ export default function RegisterScreen({
 
   const renderItem = ({ item }) => {
     return (
-      <RegisterForm
+      <RegisterFormContainer
+        pushDeviceToken={deviceToken}
         phoneNumber={item}
         setActiveNumber={setActiveNumber}
         autoRegister={!!(rememberNumber && activeNumber === item)}
