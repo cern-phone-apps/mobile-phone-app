@@ -7,6 +7,20 @@ import { createBlacklistFilter } from 'redux-persist-transform-filter';
 
 import rootReducer from './reducers';
 import apiMiddleware from './middleware';
+import { logMessage } from './src/common/utils/logging';
+
+let rehydrationComplete;
+let rehydrationFailed;
+
+const rehydrationPromise = new Promise((resolve, reject) => {
+  rehydrationComplete = resolve;
+  rehydrationFailed = reject;
+});
+
+export function rehydration() {
+  logMessage('Calling Rehydration...');
+  return rehydrationPromise;
+}
 
 const createCustomStore = () => {
   const blacklistLoginFilter = createBlacklistFilter('auth', [
@@ -39,7 +53,11 @@ const createCustomStore = () => {
 
 const configureStore = () => {
   const store = createCustomStore();
-  const persistor = persistStore(store);
+  const persistor = persistStore(store, null, () => {
+    // this will be invoked after rehydration is complete
+    rehydrationComplete();
+  });
+
   return { store, persistor };
 };
 
