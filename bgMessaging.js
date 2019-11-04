@@ -4,7 +4,7 @@ import { AppState } from 'react-native';
 import { callActions } from 'dial-core';
 
 import uuid4 from 'uuid/v4';
-import { store } from './store';
+import { store, rehydration } from './store';
 import { settingsActions } from './src/settings/actions/app-state';
 import { logMessage, warnMessage } from './src/common/utils/logging';
 import callKeepOptions from './configure-callkeep';
@@ -18,6 +18,14 @@ export default async message => {
   logMessage(
     `bgMessaging -> Receiving a background PUSH Notification (${message})`
   );
+
+  /**
+   * This will continue when rehydration is complete. If the store is already rehydrated,
+   * it will continue immediately because the promise is already resolved. If rehydration failed, it will throw an exception
+   */
+  await rehydration();
+  logMessage('Rehydration completed');
+
   try {
     RNCallKeep.setup(callKeepOptions);
     RNCallKeep.setAvailable(true);
