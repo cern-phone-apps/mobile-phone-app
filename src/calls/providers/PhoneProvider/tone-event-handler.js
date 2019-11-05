@@ -112,7 +112,9 @@ const handleInviteReceivedEvent = (event, toneAPI, isInBackground) => {
     RNCallKeep.displayIncomingCall(callId, uri.user, uri.user);
     store.dispatch(callActions.setCallId(callId));
   } else {
+    const { tempRemote } = store.getState().call;
     toneAPI.answer();
+    RNCallKeep.setCurrentCallActive(tempRemote.callId);
   }
 };
 /**
