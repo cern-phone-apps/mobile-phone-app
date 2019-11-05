@@ -124,3 +124,12 @@ AppRegistry.registerHeadlessTask(
   'RNFirebaseBackgroundMessage',
   () => bgMessaging
 );
+
+AppRegistry.registerHeadlessTask(
+  'RNCallKeepBackgroundMessage',
+  () => ({ name, callUUID, handle }) => {
+    // Make your call here
+
+    return Promise.resolve();
+  }
+);
