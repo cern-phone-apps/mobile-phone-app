@@ -29,7 +29,7 @@
     "react-native-paper": "^2.16.0",
     "react-native-sound": "^0.10.12",
     "react-native-vector-icons": "^6.3.0",
-    "react-native-webrtc": "1.69.0",
+    "react-native-webrtc": "^1.75.0",
     "react-native-webview": "^5.12.1",
     "react-navigation": "3.3.2",
     "react-navigation-header-buttons": "^2.3.1",
