@@ -52,11 +52,13 @@ RNCallKeep.addEventListener('endCall', ({ callUUID }) => {
  */
 RNCallKeep.addEventListener('answerCall', () => {
   const { isInBackground } = store.getState().settings;
+  const { activeNumber } = store.getState().numbers;
+
   logMessage('RNCallKeep -> AnswerCall from configureCallKeep');
   logMessage(`RNCallKeep -> inBackground: ${isInBackground}`);
   if (isInBackground) {
     const password = store.getState().auth.toneToken;
-    toneAPI.authenticate('65246', password, false);
+    toneAPI.authenticate(activeNumber, password, false);
   } else {
     toneAPI.answer();
   }
