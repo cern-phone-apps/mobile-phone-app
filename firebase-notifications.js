@@ -1,5 +1,6 @@
 import firebase from 'react-native-firebase';
 import { showMessage } from 'react-native-flash-message';
+import { infoMessage, logMessage } from './src/common/utils/logging';
 
 class FirebaseNotifications {
   static notificationListener;
@@ -11,7 +12,7 @@ class FirebaseNotifications {
       await firebase.messaging().requestPermission();
     } catch (error) {
       // User has rejected permissions
-      console.log('permission rejected');
+      logMessage('permission rejected');
     }
   }
 
@@ -60,8 +61,10 @@ class FirebaseNotifications {
      * */
     this.messageListener = firebase.messaging().onMessage(message => {
       // process data message
-      console.log('Receiving a PUSH notification. App on foreground');
-      console.log(JSON.stringify(message));
+      infoMessage(
+        'Receiving a PUSH notification. App on foreground. BUT DOING NOTHING'
+      );
+      logMessage(JSON.stringify(message));
     });
   }
 
