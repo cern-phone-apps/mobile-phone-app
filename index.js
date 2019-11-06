@@ -15,12 +15,7 @@ import RNCallKeep from 'react-native-callkeep';
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import {
-  RTCPeerConnection,
-  RTCSessionDescription,
-  MediaStream,
-  mediaDevices
-} from 'react-native-webrtc';
+import { registerGlobals } from 'react-native-webrtc';
 import firebase from 'react-native-firebase';
 
 import FlashMessage from 'react-native-flash-message';
@@ -42,12 +37,7 @@ import { logMessage, warnMessage } from './src/common/utils/logging';
  * These are used in the Tone JS API Session Description Handler
  */
 // Polyfill WebRTC
-global.MediaStream = MediaStream;
-global.RTCSessionDescription = RTCSessionDescription;
-global.RTCPeerConnection = RTCPeerConnection;
-global.navigator = {};
-global.navigator.mediaDevices = mediaDevices;
-
+registerGlobals();
 /**
  * We are not displaying warnings in the app itself
  */
