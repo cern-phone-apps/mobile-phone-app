@@ -19,6 +19,13 @@ export default class SettingsScreen extends React.Component {
         }
       },
       {
+        title: 'Switch phone numbers',
+        icon: 'phone',
+        onPress: () => {
+          navigation.navigate('SwitchNumbers');
+        }
+      },
+      {
         title: 'Call Forwarding',
         icon: 'phone-forwarded',
         onPress: () => {

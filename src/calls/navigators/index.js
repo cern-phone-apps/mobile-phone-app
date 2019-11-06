@@ -9,6 +9,7 @@ import RegisterLoadingScreenContainer from '../screens/RegisterLoadingScreen/Reg
 import RegisterStack from './register';
 import ContactsStack from './contacts';
 import ColorPalette from '../../styles/ColorPalette';
+import SwitchNumbersScreenContainer from '../screens/SwitchNumbersScreen/SwitchNumbersScreenContainer';
 
 export const AppStack = createMaterialBottomTabNavigator(
   {
@@ -51,6 +52,7 @@ export const AppStack = createMaterialBottomTabNavigator(
 export const AppFullStack = createSwitchNavigator(
   {
     RegisterLoading: RegisterLoadingScreenContainer,
+    SwitchNumbers: SwitchNumbersScreenContainer,
     AppRegistered: AppStack,
     Register: RegisterStack
   },

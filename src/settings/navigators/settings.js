@@ -5,6 +5,7 @@ import ColorPalette from '../../styles/ColorPalette';
 import ProfileContainer from '../components/profile/ProfileContainer';
 import RegisterScreenContainer from '../../calls/screens/RegisterScreen/RegisterScreenContainer';
 import CallForwardingScreenContainer from '../screens/CallForwardingScreen/CallForwardingScreenContainer';
+import SwitchNumbersScreenContainer from '../../calls/screens/SwitchNumbersScreen/SwitchNumbersScreenContainer';
 import SearchUsersScreenForwardingContainer from '../../calls/screens/SearchUsersScreen/SearchUsersScreenForwardingContainer';
 import DestinationsRingingListContainer from '../screens/CallForwardingScreen/DestinationsListRingingContainer';
 import DestinationsListForwardContainer from '../screens/CallForwardingScreen/DestinationsListForwardContainer';
@@ -65,6 +66,22 @@ const SettingsStack = createStackNavigator({
     navigationOptions: () => {
       return {
         title: `Call Forwarding Settings`,
+        headerTitleStyle: {
+          flex: 3
+        },
+        headerStyle: {
+          backgroundColor: ColorPalette.primary,
+          flex: 3
+        },
+        headerTintColor: 'white'
+      };
+    }
+  },
+  SwitchNumers: {
+    screen: SwitchNumbersScreenContainer,
+    navigationOptions: () => {
+      return {
+        title: `Switch Numbers`,
         headerTitleStyle: {
           flex: 3
         },
