@@ -8,8 +8,7 @@ import styles from './HangupButtonStyles';
 
 function HangupForm({ phoneService }) {
   const hangupCall = () => {
-    const hangUpdDefaultCall = true;
-    phoneService.hangUpCurrentCallAction(hangUpdDefaultCall);
+    phoneService.hangUpCurrentCallAction();
   };
 
   return (
