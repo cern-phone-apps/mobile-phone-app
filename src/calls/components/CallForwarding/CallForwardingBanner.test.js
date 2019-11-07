@@ -1,22 +1,22 @@
-/**
- * @format
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
-
-import 'react-native';
 import React from 'react';
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-
+import { render } from '@testing-library/react-native';
 import CallForwardingBanner from './CallForwardingBanner';
 
-it('renders correctly', () => {
-  const callForwardingConfig = {
-    callForwarding: {
-      'simultaneous-ring': false
-    }
-  };
-  renderer.create(
-    <CallForwardingBanner callForwarding={callForwardingConfig} />
+test('Render the component', async () => {
+  const { baseElement, queryByTestId } = render(
+    <CallForwardingBanner
+      callForwarding={{ 'simultaneous-ring': true, 'call-forwarding': true }}
+    />
   );
+  expect(queryByTestId('component')).not.toBeNull();
+  expect(baseElement).toMatchSnapshot();
+});
+
+test('Not render the component', async () => {
+  const { queryByTestId } = render(
+    <CallForwardingBanner
+      callForwarding={{ 'simultaneous-ring': false, 'call-forwarding': false }}
+    />
+  );
+  expect(queryByTestId('component')).toBeNull();
 });

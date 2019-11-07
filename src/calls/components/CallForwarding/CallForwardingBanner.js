@@ -9,6 +9,7 @@ const CallForwardingBanner = ({ callForwarding }) => {
   ) {
     return (
       <View
+        testID="component"
         style={{
           backgroundColor: 'yellow',
           width: '100%',
@@ -24,6 +25,7 @@ const CallForwardingBanner = ({ callForwarding }) => {
           type="ionicon"
         />
         <Text
+          testID="label"
           style={{ textAlignVertical: 'center', paddingLeft: 10, fontSize: 15 }}
         >
           Call-Forwarding enabled
