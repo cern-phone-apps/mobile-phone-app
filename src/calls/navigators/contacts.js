@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { IconButton } from 'react-native-paper';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import ContactsScreenContainer from '../screens/ContactsScreen/ContactsScreenContainer';
 import SearchUsersScreenContainer from '../screens/SearchUsersScreen/SearchUsersScreenContainer';
-import UserDetailsScreenContainer from '../screens/ContactsScreen/UserDetailsScreenContainer';
+import UserDetailsScreenContainer from '../screens/ContactDetailsScreen/ContactDetailsScreenContainer';
 import ColorPalette from '../../styles/ColorPalette';
 
 export default createStackNavigator({

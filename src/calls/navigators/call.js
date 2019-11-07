@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import DialpadScreenContainer from '../screens/DialpadScreen/DialpadScreenContainer';
 import ColorPalette from '../../styles/ColorPalette';
 
