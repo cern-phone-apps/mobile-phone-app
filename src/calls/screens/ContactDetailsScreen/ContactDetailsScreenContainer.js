@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { callActions } from 'dial-core';
 import dialBackendApi from '../../../services/api';
 
-import UserDetailsScreen from './UserDetailsScreen';
+import UserDetailsScreen from './ContactDetailsScreen';
 
 function mapStateToProps({ contacts, profile }) {
   return {

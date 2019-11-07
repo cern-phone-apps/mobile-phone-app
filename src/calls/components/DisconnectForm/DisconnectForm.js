@@ -11,7 +11,7 @@ export function DisconnectForm({ phoneService, navigation }) {
    */
   const disconnectUserAction = async () => {
     await phoneService.disconnectUser();
-    navigation.navigate('Register');
+    navigation.navigate('RegisterLoading');
   };
 
   return (
