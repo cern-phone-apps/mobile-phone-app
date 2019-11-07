@@ -5,6 +5,7 @@ import moment from 'moment';
 import MakeCallButton from '../../components/MakeCallButton/MakeCallButton';
 
 import styles from './RecentCallDetailsStyles';
+import useCallStatus from '../../hooks/use-call-status';
 
 function getPrintableDate(recentCall) {
   let printableDate;
@@ -28,6 +29,11 @@ function getDuration(recentCall) {
  * We use this to set the Navigation title
  */
 function RecentCallDetails({ navigation }) {
+  /**
+   * Redirect to RegisterLoading if any of these statuses change
+   */
+  useCallStatus();
+
   const { recentCall } = navigation.state.params;
 
   const printableDate = getPrintableDate(recentCall);

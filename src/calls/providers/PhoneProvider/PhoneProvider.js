@@ -175,7 +175,8 @@ export class PhoneProvider extends React.Component {
     try {
       toneAPI.stopAgent();
     } catch (error) {
-      errorMessage(`Agent is not connected`);
+      errorMessage(`disconnectUser -> Agent is not connected`);
+    } finally {
       setDisconnectionSuccess();
     }
   };

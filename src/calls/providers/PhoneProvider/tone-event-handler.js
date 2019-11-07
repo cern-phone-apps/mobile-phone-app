@@ -145,11 +145,6 @@ const handlRegistrationFailedEvent = () => {
  * state as connected
  */
 const handleRegisteredEvent = () => {
-  // const { setRegistrationSuccess } = this.props;
-  // setRegistrationSuccess();
-  // toneInMessage(store.getState());
-  // const authToken = store.getState().auth.toneToken;
-  // toneInMessage(authToken);
   const { connected } = store.getState().connection;
   if (!connected) {
     toneInMessage('Calling handleRegisteredEvent');
@@ -224,7 +219,11 @@ const eventHandler = (event, toneAPI) => {
   }[event.name];
 
   if (handler) {
-    handler(event, toneAPI, isInBackground);
+    try {
+      handler(event, toneAPI, isInBackground);
+    } catch (error) {
+      errorMessage(`Error on event-handler: ${error.message}`);
+    }
   } else {
     errorMessage(`Unhandled event: ${event.name}`);
   }

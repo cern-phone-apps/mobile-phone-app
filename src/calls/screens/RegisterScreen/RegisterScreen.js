@@ -4,6 +4,7 @@ import { FlatList, View, Text, Linking } from 'react-native';
 import { Card, Button, Icon, Overlay, Input } from 'react-native-elements';
 import firebase from 'react-native-firebase';
 import RegisterFormContainer from '../../components/RegisterForm/RegisterFormContainer';
+import { logMessage } from '../../../common/utils/logging';
 
 export default function RegisterScreen({
   getUserPhoneNumbers,
@@ -18,14 +19,21 @@ export default function RegisterScreen({
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [deviceToken, setDeviceToken] = useState('');
 
+  /**
+   * We want to save the device token in the backend
+   */
   const getDeviceToken = async () => {
     const fcmToken = await firebase.messaging().getToken();
     setDeviceToken(fcmToken);
   };
+  /**
+   * When the connected status changes, we get the user phone numbers
+   */
   useEffect(() => {
     getDeviceToken();
     if (connected) {
-      navigation.navigate('AppRegistered');
+      logMessage('Register screen -> Connected changed to true');
+      navigation.navigate('RegisterLoading');
     } else {
       getUserPhoneNumbers();
     }
