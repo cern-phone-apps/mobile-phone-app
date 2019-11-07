@@ -8,7 +8,7 @@ import { logMessage } from '../../../common/utils/logging';
 import Dialpad from './Dialpad/Dialpad';
 import styles from './DialpadFormStyles';
 
-class DialpadForm extends React.Component {
+export class DialpadForm extends React.Component {
   static propTypes = {
     phoneService: PropTypes.shape({
       makeCall: PropTypes.func.isRequired
@@ -60,11 +60,12 @@ class DialpadForm extends React.Component {
     const { phoneNumber } = this.state;
     const { disabled } = this.props;
     return (
-      <View>
+      <View testID="dialpad-form-component">
         <View style={styles.phoneNumberRow}>
           <View style={styles.phoneNumberSideColumn} />
           <View style={styles.phoneNumberCenterColumn}>
             <TextInput
+              testID="phone-number-input"
               style={styles.phoneNumberInput}
               value={phoneNumber}
               editable={false}
@@ -72,6 +73,7 @@ class DialpadForm extends React.Component {
           </View>
           <View style={styles.phoneNumberSideColumn}>
             <TouchableOpacity
+              testID="remove-number-button"
               disabled={disabled}
               activeOpacity={0.5}
               onPress={this.deleteOneNumber}
