@@ -47,13 +47,14 @@ const Dialpad = ({ updatePhoneNumber, disabled, height = 250 }) => {
   ];
 
   return (
-    <View style={{ height: height }}>
+    <View style={{ height }} testID="component">
       <Grid>
         {pad.map(row => (
           <Row key={row.key}>
             {row.columns.map(column => (
               <Col key={column.text}>
                 <Button
+                  testID={`dial-button-${column.text}`}
                   activeOpacity={disabled ? 1 : 0.7}
                   onPress={() => !disabled && updatePhoneNumber(column.text)}
                   onLongPress={column.onLongPress}

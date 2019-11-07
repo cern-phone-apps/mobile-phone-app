@@ -1,0 +1,1233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the component 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 250,
+        }
+      }
+      testID="component"
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-1"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  1
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-2"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  2
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  ABC
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-3"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  3
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  DEF
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-4"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  4
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  GHI
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-5"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  5
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  JKL
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-6"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  6
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  MNO
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-7"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  7
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  PQRS
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-8"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  8
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  TUV
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-9"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  9
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  VWXYZ
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-*"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  *
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-0"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  0
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  +
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.7}
+              testID="dial-button-#"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  #
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      null,
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Render the component disabled 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 250,
+        }
+      }
+      testID="component"
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "column",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-1"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  1
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-2"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  2
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  ABC
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-3"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  3
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  DEF
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-4"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  4
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  GHI
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-5"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  5
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  JKL
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-6"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  6
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  MNO
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-7"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  7
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  PQRS
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-8"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  8
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  TUV
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-9"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  9
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  VWXYZ
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-*"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  *
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-0"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  0
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  +
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={1}
+              testID="dial-button-#"
+            >
+              <View>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "color": "black",
+                        "fontSize": 25,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  #
+                </Text>
+                <Text
+                  style={
+                    Array [
+                      Object {
+                        "fontSize": 10,
+                        "textAlign": "center",
+                      },
+                      Object {
+                        "opacity": 0.3,
+                      },
+                    ]
+                  }
+                >
+                  
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
