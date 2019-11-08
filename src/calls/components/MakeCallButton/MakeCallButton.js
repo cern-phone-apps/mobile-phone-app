@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   }
 });
 
-class MakeCallButton extends Component {
+export class MakeCallButton extends Component {
   static propTypes = {
     phoneService: PropTypes.shape({ makeCall: PropTypes.func.isRequired })
       .isRequired,
@@ -43,6 +43,7 @@ class MakeCallButton extends Component {
         title="Call this number"
         buttonStyle={[styles.button]}
         onPress={this.makeCall}
+        testID="MakeCallButton"
       />
     );
   }
