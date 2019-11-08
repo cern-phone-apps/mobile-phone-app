@@ -14,9 +14,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <!-- Not sure if the following line is needed to receive push notifications in bg-->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <!-- end -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- END react-native-webrtc -->
