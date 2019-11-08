@@ -7,8 +7,13 @@ import uuid4 from 'uuid/v4';
 import { store, rehydration } from './store';
 import { settingsActions } from './src/settings/actions/app-state';
 import { logMessage, warnMessage } from './src/common/utils/logging';
-import callKeepOptions from './configure-callkeep';
+import callKeepOptions, { addRNCallKeepListeners } from './configure-callkeep';
 
+let callKeepListenersAdded;
+if (!callKeepListenersAdded) {
+  logMessage('Adding CallKeep Listeners...');
+  callKeepListenersAdded = addRNCallKeepListeners();
+}
 /**
  * Asynchonous function that is run when the application receives a push notification.
  * It is registered on index.js

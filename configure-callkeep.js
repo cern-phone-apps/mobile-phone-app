@@ -65,4 +65,5 @@ export const addRNCallKeepListeners = () => {
       toneAPI.answer();
     }
   });
+  return true;
 };
