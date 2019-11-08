@@ -24,7 +24,7 @@ test('Render the component', async () => {
 /*
   We press the button
 */
-test('Render the component', async () => {
+test('Render the component and press the button', async () => {
   const { queryByTestId } = render(
     <DisconnectForm navigation={navigation} phoneService={phoneService} />
   );
