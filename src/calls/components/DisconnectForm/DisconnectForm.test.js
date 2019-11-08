@@ -33,5 +33,5 @@ test('Render the component and press the button', async () => {
   const button = queryByTestId('DisconnectForm');
   fireEvent.press(button);
   expect(phoneService.disconnectUser).toHaveBeenCalledTimes(1);
-  //TODO I don't know how make the mock of the function disconnectUser that inside the component make a await when you press the button
+  // TODO I don't know how make the mock of the function disconnectUser that inside the component make a await when you press the button
 });

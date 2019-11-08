@@ -86,7 +86,7 @@ test('Test disabled buttons functionality', async () => {
     fireEvent.press(button);
   });
 
-  //TODO bug-1 Correct this test, the test said that you press but jest said that the button was pressed
-  //expect(queryByTestId('component')).not.toBeNull();
-  //expect(updatePhoneNumberCheckPress).toHaveBeenCalledTimes(0);
+  // TODO bug-1 Correct this test, the test said that you press but jest said that the button was pressed
+  // expect(queryByTestId('component')).not.toBeNull();
+  // expect(updatePhoneNumberCheckPress).toHaveBeenCalledTimes(0);
 });
