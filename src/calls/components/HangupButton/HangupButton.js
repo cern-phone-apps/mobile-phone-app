@@ -1,10 +1,8 @@
-import { View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-native-elements';
+import { Icon, Button } from 'react-native-elements';
 
 import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
-import styles from './HangupButtonStyles';
 
 function HangupForm({ phoneService }) {
   const hangupCall = () => {
@@ -12,16 +10,25 @@ function HangupForm({ phoneService }) {
   };
 
   return (
-    <View style={styles.hangupButtonContainer}>
-      <TouchableOpacity style={styles.hangupButton} onPress={hangupCall}>
+    <Button
+      title=''
+      onPress={hangupCall}
+      buttonStyle={{
+        marginTop: '20%',
+        backgroundColor: '#f12121',
+        borderRadius: 50,
+        width: 70,
+        height: 70
+      }}
+      icon={
         <Icon
-          name="call"
-          size={25}
+          name="phone-hangup"
+          size={30}
           color="white"
-          style={{ transform: [{ rotate: '90deg' }] }}
+          type="material-community"
         />
-      </TouchableOpacity>
-    </View>
+      }
+    />
   );
 }
 
