@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator, StatusBar, View } from 'react-native';
+import { logMessage } from '../../../common/utils/logging';
 
 /**
  * Check if the user is logged in and redirect him to the correct screen
@@ -22,7 +23,7 @@ export class AuthLoadingScreen extends React.Component {
     // This will switch to the App screen or Auth screen and this loading
     // screen will be unmounted and thrown away.
     if (loggedIn) {
-      console.log('Obtaining user information');
+      logMessage('Obtaining user information');
       getMe();
     }
     navigation.navigate(loggedIn ? 'App' : 'Auth');
