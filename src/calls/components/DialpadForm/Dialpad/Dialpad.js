@@ -1,11 +1,12 @@
 import React from 'react';
 import { Col, Row, Grid } from 'react-native-easy-grid';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
+import { Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 import styles from './DialpadStyles';
 
-const Dialpad = ({ updatePhoneNumber, disabled, height=250 }) => {
+const Dialpad = ({ updatePhoneNumber, disabled, height = 250 }) => {
   const pad = [
     {
       key: '123',
@@ -52,30 +53,39 @@ const Dialpad = ({ updatePhoneNumber, disabled, height=250 }) => {
           <Row key={row.key}>
             {row.columns.map(column => (
               <Col key={column.text}>
-                <TouchableOpacity
+                <Button
                   activeOpacity={disabled ? 1 : 0.7}
                   onPress={() => !disabled && updatePhoneNumber(column.text)}
                   onLongPress={column.onLongPress}
-                >
-                  <View>
-                    <Text
-                      style={[
-                        styles.mainText,
-                        disabled ? styles.disabled : null
-                      ]}
-                    >
-                      {column.text}
-                    </Text>
-                    <Text
-                      style={[
-                        styles.subText,
-                        disabled ? styles.disabled : null
-                      ]}
-                    >
-                      {column.subText}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
+                  buttonStyle={{
+                    backgroundColor: 'transparent',
+                    padding: 0,
+                    margin: 0,
+                    width: '100%',
+                    border: null
+                  }}
+                  title={
+                    <React.Fragment>
+                      <Text
+                        style={[
+                          styles.mainText,
+                          disabled ? styles.disabled : null
+                        ]}
+                      >
+                        {column.text}
+                      </Text>
+                      {'\n'}
+                      <Text
+                        style={[
+                          styles.subText,
+                          disabled ? styles.disabled : null
+                        ]}
+                      >
+                        {column.subText}
+                      </Text>
+                    </React.Fragment>
+                  }
+                />
               </Col>
             ))}
           </Row>
