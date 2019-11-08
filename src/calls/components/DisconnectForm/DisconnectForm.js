@@ -16,6 +16,7 @@ export function DisconnectForm({ phoneService, navigation }) {
 
   return (
     <ListItem
+      testID="DisconnectForm"
       onPress={disconnectUserAction}
       key="changeNumber"
       title="Change registered phone number"
