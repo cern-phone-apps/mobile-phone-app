@@ -4,7 +4,7 @@ import { ListItem } from 'react-native-elements';
 
 import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 
-function RegisterForm({
+export function RegisterForm({
   phoneNumber,
   phoneService,
   setActiveNumber,
@@ -20,9 +20,13 @@ function RegisterForm({
     phoneService.authenticateUser(phoneNumber);
     addPushDevice(pushDeviceToken, phoneNumber, 'Android Phone');
   };
-  if (autoRegister) registerUser();
+  if (autoRegister){
+     registerUser();
+  }
+
   return (
     <ListItem
+      testID={'RegisterForm'}
       key={`${phoneNumber}`}
       title={`${phoneNumber}`}
       chevron
