@@ -52,18 +52,40 @@ export default function RegisterScreen({
     );
   };
 
-  const NumberSectionList = ({ keyExtractor, data, renderItem, title }) => {
-    const Title = () => (
-      <Text
-        style={{
-          padding: 10,
-          fontSize: 13,
-          color: '#AAAAAA',
-          backgroundColor: '#EEEEEE'
-        }}
-      >
-        {title}
-      </Text>
+  const NumberSectionList = ({ data, title }) => {
+    return (
+      <React.Fragment>
+        <Text
+          style={{
+            padding: 10,
+            fontSize: 13,
+            color: '#AAAAAA',
+            backgroundColor: '#EEEEEE'
+          }}
+        >
+          {title}
+        </Text>
+        {!data || data.length === 0 ? (
+          <Text
+            style={{
+              textAlign: 'center',
+              fontSize: 14,
+              paddingTop: 20,
+              paddingBottom: 20,
+              color: '#BBBBBB'
+            }}
+            keyExtractor={keyExtractor}
+          >
+            There are no numbers in this section
+          </Text>
+        ) : (
+          <FlatList
+            keyExtractor={keyExtractor}
+            data={data}
+            renderItem={renderItem}
+          />
+        )}
+      </React.Fragment>
     );
     const ret = [];
     ret.push(<Title />);
