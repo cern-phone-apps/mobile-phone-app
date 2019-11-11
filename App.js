@@ -23,7 +23,6 @@ const TopLevelNavigator = createSwitchNavigator(
 const AppContainer = createAppContainer(TopLevelNavigator);
 
 export default class App extends React.Component {
-  // ...
 
   render() {
     return (

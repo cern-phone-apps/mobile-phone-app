@@ -2,7 +2,6 @@
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
-
 import { AppRegistry } from 'react-native';
 
 import { registerGlobals } from 'react-native-webrtc';

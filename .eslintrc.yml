@@ -5,6 +5,7 @@ extends:
   - plugin:prettier/recommended
   - prettier/babel
   - prettier/react
+  - '@react-native-community'
 plugins:
   - prettier
   - react
