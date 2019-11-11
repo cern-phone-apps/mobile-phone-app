@@ -2,8 +2,8 @@ import { applyMiddleware, createStore, compose } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-import storage from 'redux-persist/lib/storage';
 import { createBlacklistFilter } from 'redux-persist-transform-filter';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import rootReducer from './reducers';
 import apiMiddleware from './middleware';
@@ -32,7 +32,7 @@ const createCustomStore = () => {
 
   const persistConfig = {
     key: 'phone-webapp',
-    storage,
+    storage: AsyncStorage,
     blacklist: ['connection', 'search', 'call', 'dialpad', 'settings'],
     transforms: [blacklistLoginFilter],
     stateReconciler: autoMergeLevel2

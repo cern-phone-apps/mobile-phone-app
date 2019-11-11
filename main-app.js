@@ -2,14 +2,12 @@
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
-
 import { View, AppState, ActivityIndicator, StatusBar } from 'react-native';
 import RNCallKeep from 'react-native-callkeep';
 
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
-import { registerGlobals } from 'react-native-webrtc';
 import firebase from 'react-native-firebase';
 
 import FlashMessage from 'react-native-flash-message';
@@ -23,18 +21,6 @@ import { settingsActions } from './src/settings/actions/app-state';
 import { toneAPI } from './configure-tone-api';
 import callKeepOptions from './configure-callkeep';
 import { logMessage, warnMessage } from './src/common/utils/logging';
-
-/**
- * We initialize the webrtc capabilities here in order to import them directly on React Native.
- * These are used in the Tone JS API Session Description Handler
- */
-// Polyfill WebRTC
-registerGlobals();
-/**
- * We are not displaying warnings in the app itself
- */
-// eslint-disable-next-line no-console
-console.disableYellowBox = true;
 
 /**
  * This component is displayed when the store has not been rehydrated yet
@@ -85,6 +71,7 @@ const PhoneMobile = () => {
       <PersistGate loading={<LoadingComponent />} persistor={persistor}>
         <PhoneProviderContainer toneAPI={toneAPI}>
           <App />
+          {/* <LoadingComponent /> */}
         </PhoneProviderContainer>
       </PersistGate>
       <FlashMessage position="top" />

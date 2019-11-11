@@ -1,10 +1,11 @@
 package ch.cern.dialmobile;
+
 import java.util.Arrays;
 
 import com.facebook.react.ReactActivity;
 import io.wazo.callkeep.RNCallKeepModule; // Add these import lines
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 // START react-navigation
 import com.facebook.react.ReactActivityDelegate;
@@ -28,7 +29,7 @@ public class MainActivity extends ReactActivity {
       return new ReactActivityDelegate(this, getMainComponentName()) {
         @Override
         protected ReactRootView createRootView() {
-         return new RNGestureHandlerEnabledRootView(MainActivity.this);
+        return new RNGestureHandlerEnabledRootView(MainActivity.this);
         }
       };
     }
