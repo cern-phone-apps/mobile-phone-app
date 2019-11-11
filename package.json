@@ -68,6 +68,9 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
-    "preset": "@testing-library/react-native"
+    "preset": "@testing-library/react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base|react-navigation)"
+    ]
   }
 }
