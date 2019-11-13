@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "test-coverage": "jest --coverage",
+    "coverage": "jest --coverage",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -68,6 +68,9 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*.{ts,js}"],
+    "coverageReporters": ["json", "html"],
     "preset": "@testing-library/react-native",
     "transformIgnorePatterns": [
       "node_modules/(?!react-native|native-base|react-navigation)"
