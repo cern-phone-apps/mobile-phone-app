@@ -205,6 +205,7 @@ exports[`Render the component 1`] = `
               "width": 70,
             }
           }
+          testID="TouchableOpacity2"
         >
           <View>
             <View

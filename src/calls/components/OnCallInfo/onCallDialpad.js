@@ -49,6 +49,7 @@ function DialpadButton({ display, onPress, updatePhoneNumber }) {
         >
           <TouchableOpacity
             style={dialpadstyles.CloseDialpadButton}
+            testID={"TouchableOpacity1"}
             onPress={() => {
               onPress();
             }}
@@ -67,6 +68,7 @@ function DialpadButton({ display, onPress, updatePhoneNumber }) {
   return (
     <View style={dialpadstyles.DialpadButtonContainer}>
       <TouchableOpacity
+        testID={"TouchableOpacity2"}
         style={dialpadstyles.DialpadButton}
         onPress={() => {
           onPress();
