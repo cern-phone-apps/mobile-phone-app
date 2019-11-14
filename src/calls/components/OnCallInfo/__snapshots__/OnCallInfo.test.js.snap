@@ -1,0 +1,632 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the component 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 20,
+            "opacity": 0.6,
+            "position": "absolute",
+            "top": "5%",
+          }
+        }
+        theme={
+          Object {
+            "colors": Object {
+              "disabled": "hsl(208, 8%, 90%)",
+              "divider": "#bcbbc1",
+              "error": "#ff190c",
+              "grey0": "#393e42",
+              "grey1": "#43484d",
+              "grey2": "#5e6977",
+              "grey3": "#86939e",
+              "grey4": "#bdc6cf",
+              "grey5": "#e1e8ee",
+              "greyOutline": "#bbb",
+              "platform": Object {
+                "android": Object {
+                  "error": "#f44336",
+                  "primary": "#2196f3",
+                  "secondary": "#9C27B0",
+                  "success": "#4caf50",
+                  "warning": "#ffeb3b",
+                },
+                "ios": Object {
+                  "error": "#ff3b30",
+                  "primary": "#007aff",
+                  "secondary": "#5856d6",
+                  "success": "#4cd964",
+                  "warning": "#ffcc00",
+                },
+              },
+              "primary": "#2089dc",
+              "searchBg": "#303337",
+              "secondary": "#8F0CE8",
+              "success": "#52c41a",
+              "warning": "#faad14",
+            },
+          }
+        }
+      >
+        ONGOING CALL WITH
+      </Text>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "position": "absolute",
+            "top": "10%",
+            "transform": Array [
+              Object {
+                "translateY": 0.5,
+              },
+            ],
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 25,
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "primary": "#007aff",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#8F0CE8",
+                "success": "#52c41a",
+                "warning": "#faad14",
+              },
+            }
+          }
+        >
+          Name
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 20,
+            }
+          }
+          theme={
+            Object {
+              "colors": Object {
+                "disabled": "hsl(208, 8%, 90%)",
+                "divider": "#bcbbc1",
+                "error": "#ff190c",
+                "grey0": "#393e42",
+                "grey1": "#43484d",
+                "grey2": "#5e6977",
+                "grey3": "#86939e",
+                "grey4": "#bdc6cf",
+                "grey5": "#e1e8ee",
+                "greyOutline": "#bbb",
+                "platform": Object {
+                  "android": Object {
+                    "error": "#f44336",
+                    "primary": "#2196f3",
+                    "secondary": "#9C27B0",
+                    "success": "#4caf50",
+                    "warning": "#ffeb3b",
+                  },
+                  "ios": Object {
+                    "error": "#ff3b30",
+                    "primary": "#007aff",
+                    "secondary": "#5856d6",
+                    "success": "#4cd964",
+                    "warning": "#ffcc00",
+                  },
+                },
+                "primary": "#2089dc",
+                "searchBg": "#303337",
+                "secondary": "#8F0CE8",
+                "success": "#52c41a",
+                "warning": "#faad14",
+              },
+            }
+          }
+        >
+          64446
+        </Text>
+        <Text>
+          00:00
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "top": "35%",
+          }
+        }
+      >
+        <TouchableOpacity
+          activeOpacity={0.2}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#22529e",
+              "borderRadius": 50,
+              "height": 70,
+              "justifyContent": "center",
+              "width": 70,
+            }
+          }
+        >
+          <View>
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "justifyContent": "center",
+                }
+              }
+              theme={
+                Object {
+                  "colors": Object {
+                    "disabled": "hsl(208, 8%, 90%)",
+                    "divider": "#bcbbc1",
+                    "error": "#ff190c",
+                    "grey0": "#393e42",
+                    "grey1": "#43484d",
+                    "grey2": "#5e6977",
+                    "grey3": "#86939e",
+                    "grey4": "#bdc6cf",
+                    "grey5": "#e1e8ee",
+                    "greyOutline": "#bbb",
+                    "platform": Object {
+                      "android": Object {
+                        "error": "#f44336",
+                        "primary": "#2196f3",
+                        "secondary": "#9C27B0",
+                        "success": "#4caf50",
+                        "warning": "#ffeb3b",
+                      },
+                      "ios": Object {
+                        "error": "#ff3b30",
+                        "primary": "#007aff",
+                        "secondary": "#5856d6",
+                        "success": "#4cd964",
+                        "warning": "#ffcc00",
+                      },
+                    },
+                    "primary": "#2089dc",
+                    "searchBg": "#303337",
+                    "secondary": "#8F0CE8",
+                    "success": "#52c41a",
+                    "warning": "#faad14",
+                  },
+                }
+              }
+              underlayColor="white"
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
+                    Object {
+                      "color": "white",
+                      "fontSize": 25,
+                    },
+                    Object {
+                      "backgroundColor": "transparent",
+                    },
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+                testID="iconIcon"
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={
+          Object {
+            "bottom": "5%",
+            "position": "absolute",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+            }
+          }
+        >
+          <TouchableOpacity
+            activeOpacity={0.2}
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f12121",
+                "borderRadius": 50,
+                "height": 70,
+                "justifyContent": "center",
+                "transform": Array [
+                  Object {
+                    "rotate": "135deg",
+                  },
+                ],
+                "width": 70,
+              }
+            }
+            testID="HangupForm"
+          >
+            <View>
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "transparent",
+                    "justifyContent": "center",
+                  }
+                }
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+                underlayColor="white"
+              >
+                <Text
+                  allowFontScaling={false}
+                  style={
+                    Array [
+                      Object {
+                        "color": "white",
+                        "fontSize": 25,
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                      Object {
+                        "fontFamily": "Material Icons",
+                        "fontStyle": "normal",
+                        "fontWeight": "normal",
+                      },
+                      Object {},
+                    ]
+                  }
+                  testID="iconIcon"
+                >
+                  
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: Failed prop type: The prop \`phoneService\` is marked as required in \`HangupForm\`, but its value is \`undefined\`.
+    in HangupForm (created by ThemeComponent)
+    in ThemeComponent (created by OnCallInfo)
+    in View (created by View)
+    in View (created by OnCallInfo)
+    in View (created by View)
+    in View (created by OnCallInfo)
+    in OnCallInfo
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: The prop \`phoneService\` is marked as required in \`HangupForm\`, but its value is \`undefined\`.
+    in HangupForm (created by ThemeComponent)
+    in ThemeComponent (created by OnCallInfo)
+    in View (created by View)
+    in View (created by OnCallInfo)
+    in View (created by View)
+    in View (created by OnCallInfo)
+    in OnCallInfo
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 14,
+                    "file": "/Users/fiser/developer/mobile-phone-app/src/calls/providers/PhoneProvider/PhoneService.js",
+                    "lineNumber": 15,
+                    "methodName": "ThemeComponent.render",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 48.5,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: The prop \`phoneService\` is marked as required in \`HangupForm\`, but its value is \`undefined\`.
+    in HangupForm (created by ThemeComponent)
+    in ThemeComponent (created by OnCallInfo)
+    in View (created by View)
+    in View (created by OnCallInfo)
+    in View (created by View)
+    in View (created by OnCallInfo)
+    in OnCallInfo
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
+  </View>
+</View>
+`;
