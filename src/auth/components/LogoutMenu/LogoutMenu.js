@@ -47,6 +47,7 @@ const LogoutMenu = ({ logout, navigation, phoneService }) => (
     HeaderButtonComponent={IoniconsHeaderButton}
   >
     <Item
+      testID="LogoutMenu"
       title="Log out"
       onPress={() => logoutFunc(logout, navigation, phoneService)}
       show="never"
