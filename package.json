@@ -69,7 +69,7 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": ["!**/*Container.js", "src/**/*.{ts,js}"],
+    "collectCoverageFrom": ["!**/*Container.js", "!src/*.js", "src/**/*.{ts,js}"],
     "coverageReporters": ["json", "html"],
     "preset": "@testing-library/react-native",
     "transformIgnorePatterns": [
