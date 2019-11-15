@@ -81,7 +81,7 @@ test('Render the component and press save', async () => {
   expect(getCallForwardingStatus).toHaveBeenCalledTimes(1);
 });
 
-test('Render the component and press save without localRingingList', async () => {
+test('Render the component and press save without localRingingList and with simultaneous-ring at false', async () => {
   const disableCallForwarding = jest
     .fn(() => {})
     .mockReturnValueOnce(Promise.resolve('result1'));
@@ -99,7 +99,7 @@ test('Render the component and press save without localRingingList', async () =>
       Promise.resolve({
         payload: {
           'call-forwarding': true,
-          'simultaneous-ring': true,
+          'simultaneous-ring': false,
           'destination-list': ['1']
         }
       })
@@ -124,4 +124,7 @@ test('Render the component and press save without localRingingList', async () =>
   await waitForElement(() => getByTestId('ButtonCallForwardingScreen'));
   expect(baseElement).toMatchSnapshot();
   expect(addLocalRingingNumber).toHaveBeenCalledTimes(1);
+  const button = getByTestId('ButtonCallForwardingScreen');
+  fireEvent.press(button);
+  expect(enableCallForwarding).toHaveBeenCalledTimes(1);
 });
