@@ -81,6 +81,7 @@ export function CallForwardingScreen(props) {
           const testR = localRingingList.filter(
             localItem => localItem.value === item
           );
+
           if (testR.length === 0) {
             addLocalRingingNumber(item);
           }
@@ -107,12 +108,11 @@ export function CallForwardingScreen(props) {
       );
     }
     if (result.payload && result.payload && result.payload.success) {
-      console.log(result.payload);
       showMessage({
         message: 'Call forwarding set',
         description: result.payload.message,
         type: 'success'
-      });  
+      });
     getCallForwardingStatus(activeNumber);
     }
   };
