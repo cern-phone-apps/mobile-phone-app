@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   }
 });
 
-function CallForwardingScreen(props) {
+export function CallForwardingScreen(props) {
   const [callForwadingEnabled, toggleCallForwarding] = useState(false);
   const [callForwadingMode, setCallForwardingMode] = useState(modes.FORWARD_TO);
   const [isFetching, setIsFetching] = useState(false);
@@ -54,7 +54,6 @@ function CallForwardingScreen(props) {
     navigation,
     localRingingList,
     addLocalRingingNumber,
-    clearLocalRingingList,
     enabledForwardNumber,
     enabledRingingList,
     setEnabledRingingList
@@ -210,6 +209,7 @@ function CallForwardingScreen(props) {
         title="Save"
         buttonStyle={[styles.button]}
         onPress={() => save()}
+        testID={"ButtonCallForwardingScreen"}
       />
     </ScrollView>
   );
