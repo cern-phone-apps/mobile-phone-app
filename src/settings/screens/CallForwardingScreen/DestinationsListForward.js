@@ -34,6 +34,7 @@ function DestinationsListForward(props) {
             )}
             rightElement={() => (
               <IconButton
+                testID={`icon-button-${number.value}`}
                 color="#000"
                 icon="delete"
                 onPress={() => {

@@ -204,6 +204,7 @@ exports[`Render the component and press save 1`] = `
                 ],
               ]
             }
+            testID="icon-button-64443"
             underlayColor="rgba(0, 0, 0, 0.16)"
           >
             <View>
@@ -259,7 +260,7 @@ exports[`Render the component and press save 1`] = `
           }
         >
           <TouchableHighlight
-            accessibilityComponentType="radiobutton_unchecked"
+            accessibilityComponentType="radiobutton_checked"
             accessibilityLiveRegion="polite"
             accessibilityRole="button"
             accessibilityTraits="button"
@@ -267,7 +268,7 @@ exports[`Render the component and press save 1`] = `
             color="#22529e"
             delayPressOut={100}
             disabled={false}
-            status="unchecked"
+            status="checked"
             style={
               Array [
                 Object {
@@ -285,7 +286,7 @@ exports[`Render the component and press save 1`] = `
             <View
               style={
                 Object {
-                  "opacity": 0,
+                  "opacity": 1,
                 }
               }
             >
@@ -424,6 +425,7 @@ exports[`Render the component and press save 1`] = `
                 ],
               ]
             }
+            testID="icon-button-64444"
             underlayColor="rgba(0, 0, 0, 0.16)"
           >
             <View>
@@ -644,6 +646,7 @@ exports[`Render the component and press save 1`] = `
                 ],
               ]
             }
+            testID="icon-button-64445"
             underlayColor="rgba(0, 0, 0, 0.16)"
           >
             <View>
@@ -755,61 +758,6 @@ exports[`Render the component and press save 1`] = `
       data={
         Array [
           Object {
-            "category": "Warning: Failed prop type: Invalid prop \`enabledForwardNumber\` of type \`function\` supplied to \`DestinationsListForward\`, expected \`string\`.
-    in DestinationsListForward",
-            "warnings": Array [
-              YellowBoxWarning {
-                "message": Object {
-                  "content": "Warning: Failed prop type: Invalid prop \`enabledForwardNumber\` of type \`function\` supplied to \`DestinationsListForward\`, expected \`string\`.
-    in DestinationsListForward",
-                  "substitutions": Array [],
-                },
-                "stack": Array [
-                  Object {
-                    "arguments": Array [],
-                    "column": 15,
-                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
-                    "lineNumber": 20,
-                    "methodName": "printWarning",
-                  },
-                  Object {
-                    "arguments": Array [],
-                    "column": 11,
-                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
-                    "lineNumber": 82,
-                    "methodName": "checkPropTypes",
-                  },
-                  Object {
-                    "arguments": Array [],
-                    "column": 5,
-                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
-                    "lineNumber": 1796,
-                    "methodName": "validatePropTypes",
-                  },
-                  Object {
-                    "arguments": Array [],
-                    "column": 5,
-                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
-                    "lineNumber": 1969,
-                    "methodName": "Object.createElementWithValidation [as createElement]",
-                  },
-                  Object {
-                    "arguments": Array [],
-                    "column": 5,
-                    "file": "/Users/fiser/developer/mobile-phone-app/src/settings/screens/CallForwardingScreen/DestinationsListForward.test.js",
-                    "lineNumber": 15,
-                    "methodName": "_callee$",
-                  },
-                ],
-                "symbolicated": Object {
-                  "error": null,
-                  "stack": null,
-                  "status": "NONE",
-                },
-              },
-            ],
-          },
-          Object {
             "category": "Warning: Failed prop type: Invalid prop \`localForwardList[0]\` of type \`object\` supplied to \`DestinationsListForward\`, expected \`string\`.
     in DestinationsListForward",
             "warnings": Array [
@@ -852,7 +800,7 @@ exports[`Render the component and press save 1`] = `
                     "arguments": Array [],
                     "column": 5,
                     "file": "/Users/fiser/developer/mobile-phone-app/src/settings/screens/CallForwardingScreen/DestinationsListForward.test.js",
-                    "lineNumber": 15,
+                    "lineNumber": 14,
                     "methodName": "_callee$",
                   },
                 ],
@@ -879,61 +827,13 @@ exports[`Render the component and press save 1`] = `
       stickyHeaderIndices={Array []}
       style={
         Object {
-          "height": 97,
+          "height": 48.5,
         }
       }
       updateCellsBatchingPeriod={50}
       viewabilityConfigCallbackPairs={Array []}
       windowSize={21}
     >
-      <View
-        style={null}
-      >
-        <TouchableWithoutFeedback>
-          <View
-            style={
-              Array [
-                Object {
-                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
-                },
-                Object {
-                  "height": 48,
-                  "justifyContent": "center",
-                  "marginTop": 0.5,
-                  "paddingHorizontal": 12,
-                },
-              ]
-            }
-          >
-            <View
-              style={
-                Object {
-                  "alignItems": "flex-start",
-                  "flexDirection": "row",
-                }
-              }
-            >
-              <Text
-                numberOfLines={2}
-                style={
-                  Object {
-                    "color": "rgba(255, 255, 255, 1)",
-                    "flex": 1,
-                    "fontSize": 14,
-                    "includeFontPadding": false,
-                    "lineHeight": 18,
-                  }
-                }
-              >
-                <Text>
-                  Warning: Failed prop type: Invalid prop \`enabledForwardNumber\` of type \`function\` supplied to \`DestinationsListForward\`, expected \`string\`.
-    in DestinationsListForward
-                </Text>
-              </Text>
-            </View>
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
       <View
         style={null}
       >
