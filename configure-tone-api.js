@@ -7,7 +7,8 @@ import { logMessage } from './src/common/utils/logging';
  */
 const configureToneApi = () => {
   logMessage('configureToneApi');
-  const toneAPI = DialSingleton.getInstance();
+  const isDev = false;
+  const toneAPI = DialSingleton.getInstance(isDev);
   if (toneAPI.getNotifier()) {
     toneAPI.getNotifier().on('ToneEvent', event => {
       eventHandler(event, toneAPI);
