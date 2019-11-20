@@ -6,6 +6,52 @@ import firebase from 'react-native-firebase';
 import RegisterFormContainer from '../../components/RegisterForm/RegisterFormContainer';
 import { logMessage } from '../../../common/utils/logging';
 
+const NumberSectionList = ({
+  data,
+  title,
+  deviceToken,
+  setActiveNumber,
+  rememberNumber,
+  activeNumber,
+  keyExtractor,
+  renderItem
+}) => {
+  return (
+    <React.Fragment>
+      <Text
+        style={{
+          padding: 10,
+          fontSize: 13,
+          color: '#AAAAAA',
+          backgroundColor: '#EEEEEE'
+        }}
+      >
+        {title}
+      </Text>
+      {!data || data.length === 0 ? (
+        <Text
+          style={{
+            textAlign: 'center',
+            fontSize: 14,
+            paddingTop: 20,
+            paddingBottom: 20,
+            color: '#BBBBBB'
+          }}
+          keyExtractor={keyExtractor}
+        >
+          There are no numbers in this section
+        </Text>
+      ) : (
+        <FlatList
+          keyExtractor={keyExtractor}
+          data={data}
+          renderItem={renderItem}
+        />
+      )}
+    </React.Fragment>
+  );
+};
+
 export default function RegisterScreen({
   getUserPhoneNumbers,
   connected,
@@ -37,7 +83,7 @@ export default function RegisterScreen({
     } else {
       getUserPhoneNumbers();
     }
-  }, [connected]);
+  }, [connected, getUserPhoneNumbers, navigation]);
 
   const keyExtractor = (item, index) => index.toString();
 
@@ -52,91 +98,25 @@ export default function RegisterScreen({
     );
   };
 
-  const NumberSectionList = ({ data, title }) => {
-    return (
-      <React.Fragment>
-        <Text
-          style={{
-            padding: 10,
-            fontSize: 13,
-            color: '#AAAAAA',
-            backgroundColor: '#EEEEEE'
-          }}
-        >
-          {title}
-        </Text>
-        {!data || data.length === 0 ? (
-          <Text
-            style={{
-              textAlign: 'center',
-              fontSize: 14,
-              paddingTop: 20,
-              paddingBottom: 20,
-              color: '#BBBBBB'
-            }}
-            keyExtractor={keyExtractor}
-          >
-            There are no numbers in this section
-          </Text>
-        ) : (
-          <FlatList
-            keyExtractor={keyExtractor}
-            data={data}
-            renderItem={renderItem}
-          />
-        )}
-      </React.Fragment>
-    );
-    const ret = [];
-    ret.push(<Title />);
-    if (!data || data.length === 0) {
-      ret.push(
-        <Text
-          style={{
-            padding: 10,
-            fontSize: 13,
-            color: '#AAAAAA',
-            backgroundColor: '#EEEEEE'
-          }}
-        >
-          {title}
-        </Text>
-        {!data || data.length === 0 ? (
-          <Text
-            style={{
-              textAlign: 'center',
-              fontSize: 14,
-              paddingTop: 20,
-              paddingBottom: 20,
-              color: '#BBBBBB'
-            }}
-            keyExtractor={keyExtractor}
-          >
-            There are no numbers in this section
-          </Text>
-        ) : (
-          <FlatList
-            keyExtractor={keyExtractor}
-            data={data}
-            renderItem={renderItem}
-          />
-        )}
-      </React.Fragment>
-    );
-  };
-
   renderItem.propTypes = {
     item: PropTypes.shape({
       phoneNumber: PropTypes.string.isRequired
     }).isRequired
   };
+
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'white'
-      }}
-    >
+    <View>
+      <Card title='ABOUT CERTIFICATES' containerStyle={{ marginBottom: 10 }}>
+        <Text style={{ marginBottom: 10 }}>
+          Please, install the CERN certificates and come back to this screen if
+          you haven&apos;t done it yet.
+        </Text>
+        <Button
+          icon={<Icon name='info' color='#ffffff' type='font-awesome' />}
+          onPress={() => setOverlayVisible(true)}
+          title=' More info'
+        />
+      </Card>
       <Overlay
         isVisible={overlayVisible}
         onBackdropPress={() => setOverlayVisible(false)}
@@ -155,79 +135,48 @@ export default function RegisterScreen({
               textAlign: 'justify'
             }}
           >
-            This application requires CERN Certificates to work. Please, follow
-            the steps to install them from the following link and come back to
-            the application. You may need to restart the application afterwards.
+            This application requires CERN Certificates to work.Please, follow
+            to install them from the following link and come back to the
+            application.You may need to restart the application afterwards.
           </Text>
-          <Input placeholder="Token" value={deviceToken} />
-          <Input placeholder="Token" value={toneToken} />
           <Button
-            title="https://cafiles.cern.ch/cafiles/certificates/Grid.aspx"
-            type="clear"
+            title='https://cafiles.cern.ch/cafiles/certificates/Grid.aspx'
+            type='clear'
             onPress={() => {
               Linking.openURL(
                 'https://cafiles.cern.ch/cafiles/certificates/Grid.aspx'
               );
             }}
           />
-          <Button title="Close" onPress={() => setOverlayVisible(false)} />
+          <Text style={{ fontSize: 24 }}>Debug</Text>
+
+          <Input
+            placeholder='Device token'
+            value={deviceToken}
+            label='Device token'
+          />
+
+          <Input
+            placeholder='Tone token'
+            value={toneToken}
+            label='Tone token'
+          />
+
+          <Button title='Close' onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
       <NumberSectionList
         keyExtractor={keyExtractor}
         data={numbers.personal}
         renderItem={renderItem}
-        title="Personal"
+        title='Personal'
       />
       <NumberSectionList
         keyExtractor={keyExtractor}
         data={numbers.shared}
         renderItem={renderItem}
-        title="Shared"
+        title='Shared'
       />
-      <View
-        style={{
-          flex: 2,
-          backgroundColor: '000',
-          bottom: '10%',
-          position: 'absolute'
-        }}
-      >
-        <Card
-          title={
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderBottomColor: '#d4d4d4',
-                borderBottomWidth: 1
-              }}
-            >
-              <Icon name="info-circle" type="font-awesome" />
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontWeight: 'bold'
-                }}
-              >
-                {' '}
-                About Certificates
-              </Text>
-            </View>
-          }
-        >
-          <Text style={{ marginTop: 5 }}>
-            Please, install the CERN certificates and come back to this screen
-            if you haven&apos;t done it yet.
-          </Text>
-          <Button
-            title="More info"
-            onPress={() => setOverlayVisible(true)}
-            type="clear"
-          />
-        </Card>
-      </View>
     </View>
   );
 }
