@@ -214,13 +214,9 @@ export class PhoneProvider extends React.Component {
     this.makeCall(handle, handle);
   };
 
-  hangUpCurrentCallAction = (hangupDefault = false) => {
+  hangUpCurrentCallAction = () => {
     const { toneAPI } = this.props;
     toneOutMessage(`Hang up current call from hangUpCurrentCallAction`);
-    if (hangupDefault) {
-      this.hangupDefault = true;
-      logMessage('hangupDefault is true');
-    }
     try {
       toneAPI.hangUp();
     } catch (error) {
