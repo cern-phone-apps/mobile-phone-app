@@ -11,13 +11,10 @@ const modes = Object.freeze({
   FORWARD_TO: 'forwardto'
 });
 
-function CallForwardingListRingingScreen(props) {
+export function CallForwardingListRingingScreen(props) {
   const {
-    navigation,
     localRingingList,
-    addLocalRingingNumber,
     removeLocalRingingNumber,
-    clearLocalRingingList,
     enabledRingingList,
     setEnabledRingingList
   } = props;
@@ -52,6 +49,7 @@ function CallForwardingListRingingScreen(props) {
           )}
           right={() => (
             <IconButton
+              testID={`icon-button-${number.value}`}
               color="#000"
               icon="delete"
               onPress={() => {

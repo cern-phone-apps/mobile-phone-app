@@ -1,0 +1,668 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the component and press save 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <ScrollView
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <TouchableHighlight
+        activeOpacity={0.85}
+        bottomDivider={true}
+        delayPressOut={100}
+        disabled={true}
+        style={
+          Array [
+            false,
+            Array [
+              Object {
+                "padding": 8,
+              },
+              undefined,
+            ],
+          ]
+        }
+        underlayColor="rgba(0, 0, 0, 0.1)"
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Switch
+            value={false}
+          />
+          <View
+            pointerEvents="none"
+            style={
+              Array [
+                Object {
+                  "margin": 8,
+                },
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "Helvetica Neue",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              64443
+            </Text>
+          </View>
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            centered={true}
+            delayPressOut={100}
+            disabled={false}
+            hitSlop={
+              Object {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 18,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "margin": 6,
+                    "overflow": "visible",
+                    "width": 36,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+            testID="icon-button-64443"
+            underlayColor="rgba(0, 0, 0, 0.16)"
+          >
+            <View>
+              <Text
+                accessibilityElementsHidden={true}
+                allowFontScaling={false}
+                importantForAccessibility="no-hide-descendants"
+                pointerEvents="none"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 24,
+                    },
+                    Array [
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scaleX": 1,
+                          },
+                        ],
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                    ],
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        bottomDivider={true}
+        delayPressOut={100}
+        disabled={true}
+        style={
+          Array [
+            false,
+            Array [
+              Object {
+                "padding": 8,
+              },
+              undefined,
+            ],
+          ]
+        }
+        underlayColor="rgba(0, 0, 0, 0.1)"
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Switch
+            value={false}
+          />
+          <View
+            pointerEvents="none"
+            style={
+              Array [
+                Object {
+                  "margin": 8,
+                },
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "Helvetica Neue",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              64444
+            </Text>
+          </View>
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            centered={true}
+            delayPressOut={100}
+            disabled={false}
+            hitSlop={
+              Object {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 18,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "margin": 6,
+                    "overflow": "visible",
+                    "width": 36,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+            testID="icon-button-64444"
+            underlayColor="rgba(0, 0, 0, 0.16)"
+          >
+            <View>
+              <Text
+                accessibilityElementsHidden={true}
+                allowFontScaling={false}
+                importantForAccessibility="no-hide-descendants"
+                pointerEvents="none"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 24,
+                    },
+                    Array [
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scaleX": 1,
+                          },
+                        ],
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                    ],
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+      </TouchableHighlight>
+      <TouchableHighlight
+        activeOpacity={0.85}
+        bottomDivider={true}
+        delayPressOut={100}
+        disabled={true}
+        style={
+          Array [
+            false,
+            Array [
+              Object {
+                "padding": 8,
+              },
+              undefined,
+            ],
+          ]
+        }
+        underlayColor="rgba(0, 0, 0, 0.1)"
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <Switch
+            value={false}
+          />
+          <View
+            pointerEvents="none"
+            style={
+              Array [
+                Object {
+                  "margin": 8,
+                },
+                Object {
+                  "flex": 1,
+                  "justifyContent": "center",
+                },
+              ]
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Array [
+                  Object {
+                    "color": "#000000",
+                    "fontFamily": "Helvetica Neue",
+                    "textAlign": "left",
+                    "writingDirection": "ltr",
+                  },
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "color": "rgba(0, 0, 0, 0.87)",
+                    },
+                    undefined,
+                  ],
+                ]
+              }
+            >
+              64445
+            </Text>
+          </View>
+          <TouchableHighlight
+            accessibilityComponentType="button"
+            accessibilityRole="button"
+            accessibilityTraits="button"
+            activeOpacity={0.85}
+            centered={true}
+            delayPressOut={100}
+            disabled={false}
+            hitSlop={
+              Object {
+                "bottom": 6,
+                "left": 6,
+                "right": 6,
+                "top": 6,
+              }
+            }
+            style={
+              Array [
+                Object {
+                  "overflow": "hidden",
+                },
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "borderRadius": 18,
+                    "height": 36,
+                    "justifyContent": "center",
+                    "margin": 6,
+                    "overflow": "visible",
+                    "width": 36,
+                  },
+                  undefined,
+                  undefined,
+                ],
+              ]
+            }
+            testID="icon-button-64445"
+            underlayColor="rgba(0, 0, 0, 0.16)"
+          >
+            <View>
+              <Text
+                accessibilityElementsHidden={true}
+                allowFontScaling={false}
+                importantForAccessibility="no-hide-descendants"
+                pointerEvents="none"
+                style={
+                  Array [
+                    Object {
+                      "color": "#000",
+                      "fontSize": 24,
+                    },
+                    Array [
+                      Object {
+                        "transform": Array [
+                          Object {
+                            "scaleX": 1,
+                          },
+                        ],
+                      },
+                      Object {
+                        "backgroundColor": "transparent",
+                      },
+                    ],
+                    Object {
+                      "fontFamily": "Material Icons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+      </TouchableHighlight>
+    </ScrollView>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: Failed prop type: Invalid prop \`localRingingList[0]\` of type \`object\` supplied to \`CallForwardingListRingingScreen\`, expected \`string\`.
+    in CallForwardingListRingingScreen",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: Invalid prop \`localRingingList[0]\` of type \`object\` supplied to \`CallForwardingListRingingScreen\`, expected \`string\`.
+    in CallForwardingListRingingScreen",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/src/settings/screens/CallForwardingScreen/DestinationsListRinging.test.js",
+                    "lineNumber": 14,
+                    "methodName": "_callee$",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 48.5,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: Invalid prop \`localRingingList[0]\` of type \`object\` supplied to \`CallForwardingListRingingScreen\`, expected \`string\`.
+    in CallForwardingListRingingScreen
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
+  </View>
+</View>
+`;
