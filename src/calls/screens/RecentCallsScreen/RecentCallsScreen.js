@@ -6,8 +6,13 @@ import moment from 'moment';
 import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 
 import ColorPalette from '../../../styles/ColorPalette';
+import useCallStatus from '../../hooks/use-call-status';
 
 export function RecentCallsScreen({ navigation, recentCalls }) {
+  /**
+   * Redirect to RegisterLoading if any of these statuses change
+   */
+  useCallStatus();
   const keyExtractor = (item, index) => index.toString();
 
   const renderItem = ({ item }) => {

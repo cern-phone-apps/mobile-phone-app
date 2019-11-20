@@ -4,8 +4,13 @@ import { View } from 'react-native';
 import { PropTypes } from 'prop-types';
 import { ActivityIndicator } from 'react-native-paper';
 import MakeCallButton from '../../components/MakeCallButton/MakeCallButton';
+import useCallStatus from '../../hooks/use-call-status';
 
 const ProfileDetails = ({ iconName, value, addProps }) => {
+  /**
+   * Redirect to RegisterLoading if any of these statuses change
+   */
+  useCallStatus();
   return (
     <View
       style={{

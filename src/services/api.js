@@ -11,6 +11,8 @@ import config from '../config';
 
 import JwtTokenHandlerMobile from '../auth/utils/token-mobile-handler';
 
+import pushDevicesActionFactory from '../push_notifications/actions/push_notifications';
+
 const apiEndpoint = config.api.ENDPOINT;
 const apiType = 'mobile';
 
@@ -89,7 +91,12 @@ const dialBackendApi = () => ({
     apiEndpoint,
     apiType,
     JwtTokenHandlerMobile
-  ).enableCallForwarding
+  ).enableCallForwarding,
+  /**
+   * Push Notifications
+   */
+  addPushDevice: pushDevicesActionFactory(apiEndpoint, JwtTokenHandlerMobile)
+    .addPushDevice
 });
 
 export default dialBackendApi;

@@ -11,7 +11,7 @@ function mapStateToProps({ connection, numbers, auth, user }) {
     connected: connection ? connection.connected : false,
     numbers: numbers.numbers,
     activeNumber: numbers.activeNumber,
-    token: auth.token,
+    toneToken: auth.toneToken,
     rememberNumber: user.rememberNumber
   };
 }

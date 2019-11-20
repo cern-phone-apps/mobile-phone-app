@@ -4,13 +4,25 @@ import { ListItem, Text } from 'react-native-elements';
 import { FlatList, View } from 'react-native';
 import { IconButton } from 'react-native-paper';
 import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
+import useCallStatus from '../../hooks/use-call-status';
 
+/**
+ * Displays a list of contacts
+ * @param {*} param0
+ */
 export default function ContactsScreen({
   contacts,
   getUserContacts,
   removeUserContact,
   navigation
 }) {
+  /**
+   * Redirect to RegisterLoading if any of these statuses change
+   */
+  useCallStatus();
+  /**
+   * Update the contacts when the component loads
+   */
   useEffect(() => {
     getUserContacts();
   }, []);
@@ -47,7 +59,7 @@ export default function ContactsScreen({
 
   return (
     <View style={{ flex: 1 }}>
-      <CallForwardingBannerContainer/>
+      <CallForwardingBannerContainer />
       <FlatList
         keyExtractor={keyExtractor}
         data={contacts}

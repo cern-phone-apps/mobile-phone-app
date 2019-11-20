@@ -1,4 +1,4 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import LoginScreenContainer from '../screens/LoginScreen/LoginScreenContainer';
 import LoginWebViewContainer from '../screens/LoginWebView/LoginWebViewContainer';
 import ColorPalette from '../../styles/ColorPalette';

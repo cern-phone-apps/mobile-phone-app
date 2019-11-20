@@ -2,41 +2,40 @@
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
+import { AppRegistry } from 'react-native';
 
-import { AppRegistry, View, Text } from 'react-native';
-import React from 'react';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/es/integration/react';
-import FlashMessage from 'react-native-flash-message';
+import { registerGlobals } from 'react-native-webrtc';
+import bgMessaging from './bgMessaging';
+
 import { name as appName } from './app.json';
-import App from './App';
-// import configureStore from './store';
-import { store, persistor } from './store';
 
-import PhoneProvider from './src/calls/providers/PhoneProvider/PhoneProviderContainer';
-
-console.disableYellowBox = true;
+import PhoneMobile from './main-app';
 /**
- * Set up the store and the history
+ * We initialize the webrtc capabilities here in order to import them directly on React Native.
+ * These are used in the Tone JS API Session Description Handler
  */
+// Polyfill WebRTC
+registerGlobals();
+/**
+ * We are not displaying warnings in the app itself
+ */
+// eslint-disable-next-line no-console
+console.disableYellowBox = true;
 
-const LoadingComponent = () => {
-  return (
-    <View>
-      <Text>Loading...</Text>
-    </View>
-  );
-};
+// Foreground behavior
+AppRegistry.registerComponent(appName, () => PhoneMobile);
 
-const PhoneMobile = () => (
-  <Provider store={store}>
-    <PersistGate loading={<LoadingComponent />} persistor={persistor}>
-      <PhoneProvider>
-        <App />
-      </PhoneProvider>
-    </PersistGate>
-    <FlashMessage position="top" />
-  </Provider>
+// Background behavior
+AppRegistry.registerHeadlessTask(
+  'RNFirebaseBackgroundMessage',
+  () => bgMessaging
 );
 
-AppRegistry.registerComponent(appName, () => PhoneMobile);
+AppRegistry.registerHeadlessTask(
+  'RNCallKeepBackgroundMessage',
+  () => ({ name, callUUID, handle }) => {
+    // Make your call here
+
+    return Promise.resolve();
+  }
+);
