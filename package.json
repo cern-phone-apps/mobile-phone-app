@@ -65,6 +65,17 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "modules/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/",
+      "!**/modules/"
+    ]
   }
 }
