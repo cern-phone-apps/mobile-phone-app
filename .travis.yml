@@ -8,6 +8,7 @@ cache:
 install:
   # use the new "ci" command for fastest installs on CI
   - npm install -g codecov
+  - yarn
 
 stages:
   - unit_test
