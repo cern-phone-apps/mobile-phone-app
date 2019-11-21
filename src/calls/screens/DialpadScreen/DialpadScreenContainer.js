@@ -2,14 +2,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ConnectedScreen from './DialpadScreen';
 import dialBackendApi from '../../../services/api';
-import { phoneService } from '../../providers/PhoneProvider/PhoneService';
 
 function mapStateToProps({ call, connection, numbers }) {
   return {
-    onCall: call.onCall,
     disabled: call.onCall,
-    calling: call.calling,
-    tempRemote: call.tempRemote,
     connected: connection.connected,
     activeNumber: numbers.activeNumber
   };

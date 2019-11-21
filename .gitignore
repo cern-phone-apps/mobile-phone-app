@@ -35,14 +35,12 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-# XXX: remove this after sprint
-yarn.lock
-package-lock.json
 
 # BUCK
 buck-out/
 \.buckd/
 *.keystore
+!debug.keystore
 
 # fastlane
 #
@@ -139,4 +137,5 @@ RNTester/build
 /template/ios/Podfile.lock
 RNTester/RNTesterPods.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 ios/Pods
+/ios/Pods/
 src/config.js

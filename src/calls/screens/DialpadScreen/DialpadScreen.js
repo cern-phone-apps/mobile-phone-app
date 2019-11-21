@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View, Alert } from 'react-native';
-import { Icon, Text } from 'react-native-elements';
+import { Icon, Text } from 'react-native-elements'
+import { StyleSheet, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import MakeCallForm from '../../components/DialpadForm/DialpadForm';
-import HangupButton from '../../components/HangupButton/HangupButton';
-import OnCallInfoContainer from '../../components/OnCallInfo/OnCallInfoContainer';
+
 import CallForwardingBannerContainer from '../../components/CallForwarding/CallForwardingBannerContainer';
 import ColorPalette from '../../../styles/ColorPalette';
 import { phoneService } from '../../providers/PhoneProvider/PhoneService';
+import { logMessage } from '../../../common/utils/logging';
+import useCallStatus from '../../hooks/use-call-status';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,65 +29,33 @@ const styles = StyleSheet.create({
   }
 });
 
-const callingStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: 10
-  },
-  iconTextContainer: {
-    paddingVertical: 15,
-    paddingHorizontal: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
-
 const DialpadScreen = ({
   disabled,
-  calling,
-  tempRemote,
-  onCall,
   connected,
-  navigation,
   activeNumber,
   getCallForwardingStatus
 }) => {
+  /**
+   * Redirect to RegisterLoading if any of these statuses change
+   */
+  useCallStatus();
+  /**
+   * Update the call forwarding status
+   */
   useEffect(() => {
+    const miliSeconds = 60000;
     const timer = setInterval(() => {
       try {
         getCallForwardingStatus(activeNumber);
       } catch {
-        console.log('Get callforwarding status failed');
+        logMessage('Get callforwarding status failed');
       }
-    }, 60000);
-    navigation.navigate(connected ? 'AppRegistered' : 'Register');
-    console.log('Running useEffect -> DialpadScreen()');
+    }, miliSeconds);
+    logMessage('Running useEffect -> DialpadScreen()');
     return function cleanup() {
       clearInterval(timer);
     };
   }, [connected]);
-
-  if (onCall) {
-    return <OnCallInfoContainer />;
-  }
-
-  if (calling) {
-    return (
-      <View style={[callingStyles.container]}>
-        <View style={[callingStyles.iconTextContainer]}>
-          <Text h2>Calling...</Text>
-        </View>
-        <View style={[callingStyles.iconTextContainer]}>
-          <Icon name="phone" size={30} />
-          <Text h4>{tempRemote.phoneNumber}</Text>
-        </View>
-        <HangupButton />
-      </View>
-    );
-  }
 
   return (
     <View style={styles.container}>
@@ -139,8 +109,6 @@ const DialpadScreen = ({
 
 DialpadScreen.propTypes = {
   disabled: PropTypes.bool,
-  calling: PropTypes.bool.isRequired,
-  onCall: PropTypes.bool.isRequired,
   connected: PropTypes.bool.isRequired,
   tempRemote: PropTypes.shape({
     phoneNumber: PropTypes.string

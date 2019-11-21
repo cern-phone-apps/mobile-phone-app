@@ -6,6 +6,7 @@ import DialpadStack from './call';
 import RecentStack from './recent';
 import SettingsStack from '../../settings/navigators/settings';
 import RegisterLoadingScreenContainer from '../screens/RegisterLoadingScreen/RegisterLoadingScreenContainer';
+import CallModalScreenContainer from '../screens/CallModalScreen/CallModalScreenContainer';
 import RegisterStack from './register';
 import ContactsStack from './contacts';
 import ColorPalette from '../../styles/ColorPalette';
@@ -53,6 +54,7 @@ export const AppFullStack = createSwitchNavigator(
   {
     RegisterLoading: RegisterLoadingScreenContainer,
     SwitchNumbers: SwitchNumbersScreenContainer,
+    CallModal: CallModalScreenContainer,
     AppRegistered: AppStack,
     Register: RegisterStack
   },
@@ -60,3 +62,5 @@ export const AppFullStack = createSwitchNavigator(
     initialRouteName: 'RegisterLoading'
   }
 );
+
+export default AppFullStack;

@@ -10,6 +10,9 @@ import {
   contactsReducer
 } from 'dial-core';
 
+import settingsReducer from './src/settings/reducers/app-state';
+import pushDevicesReducer from './src/push_notifications/reducers/push_notifications';
+
 export default combineReducers({
   auth: authReducer,
   user: meReducer,
@@ -22,5 +25,7 @@ export default combineReducers({
   numbers: callsReducer.numbersReducer,
   status: doNotDisturbReducer,
   profile: profileReducer,
-  contacts: contactsReducer
+  contacts: contactsReducer,
+  settings: settingsReducer,
+  pushDevices: pushDevicesReducer
 });

@@ -1,45 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FlatList, View, Text, Linking } from 'react-native';
-import { Card, Button, Icon, Overlay, Badge } from 'react-native-elements';
-import RegisterForm from '../../components/RegisterForm/RegisterForm';
-import ColorPalette from '../../../styles/ColorPalette';
+import { Card, Button, Icon, Overlay, Input } from 'react-native-elements';
+import firebase from 'react-native-firebase';
+import RegisterFormContainer from '../../components/RegisterForm/RegisterFormContainer';
+import { logMessage } from '../../../common/utils/logging';
 
-export default function RegisterScreen({
-  getUserPhoneNumbers,
-  connected,
-  navigation,
-  numbers,
-  token,
+const NumberSectionList = ({
+  data,
+  title,
+  deviceToken,
   setActiveNumber,
+  rememberNumber,
   activeNumber,
-  rememberNumber
-}) {
-  const [overlayVisible, setOverlayVisible] = useState(false);
-
-  useEffect(() => {
-    if (connected) {
-      navigation.navigate('AppRegistered');
-    } else {
-      getUserPhoneNumbers();
-    }
-  }, [connected]);
-
-  const keyExtractor = (item, index) => index.toString();
-
-  const renderItem = ({ item }) => {
-    return (
-      <RegisterForm
-        phoneNumber={item}
-        token={token}
-        setActiveNumber={setActiveNumber}
-        autoRegister={!!(rememberNumber && activeNumber === item)}
-      />
-    );
-  };
-
-  const NumberSectionList = ({ keyExtractor, data, renderItem, title }) => {
-    const Title = () => (
+  keyExtractor,
+  renderItem
+}) => {
+  return (
+    <React.Fragment>
       <Text
         style={{
           padding: 10,
@@ -50,11 +28,7 @@ export default function RegisterScreen({
       >
         {title}
       </Text>
-    );
-    const ret = [];
-    ret.push(<Title />);
-    if (!data || data.length === 0) {
-      ret.push(
+      {!data || data.length === 0 ? (
         <Text
           style={{
             textAlign: 'center',
@@ -67,17 +41,61 @@ export default function RegisterScreen({
         >
           There are no numbers in this section
         </Text>
-      );
-      return ret;
+      ) : (
+        <FlatList
+          keyExtractor={keyExtractor}
+          data={data}
+          renderItem={renderItem}
+        />
+      )}
+    </React.Fragment>
+  );
+};
+
+export default function RegisterScreen({
+  getUserPhoneNumbers,
+  connected,
+  navigation,
+  numbers,
+  toneToken,
+  setActiveNumber,
+  activeNumber,
+  rememberNumber
+}) {
+  const [overlayVisible, setOverlayVisible] = useState(false);
+  const [deviceToken, setDeviceToken] = useState('');
+
+  /**
+   * We want to save the device token in the backend
+   */
+  const getDeviceToken = async () => {
+    const fcmToken = await firebase.messaging().getToken();
+    setDeviceToken(fcmToken);
+  };
+  /**
+   * When the connected status changes, we get the user phone numbers
+   */
+  useEffect(() => {
+    getDeviceToken();
+    if (connected) {
+      logMessage('Register screen -> Connected changed to true');
+      navigation.navigate('RegisterLoading');
+    } else {
+      getUserPhoneNumbers();
     }
-    ret.push(
-      <FlatList
-        keyExtractor={keyExtractor}
-        data={data}
-        renderItem={renderItem}
+  }, [connected, getUserPhoneNumbers, navigation]);
+
+  const keyExtractor = (item, index) => index.toString();
+
+  const renderItem = ({ item }) => {
+    return (
+      <RegisterFormContainer
+        pushDeviceToken={deviceToken}
+        phoneNumber={item}
+        setActiveNumber={setActiveNumber}
+        autoRegister={!!(rememberNumber && activeNumber === item)}
       />
     );
-    return ret;
   };
 
   renderItem.propTypes = {
@@ -85,13 +103,20 @@ export default function RegisterScreen({
       phoneNumber: PropTypes.string.isRequired
     }).isRequired
   };
+
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'white'
-      }}
-    >
+    <View>
+      <Card title='ABOUT CERTIFICATES' containerStyle={{ marginBottom: 10 }}>
+        <Text style={{ marginBottom: 10 }}>
+          Please, install the CERN certificates and come back to this screen if
+          you haven&apos;t done it yet.
+        </Text>
+        <Button
+          icon={<Icon name='info' color='#ffffff' type='font-awesome' />}
+          onPress={() => setOverlayVisible(true)}
+          title=' More info'
+        />
+      </Card>
       <Overlay
         isVisible={overlayVisible}
         onBackdropPress={() => setOverlayVisible(false)}
@@ -110,92 +135,64 @@ export default function RegisterScreen({
               textAlign: 'justify'
             }}
           >
-            This application requires CERN Certificates to work. Please, follow
-            the steps to install them from the following link and come back to
-            the application. You may need to restart the application afterwards.
+            This application requires CERN Certificates to work.Please, follow
+            to install them from the following link and come back to the
+            application.You may need to restart the application afterwards.
           </Text>
           <Button
-            title="https://cafiles.cern.ch/cafiles/certificates/Grid.aspx"
-            type="clear"
+            title='https://cafiles.cern.ch/cafiles/certificates/Grid.aspx'
+            type='clear'
             onPress={() => {
               Linking.openURL(
                 'https://cafiles.cern.ch/cafiles/certificates/Grid.aspx'
               );
             }}
           />
-          <Button title="Close" onPress={() => setOverlayVisible(false)} />
+          <Text style={{ fontSize: 24 }}>Debug</Text>
+
+          <Input
+            placeholder='Device token'
+            value={deviceToken}
+            label='Device token'
+          />
+
+          <Input
+            placeholder='Tone token'
+            value={toneToken}
+            label='Tone token'
+          />
+
+          <Button title='Close' onPress={() => setOverlayVisible(false)} />
         </View>
       </Overlay>
       <NumberSectionList
         keyExtractor={keyExtractor}
         data={numbers.personal}
         renderItem={renderItem}
-        title="Personal"
+        title='Personal'
       />
       <NumberSectionList
         keyExtractor={keyExtractor}
         data={numbers.shared}
         renderItem={renderItem}
-        title="Shared"
+        title='Shared'
       />
-      <View
-        style={{
-          flex: 2,
-          backgroundColor: '000',
-          bottom: '10%',
-          position: 'absolute'
-        }}
-      >
-        <Card
-          title={
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                borderBottomColor: '#d4d4d4',
-                borderBottomWidth: 1
-              }}
-            >
-              <Icon name="info-circle" type="font-awesome" />
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontWeight: 'bold'
-                }}
-              >
-                {' '}
-                About Certificates
-              </Text>
-            </View>
-          }
-        >
-          <Text style={{ marginTop: 5 }}>
-            Please, install the CERN certificates and come back to this screen
-            if you haven&apos;t done it yet.
-          </Text>
-          <Button
-            title="More info"
-            onPress={() => setOverlayVisible(true)}
-            type="clear"
-          />
-        </Card>
-      </View>
     </View>
   );
 }
 
 RegisterScreen.propTypes = {
   connected: PropTypes.bool.isRequired,
-  numbers: PropTypes.arrayOf(PropTypes.object),
+  numbers: PropTypes.shape({
+    personal: PropTypes.arrayOf(PropTypes.string),
+    shared: PropTypes.arrayOf(PropTypes.string)
+  }),
   getUserPhoneNumbers: PropTypes.func.isRequired,
-  token: PropTypes.string,
   setActiveNumber: PropTypes.func.isRequired,
   activeNumber: PropTypes.string
 };
 
 RegisterScreen.defaultProps = {
-  token: '',
   numbers: []
 };
 

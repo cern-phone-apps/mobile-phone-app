@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import SettingsScreen from '../screens/SettingsScreen/SettingsScreen';
 import ColorPalette from '../../styles/ColorPalette';
 import ProfileContainer from '../components/profile/ProfileContainer';
