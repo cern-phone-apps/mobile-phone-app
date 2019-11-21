@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - 11.13
+
+cache:
+  yarn: true
+
+install:
+  # use the new "ci" command for fastest installs on CI
+  - npm install -g codecov
+
+stages:
+  - unit_test
+
+jobs:
+  include:
+    - stage: unit_test
+      name: "Unit Tests"
+      script:
+        - yarn --version
+        - yarn test-coverage
+        - codecov
