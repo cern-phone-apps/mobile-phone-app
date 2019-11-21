@@ -6,7 +6,7 @@
 
 CERN Phone application to make and receive calls.
 
-[![Build Status](https://travis-ci.com/cern-phone-apps/mobile-phone-app.svg?branch=master)](https://travis-ci.com/cern-phone-apps/mobile-phone-app) [![codecov](https://codecov.io/gh/cern-phone-apps/mobile-phone-app/branch/master/graph/badge.svg)](https://codecov.io/gh/cern-phone-apps/mobile-phone-app)
+[![Build Status](https://travis-ci.com/cern-phone-apps/mobile-phone-app.svg?branch=master)](https://travis-ci.com/cern-phone-apps/mobile-phone-app) [![codecov](https://codecov.io/gh/cern-phone-apps/mobile-phone-app/branch/master/graph/badge.svg)](https://codecov.io/gh/cern-phone-apps/mobile-phone-app) [![Dependency Status](https://david-dm.org/cern-phone-apps/mobile-phone-app.svg)](https://david-dm.org/cern-phone-apps/mobile-phone-app)
 
 ## Current limitations
 
