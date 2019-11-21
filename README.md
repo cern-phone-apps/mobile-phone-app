@@ -1,6 +1,8 @@
 # Dial Mobile (CERN Phone Mobile App)
 
-<img src="docs/screenshots/login-screen.png" width="200"> <img src="docs/screenshots/number-selector.png" width="200"> <img src="docs/screenshots/dial-pad.png" width="200"> <img src="docs/screenshots/recent-calls.png" width="200"> <img src="docs/screenshots/contacts-list.png" width="200"> <img src="docs/screenshots/profile-details.png" width="200"> <img src="docs/screenshots/on-call.png" width="200"> <img src="docs/screenshots/recent-calls.png" width="200"> <img src="docs/screenshots/settings.png" width="200">
+<img src="docs/screenshots/login-screen.png" width="200"> <img src="docs/screenshots/number-selector.png" width="200"> <img src="docs/screenshots/dial-pad.png" width="200">  <img src="docs/screenshots/on-call.png" width="200">
+
+[View all screenshots](docs/all-screenshots.md)
 
 CERN Phone application to make and receive calls.
 
