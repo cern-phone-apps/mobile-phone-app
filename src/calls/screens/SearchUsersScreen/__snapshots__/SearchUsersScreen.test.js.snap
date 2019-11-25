@@ -665,7 +665,7 @@ exports[`Render the component 2`] = `
 </View>
 `;
 
-exports[`Render the component with 2 caracters 1`] = `
+exports[`Render the component with 2 characters 1`] = `
 <View
   pointerEvents="box-none"
   style={

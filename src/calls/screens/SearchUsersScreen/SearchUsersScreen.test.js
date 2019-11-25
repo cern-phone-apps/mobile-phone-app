@@ -50,7 +50,7 @@ test('Render the component', async () => {
   expect(baseElement).toMatchSnapshot();
 });
 
-test('Render the component with 2 caracters', async () => {
+test('Render the component with 2 characters', async () => {
   const searchUsers = jest
     .fn(() => {})
     .mockReturnValueOnce(
