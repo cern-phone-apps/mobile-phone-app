@@ -60,6 +60,7 @@ const RingingListMenu = ({
     <Item
       iconName="md-add"
       title="Add number"
+      testID="add-number"
       onPress={() =>
         navigation.navigate('SearchUsersCallForwarding', {
           mode: 'simultaneous', // modes.SIMULTANEOUS,
@@ -69,6 +70,7 @@ const RingingListMenu = ({
     />
     <Item
       icon="md-clear"
+      testID="clear-all"
       title="Clear all"
       onPress={() =>
         clearRecentCallsFunc(clearLocalRingingList, setEnabledRingingList)
