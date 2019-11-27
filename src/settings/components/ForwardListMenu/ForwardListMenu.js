@@ -59,6 +59,7 @@ const RingingListMenu = ({
   >
     <Item
       iconName="md-add"
+      testID="add-number"
       title="Add number"
       onPress={() =>
         navigation.navigate('SearchUsersCallForwarding', {
