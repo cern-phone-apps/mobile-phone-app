@@ -18,7 +18,7 @@ const addLocalForwardNumber = jest.fn(() => {});
 /*
   We render the component
 */
-test('Render the component andd press the button navigate', async () => {
+test('Render the component and press the button navigate', async () => {
   const { baseElement, queryByTestId } = render(
     <ForwardListMenu
       navigation={navigation}
