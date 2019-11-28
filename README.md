@@ -41,14 +41,16 @@ To install the following components, please follow the React Native guide for yo
 
 > ⚠️ Beware of the libs used which contain native code. Some of them are highly dependent on the React Native version and might not be compatible with newer ones.
 
-- React Native Callkeep
-- React Native Webrtc
-- React Native Firebase
-- React Native Vector Icons
-- React Navigation (and it's dependencies)
-- React Native Sound
-- React Native Screens
-- React Native Reanimated
+- [React Native Callkeep](https://github.com/react-native-webrtc/react-native-callkeep)
+- [React Native Webrtc](https://github.com/react-native-webrtc/react-native-webrtc)
+- [React Native Firebase](https://github.com/invertase/react-native-firebase)
+- [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
+- [React Navigation (and it's dependencies)](https://reactnavigation.org/)
+    - [React Native Gesture Handler](https://github.com/kmagiera/react-native-gesture-handler)
+    - [React Native Screens](https://github.com/kmagiera/react-native-screens)
+    - [React Native Reanimated](https://github.com/software-mansion/react-native-reanimated)
+- [React Native Sound](https://github.com/zmxv/react-native-sound)
+
 
 ### Debugging
 
