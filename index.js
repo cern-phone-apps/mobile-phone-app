@@ -2,8 +2,8 @@
  * @format
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
+import 'webrtc-adapter';
 import { AppRegistry } from 'react-native';
-
 import { registerGlobals } from 'react-native-webrtc';
 import bgMessaging from './bgMessaging';
 
