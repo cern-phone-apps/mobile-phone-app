@@ -50,40 +50,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-1"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-1"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  1
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      1
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -93,40 +135,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-2"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-2"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  2
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  ABC
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      2
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      ABC
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -136,178 +220,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-3"
-            >
-              <View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  3
-                </Text>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 10,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  DEF
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
               }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-4"
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-3"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  4
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  GHI
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
-              }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-5"
-            >
-              <View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  5
-                </Text>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 10,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  JKL
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
-              }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-6"
-            >
-              <View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  6
-                </Text>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 10,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  MNO
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      3
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      DEF
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View
@@ -326,40 +314,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-7"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-4"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  7
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  PQRS
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      4
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      GHI
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -369,40 +399,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-8"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-5"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  8
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  TUV
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      5
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      JKL
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -412,40 +484,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-9"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-6"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  9
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  VWXYZ
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      6
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      MNO
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View
@@ -464,40 +578,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-*"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-7"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  *
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      7
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      PQRS
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -507,40 +663,82 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-0"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-8"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  0
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
-                  }
-                >
-                  +
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      8
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      TUV
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -550,44 +748,1054 @@ exports[`Render the component 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={0.7}
-              testID="dial-button-#"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-9"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      null,
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  #
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      null,
-                    ]
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      9
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      VWXYZ
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-*"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  
-                </Text>
-              </View>
-            </TouchableOpacity>
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      *
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-0"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      0
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      +
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={0.7}
+                disabled={false}
+                testID="dial-button-#"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      #
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          null,
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
     </View>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: Failed prop type: Invalid props.buttonStyle key \`border\` supplied to \`Button\`.
+Bad object: {
+  \\"backgroundColor\\": \\"transparent\\",
+  \\"padding\\": 0,
+  \\"margin\\": 0,
+  \\"width\\": \\"100%\\",
+  \\"border\\": null
+}
+Valid keys: [
+  \\"display\\",
+  \\"width\\",
+  \\"height\\",
+  \\"start\\",
+  \\"end\\",
+  \\"top\\",
+  \\"left\\",
+  \\"right\\",
+  \\"bottom\\",
+  \\"minWidth\\",
+  \\"maxWidth\\",
+  \\"minHeight\\",
+  \\"maxHeight\\",
+  \\"margin\\",
+  \\"marginVertical\\",
+  \\"marginHorizontal\\",
+  \\"marginTop\\",
+  \\"marginBottom\\",
+  \\"marginLeft\\",
+  \\"marginRight\\",
+  \\"marginStart\\",
+  \\"marginEnd\\",
+  \\"padding\\",
+  \\"paddingVertical\\",
+  \\"paddingHorizontal\\",
+  \\"paddingTop\\",
+  \\"paddingBottom\\",
+  \\"paddingLeft\\",
+  \\"paddingRight\\",
+  \\"paddingStart\\",
+  \\"paddingEnd\\",
+  \\"borderWidth\\",
+  \\"borderTopWidth\\",
+  \\"borderStartWidth\\",
+  \\"borderEndWidth\\",
+  \\"borderRightWidth\\",
+  \\"borderBottomWidth\\",
+  \\"borderLeftWidth\\",
+  \\"position\\",
+  \\"flexDirection\\",
+  \\"flexWrap\\",
+  \\"justifyContent\\",
+  \\"alignItems\\",
+  \\"alignSelf\\",
+  \\"alignContent\\",
+  \\"overflow\\",
+  \\"flex\\",
+  \\"flexGrow\\",
+  \\"flexShrink\\",
+  \\"flexBasis\\",
+  \\"aspectRatio\\",
+  \\"zIndex\\",
+  \\"direction\\",
+  \\"shadowColor\\",
+  \\"shadowOffset\\",
+  \\"shadowOpacity\\",
+  \\"shadowRadius\\",
+  \\"transform\\",
+  \\"transformMatrix\\",
+  \\"decomposedMatrix\\",
+  \\"scaleX\\",
+  \\"scaleY\\",
+  \\"rotation\\",
+  \\"translateX\\",
+  \\"translateY\\",
+  \\"backfaceVisibility\\",
+  \\"backgroundColor\\",
+  \\"borderColor\\",
+  \\"borderTopColor\\",
+  \\"borderRightColor\\",
+  \\"borderBottomColor\\",
+  \\"borderLeftColor\\",
+  \\"borderStartColor\\",
+  \\"borderEndColor\\",
+  \\"borderRadius\\",
+  \\"borderTopLeftRadius\\",
+  \\"borderTopRightRadius\\",
+  \\"borderTopStartRadius\\",
+  \\"borderTopEndRadius\\",
+  \\"borderBottomLeftRadius\\",
+  \\"borderBottomRightRadius\\",
+  \\"borderBottomStartRadius\\",
+  \\"borderBottomEndRadius\\",
+  \\"borderStyle\\",
+  \\"opacity\\",
+  \\"elevation\\"
+]
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: Invalid props.buttonStyle key \`border\` supplied to \`Button\`.
+Bad object: {
+  \\"backgroundColor\\": \\"transparent\\",
+  \\"padding\\": 0,
+  \\"margin\\": 0,
+  \\"width\\": \\"100%\\",
+  \\"border\\": null
+}
+Valid keys: [
+  \\"display\\",
+  \\"width\\",
+  \\"height\\",
+  \\"start\\",
+  \\"end\\",
+  \\"top\\",
+  \\"left\\",
+  \\"right\\",
+  \\"bottom\\",
+  \\"minWidth\\",
+  \\"maxWidth\\",
+  \\"minHeight\\",
+  \\"maxHeight\\",
+  \\"margin\\",
+  \\"marginVertical\\",
+  \\"marginHorizontal\\",
+  \\"marginTop\\",
+  \\"marginBottom\\",
+  \\"marginLeft\\",
+  \\"marginRight\\",
+  \\"marginStart\\",
+  \\"marginEnd\\",
+  \\"padding\\",
+  \\"paddingVertical\\",
+  \\"paddingHorizontal\\",
+  \\"paddingTop\\",
+  \\"paddingBottom\\",
+  \\"paddingLeft\\",
+  \\"paddingRight\\",
+  \\"paddingStart\\",
+  \\"paddingEnd\\",
+  \\"borderWidth\\",
+  \\"borderTopWidth\\",
+  \\"borderStartWidth\\",
+  \\"borderEndWidth\\",
+  \\"borderRightWidth\\",
+  \\"borderBottomWidth\\",
+  \\"borderLeftWidth\\",
+  \\"position\\",
+  \\"flexDirection\\",
+  \\"flexWrap\\",
+  \\"justifyContent\\",
+  \\"alignItems\\",
+  \\"alignSelf\\",
+  \\"alignContent\\",
+  \\"overflow\\",
+  \\"flex\\",
+  \\"flexGrow\\",
+  \\"flexShrink\\",
+  \\"flexBasis\\",
+  \\"aspectRatio\\",
+  \\"zIndex\\",
+  \\"direction\\",
+  \\"shadowColor\\",
+  \\"shadowOffset\\",
+  \\"shadowOpacity\\",
+  \\"shadowRadius\\",
+  \\"transform\\",
+  \\"transformMatrix\\",
+  \\"decomposedMatrix\\",
+  \\"scaleX\\",
+  \\"scaleY\\",
+  \\"rotation\\",
+  \\"translateX\\",
+  \\"translateY\\",
+  \\"backfaceVisibility\\",
+  \\"backgroundColor\\",
+  \\"borderColor\\",
+  \\"borderTopColor\\",
+  \\"borderRightColor\\",
+  \\"borderBottomColor\\",
+  \\"borderLeftColor\\",
+  \\"borderStartColor\\",
+  \\"borderEndColor\\",
+  \\"borderRadius\\",
+  \\"borderTopLeftRadius\\",
+  \\"borderTopRightRadius\\",
+  \\"borderTopStartRadius\\",
+  \\"borderTopEndRadius\\",
+  \\"borderBottomLeftRadius\\",
+  \\"borderBottomRightRadius\\",
+  \\"borderBottomStartRadius\\",
+  \\"borderBottomEndRadius\\",
+  \\"borderStyle\\",
+  \\"opacity\\",
+  \\"elevation\\"
+]
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 22,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-native-elements/src/config/withTheme.js",
+                    "lineNumber": 40,
+                    "methodName": "<unknown>",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+          Object {
+            "category": "Warning: Failed prop type: Invalid prop \`title\` of type \`object\` supplied to \`Button\`, expected \`string\`.
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: Invalid prop \`title\` of type \`object\` supplied to \`Button\`, expected \`string\`.
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 22,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-native-elements/src/config/withTheme.js",
+                    "lineNumber": 40,
+                    "methodName": "<unknown>",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 97,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: Invalid props.buttonStyle key \`border\` supplied to \`Button\`.
+Bad object: {
+  "backgroundColor": "transparent",
+  "padding": 0,
+  "margin": 0,
+  "width": "100%",
+  "border": null
+}
+Valid keys: [
+  "display",
+  "width",
+  "height",
+  "start",
+  "end",
+  "top",
+  "left",
+  "right",
+  "bottom",
+  "minWidth",
+  "maxWidth",
+  "minHeight",
+  "maxHeight",
+  "margin",
+  "marginVertical",
+  "marginHorizontal",
+  "marginTop",
+  "marginBottom",
+  "marginLeft",
+  "marginRight",
+  "marginStart",
+  "marginEnd",
+  "padding",
+  "paddingVertical",
+  "paddingHorizontal",
+  "paddingTop",
+  "paddingBottom",
+  "paddingLeft",
+  "paddingRight",
+  "paddingStart",
+  "paddingEnd",
+  "borderWidth",
+  "borderTopWidth",
+  "borderStartWidth",
+  "borderEndWidth",
+  "borderRightWidth",
+  "borderBottomWidth",
+  "borderLeftWidth",
+  "position",
+  "flexDirection",
+  "flexWrap",
+  "justifyContent",
+  "alignItems",
+  "alignSelf",
+  "alignContent",
+  "overflow",
+  "flex",
+  "flexGrow",
+  "flexShrink",
+  "flexBasis",
+  "aspectRatio",
+  "zIndex",
+  "direction",
+  "shadowColor",
+  "shadowOffset",
+  "shadowOpacity",
+  "shadowRadius",
+  "transform",
+  "transformMatrix",
+  "decomposedMatrix",
+  "scaleX",
+  "scaleY",
+  "rotation",
+  "translateX",
+  "translateY",
+  "backfaceVisibility",
+  "backgroundColor",
+  "borderColor",
+  "borderTopColor",
+  "borderRightColor",
+  "borderBottomColor",
+  "borderLeftColor",
+  "borderStartColor",
+  "borderEndColor",
+  "borderRadius",
+  "borderTopLeftRadius",
+  "borderTopRightRadius",
+  "borderTopStartRadius",
+  "borderTopEndRadius",
+  "borderBottomLeftRadius",
+  "borderBottomRightRadius",
+  "borderBottomStartRadius",
+  "borderBottomEndRadius",
+  "borderStyle",
+  "opacity",
+  "elevation"
+]
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: Invalid prop \`title\` of type \`object\` supplied to \`Button\`, expected \`string\`.
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
   </View>
 </View>
 `;
@@ -642,44 +1850,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-1"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-1"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  1
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      1
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -689,44 +1939,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-2"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-2"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  2
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  ABC
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      2
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      ABC
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -736,194 +2028,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-3"
-            >
-              <View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  3
-                </Text>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 10,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  DEF
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "flex": 1,
-              "flexDirection": "row",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
               }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-4"
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-3"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  4
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  GHI
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
-              }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-5"
-            >
-              <View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  5
-                </Text>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 10,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  JKL
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={
-              Object {
-                "flex": 1,
-                "flexDirection": "column",
-              }
-            }
-          >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-6"
-            >
-              <View>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  6
-                </Text>
-                <Text
-                  style={
-                    Array [
-                      Object {
-                        "fontSize": 10,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  MNO
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      3
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      DEF
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View
@@ -942,44 +2126,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-7"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-4"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  7
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  PQRS
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      4
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      GHI
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -989,44 +2215,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-8"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-5"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  8
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  TUV
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      5
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      JKL
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -1036,44 +2304,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-9"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-6"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  9
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  VWXYZ
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      6
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      MNO
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
         <View
@@ -1092,44 +2402,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-*"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-7"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  *
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      7
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      PQRS
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -1139,44 +2491,86 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-0"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-8"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  0
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
-                  }
-                >
-                  +
-                </Text>
-              </View>
-            </TouchableOpacity>
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      8
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      TUV
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
           <View
             style={
@@ -1186,48 +2580,1070 @@ exports[`Render the component disabled 1`] = `
               }
             }
           >
-            <TouchableOpacity
-              activeOpacity={1}
-              testID="dial-button-#"
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
             >
-              <View>
-                <Text
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-9"
+              >
+                <View
                   style={
-                    Array [
-                      Object {
-                        "color": "black",
-                        "fontSize": 25,
-                        "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  #
-                </Text>
-                <Text
-                  style={
-                    Array [
+                  <Text
+                    style={
                       Object {
-                        "fontSize": 10,
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
                         "textAlign": "center",
-                      },
-                      Object {
-                        "opacity": 0.3,
-                      },
-                    ]
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      9
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      VWXYZ
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-*"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
                   }
                 >
-                  
-                </Text>
-              </View>
-            </TouchableOpacity>
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      *
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-0"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      0
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      +
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+                "flexDirection": "column",
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderRadius": 3,
+                }
+              }
+            >
+              <TouchableOpacity
+                activeOpacity={1}
+                disabled={false}
+                testID="dial-button-#"
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "transparent",
+                      "border": null,
+                      "borderColor": "#2089dc",
+                      "borderRadius": 3,
+                      "borderWidth": 0,
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                      "margin": 0,
+                      "padding": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "color": "white",
+                        "fontSize": 18,
+                        "paddingBottom": 1,
+                        "paddingTop": 2,
+                        "textAlign": "center",
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "black",
+                            "fontSize": 20,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      #
+                    </Text>
+                    
+
+                    <Text
+                      style={
+                        Array [
+                          Object {
+                            "color": "rgba(0,0,0,0.2)",
+                            "fontSize": 10,
+                            "textAlign": "center",
+                            "width": "100%",
+                          },
+                          Object {
+                            "opacity": 0.3,
+                          },
+                        ]
+                      }
+                    >
+                      
+                    </Text>
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
     </View>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: Failed prop type: Invalid props.buttonStyle key \`border\` supplied to \`Button\`.
+Bad object: {
+  \\"backgroundColor\\": \\"transparent\\",
+  \\"padding\\": 0,
+  \\"margin\\": 0,
+  \\"width\\": \\"100%\\",
+  \\"border\\": null
+}
+Valid keys: [
+  \\"display\\",
+  \\"width\\",
+  \\"height\\",
+  \\"start\\",
+  \\"end\\",
+  \\"top\\",
+  \\"left\\",
+  \\"right\\",
+  \\"bottom\\",
+  \\"minWidth\\",
+  \\"maxWidth\\",
+  \\"minHeight\\",
+  \\"maxHeight\\",
+  \\"margin\\",
+  \\"marginVertical\\",
+  \\"marginHorizontal\\",
+  \\"marginTop\\",
+  \\"marginBottom\\",
+  \\"marginLeft\\",
+  \\"marginRight\\",
+  \\"marginStart\\",
+  \\"marginEnd\\",
+  \\"padding\\",
+  \\"paddingVertical\\",
+  \\"paddingHorizontal\\",
+  \\"paddingTop\\",
+  \\"paddingBottom\\",
+  \\"paddingLeft\\",
+  \\"paddingRight\\",
+  \\"paddingStart\\",
+  \\"paddingEnd\\",
+  \\"borderWidth\\",
+  \\"borderTopWidth\\",
+  \\"borderStartWidth\\",
+  \\"borderEndWidth\\",
+  \\"borderRightWidth\\",
+  \\"borderBottomWidth\\",
+  \\"borderLeftWidth\\",
+  \\"position\\",
+  \\"flexDirection\\",
+  \\"flexWrap\\",
+  \\"justifyContent\\",
+  \\"alignItems\\",
+  \\"alignSelf\\",
+  \\"alignContent\\",
+  \\"overflow\\",
+  \\"flex\\",
+  \\"flexGrow\\",
+  \\"flexShrink\\",
+  \\"flexBasis\\",
+  \\"aspectRatio\\",
+  \\"zIndex\\",
+  \\"direction\\",
+  \\"shadowColor\\",
+  \\"shadowOffset\\",
+  \\"shadowOpacity\\",
+  \\"shadowRadius\\",
+  \\"transform\\",
+  \\"transformMatrix\\",
+  \\"decomposedMatrix\\",
+  \\"scaleX\\",
+  \\"scaleY\\",
+  \\"rotation\\",
+  \\"translateX\\",
+  \\"translateY\\",
+  \\"backfaceVisibility\\",
+  \\"backgroundColor\\",
+  \\"borderColor\\",
+  \\"borderTopColor\\",
+  \\"borderRightColor\\",
+  \\"borderBottomColor\\",
+  \\"borderLeftColor\\",
+  \\"borderStartColor\\",
+  \\"borderEndColor\\",
+  \\"borderRadius\\",
+  \\"borderTopLeftRadius\\",
+  \\"borderTopRightRadius\\",
+  \\"borderTopStartRadius\\",
+  \\"borderTopEndRadius\\",
+  \\"borderBottomLeftRadius\\",
+  \\"borderBottomRightRadius\\",
+  \\"borderBottomStartRadius\\",
+  \\"borderBottomEndRadius\\",
+  \\"borderStyle\\",
+  \\"opacity\\",
+  \\"elevation\\"
+]
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: Invalid props.buttonStyle key \`border\` supplied to \`Button\`.
+Bad object: {
+  \\"backgroundColor\\": \\"transparent\\",
+  \\"padding\\": 0,
+  \\"margin\\": 0,
+  \\"width\\": \\"100%\\",
+  \\"border\\": null
+}
+Valid keys: [
+  \\"display\\",
+  \\"width\\",
+  \\"height\\",
+  \\"start\\",
+  \\"end\\",
+  \\"top\\",
+  \\"left\\",
+  \\"right\\",
+  \\"bottom\\",
+  \\"minWidth\\",
+  \\"maxWidth\\",
+  \\"minHeight\\",
+  \\"maxHeight\\",
+  \\"margin\\",
+  \\"marginVertical\\",
+  \\"marginHorizontal\\",
+  \\"marginTop\\",
+  \\"marginBottom\\",
+  \\"marginLeft\\",
+  \\"marginRight\\",
+  \\"marginStart\\",
+  \\"marginEnd\\",
+  \\"padding\\",
+  \\"paddingVertical\\",
+  \\"paddingHorizontal\\",
+  \\"paddingTop\\",
+  \\"paddingBottom\\",
+  \\"paddingLeft\\",
+  \\"paddingRight\\",
+  \\"paddingStart\\",
+  \\"paddingEnd\\",
+  \\"borderWidth\\",
+  \\"borderTopWidth\\",
+  \\"borderStartWidth\\",
+  \\"borderEndWidth\\",
+  \\"borderRightWidth\\",
+  \\"borderBottomWidth\\",
+  \\"borderLeftWidth\\",
+  \\"position\\",
+  \\"flexDirection\\",
+  \\"flexWrap\\",
+  \\"justifyContent\\",
+  \\"alignItems\\",
+  \\"alignSelf\\",
+  \\"alignContent\\",
+  \\"overflow\\",
+  \\"flex\\",
+  \\"flexGrow\\",
+  \\"flexShrink\\",
+  \\"flexBasis\\",
+  \\"aspectRatio\\",
+  \\"zIndex\\",
+  \\"direction\\",
+  \\"shadowColor\\",
+  \\"shadowOffset\\",
+  \\"shadowOpacity\\",
+  \\"shadowRadius\\",
+  \\"transform\\",
+  \\"transformMatrix\\",
+  \\"decomposedMatrix\\",
+  \\"scaleX\\",
+  \\"scaleY\\",
+  \\"rotation\\",
+  \\"translateX\\",
+  \\"translateY\\",
+  \\"backfaceVisibility\\",
+  \\"backgroundColor\\",
+  \\"borderColor\\",
+  \\"borderTopColor\\",
+  \\"borderRightColor\\",
+  \\"borderBottomColor\\",
+  \\"borderLeftColor\\",
+  \\"borderStartColor\\",
+  \\"borderEndColor\\",
+  \\"borderRadius\\",
+  \\"borderTopLeftRadius\\",
+  \\"borderTopRightRadius\\",
+  \\"borderTopStartRadius\\",
+  \\"borderTopEndRadius\\",
+  \\"borderBottomLeftRadius\\",
+  \\"borderBottomRightRadius\\",
+  \\"borderBottomStartRadius\\",
+  \\"borderBottomEndRadius\\",
+  \\"borderStyle\\",
+  \\"opacity\\",
+  \\"elevation\\"
+]
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 22,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-native-elements/src/config/withTheme.js",
+                    "lineNumber": 40,
+                    "methodName": "<unknown>",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+          Object {
+            "category": "Warning: Failed prop type: Invalid prop \`title\` of type \`object\` supplied to \`Button\`, expected \`string\`.
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: Failed prop type: Invalid prop \`title\` of type \`object\` supplied to \`Button\`, expected \`string\`.
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)",
+                  "substitutions": Array [],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 15,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 20,
+                    "methodName": "printWarning",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 11,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/prop-types/checkPropTypes.js",
+                    "lineNumber": 82,
+                    "methodName": "checkPropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1796,
+                    "methodName": "validatePropTypes",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react/cjs/react.development.js",
+                    "lineNumber": 1969,
+                    "methodName": "Object.createElementWithValidation [as createElement]",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 22,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-native-elements/src/config/withTheme.js",
+                    "lineNumber": 40,
+                    "methodName": "<unknown>",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 97,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: Invalid props.buttonStyle key \`border\` supplied to \`Button\`.
+Bad object: {
+  "backgroundColor": "transparent",
+  "padding": 0,
+  "margin": 0,
+  "width": "100%",
+  "border": null
+}
+Valid keys: [
+  "display",
+  "width",
+  "height",
+  "start",
+  "end",
+  "top",
+  "left",
+  "right",
+  "bottom",
+  "minWidth",
+  "maxWidth",
+  "minHeight",
+  "maxHeight",
+  "margin",
+  "marginVertical",
+  "marginHorizontal",
+  "marginTop",
+  "marginBottom",
+  "marginLeft",
+  "marginRight",
+  "marginStart",
+  "marginEnd",
+  "padding",
+  "paddingVertical",
+  "paddingHorizontal",
+  "paddingTop",
+  "paddingBottom",
+  "paddingLeft",
+  "paddingRight",
+  "paddingStart",
+  "paddingEnd",
+  "borderWidth",
+  "borderTopWidth",
+  "borderStartWidth",
+  "borderEndWidth",
+  "borderRightWidth",
+  "borderBottomWidth",
+  "borderLeftWidth",
+  "position",
+  "flexDirection",
+  "flexWrap",
+  "justifyContent",
+  "alignItems",
+  "alignSelf",
+  "alignContent",
+  "overflow",
+  "flex",
+  "flexGrow",
+  "flexShrink",
+  "flexBasis",
+  "aspectRatio",
+  "zIndex",
+  "direction",
+  "shadowColor",
+  "shadowOffset",
+  "shadowOpacity",
+  "shadowRadius",
+  "transform",
+  "transformMatrix",
+  "decomposedMatrix",
+  "scaleX",
+  "scaleY",
+  "rotation",
+  "translateX",
+  "translateY",
+  "backfaceVisibility",
+  "backgroundColor",
+  "borderColor",
+  "borderTopColor",
+  "borderRightColor",
+  "borderBottomColor",
+  "borderLeftColor",
+  "borderStartColor",
+  "borderEndColor",
+  "borderRadius",
+  "borderTopLeftRadius",
+  "borderTopRightRadius",
+  "borderTopStartRadius",
+  "borderTopEndRadius",
+  "borderBottomLeftRadius",
+  "borderBottomRightRadius",
+  "borderBottomStartRadius",
+  "borderBottomEndRadius",
+  "borderStyle",
+  "opacity",
+  "elevation"
+]
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: Failed prop type: Invalid prop \`title\` of type \`object\` supplied to \`Button\`, expected \`string\`.
+    in Button (created by Context.Consumer)
+    in ThemedComponent (created by ForwardRef(Themed.Button))
+    in ForwardRef(Themed.Button) (created by Dialpad)
+    in View (created by View)
+    in View (created by ColumnNB)
+    in ColumnNB (created by Dialpad)
+    in View (created by View)
+    in View (created by RowNB)
+    in RowNB (created by Dialpad)
+    in View (created by View)
+    in View (created by GridNB)
+    in GridNB (created by Dialpad)
+    in View (created by View)
+    in View (created by Dialpad)
+    in Dialpad
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
   </View>
 </View>
 `;
