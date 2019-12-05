@@ -51,6 +51,7 @@ exports[`Render the component and press save 1`] = `
           }
         >
           <Switch
+            testID="switch64443"
             value={false}
           />
           <View
@@ -196,6 +197,7 @@ exports[`Render the component and press save 1`] = `
           }
         >
           <Switch
+            testID="switch64444"
             value={false}
           />
           <View
@@ -341,6 +343,7 @@ exports[`Render the component and press save 1`] = `
           }
         >
           <Switch
+            testID="switch64445"
             value={false}
           />
           <View

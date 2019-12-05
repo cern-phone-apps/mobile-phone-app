@@ -43,6 +43,7 @@ export function CallForwardingListRingingScreen(props) {
           title={number.value}
           left={() => (
             <Switch
+              testID={`switch${number.value}`}
               onChange={() => onChangeRinging(number.value)}
               value={enabledRingingList.includes(number.value)}
             />
