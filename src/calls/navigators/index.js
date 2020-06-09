@@ -10,6 +10,7 @@ import CallModalScreenContainer from '../screens/CallModalScreen/CallModalScreen
 import RegisterStack from './register';
 import ContactsStack from './contacts';
 import ColorPalette from '../../styles/ColorPalette';
+import SwitchNumbersScreenContainer from '../screens/SwitchNumbersScreen/SwitchNumbersScreenContainer';
 
 export const AppStack = createMaterialBottomTabNavigator(
   {
@@ -52,6 +53,7 @@ export const AppStack = createMaterialBottomTabNavigator(
 export const AppFullStack = createSwitchNavigator(
   {
     RegisterLoading: RegisterLoadingScreenContainer,
+    SwitchNumbers: SwitchNumbersScreenContainer,
     CallModal: CallModalScreenContainer,
     AppRegistered: AppStack,
     Register: RegisterStack

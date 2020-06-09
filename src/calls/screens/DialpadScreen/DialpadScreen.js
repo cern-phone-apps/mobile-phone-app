@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { StyleSheet, View, Alert } from 'react-native';
+import { Icon, Text } from 'react-native-elements'
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 import MakeCallForm from '../../components/DialpadForm/DialpadForm';
 
@@ -77,6 +78,24 @@ const DialpadScreen = ({
             color: 'white',
             overflow: 'hidden'
           }}
+          onPress={() =>
+            Alert.alert(
+              'Switch number',
+              'Do you really want to switch numbers ?',
+              [
+                {
+                  text: 'Cancel',
+                  onPress: () => null,
+                  style: 'cancel'
+                },
+                {
+                  text: 'Yes',
+                  onPress: () => navigation.navigate('SwitchNumbers')
+                }
+              ],
+              { cancelable: false }
+            )
+          }
         >
           {activeNumber}
         </Text>
