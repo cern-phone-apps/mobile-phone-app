@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Profile = ({ user }) => {
   return (
-    <Card>
+    <Card testID={"Profile"}>
       <Text style={{ fontWeight: 'bold' }}>
         {user.firstName} {user.lastName}
       </Text>

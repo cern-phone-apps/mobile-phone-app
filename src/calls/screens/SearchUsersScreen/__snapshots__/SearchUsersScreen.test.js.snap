@@ -1,0 +1,1867 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the component 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 3,
+              "justifyContent": "space-around",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#e1e8ee",
+                "borderBottomColor": "#e1e1e1",
+                "borderBottomWidth": 1,
+                "borderTopColor": "#e1e1e1",
+                "borderTopWidth": 1,
+                "padding": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#bdc6cf",
+                    "borderBottomWidth": 0,
+                    "borderColor": "#86939e",
+                    "borderRadius": 3,
+                    "flexDirection": "row",
+                    "minHeight": 30,
+                    "overflow": "hidden",
+                    "transform": Array [
+                      Object {
+                        "translateX": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  <View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "justifyContent": "center",
+                        }
+                      }
+                      theme={
+                        Object {
+                          "colors": Object {
+                            "disabled": "hsl(208, 8%, 90%)",
+                            "divider": "#bcbbc1",
+                            "error": "#ff190c",
+                            "grey0": "#393e42",
+                            "grey1": "#43484d",
+                            "grey2": "#5e6977",
+                            "grey3": "#86939e",
+                            "grey4": "#bdc6cf",
+                            "grey5": "#e1e8ee",
+                            "greyOutline": "#bbb",
+                            "platform": Object {
+                              "android": Object {
+                                "error": "#f44336",
+                                "primary": "#2196f3",
+                                "secondary": "#9C27B0",
+                                "success": "#4caf50",
+                                "warning": "#ffeb3b",
+                              },
+                              "ios": Object {
+                                "error": "#ff3b30",
+                                "primary": "#007aff",
+                                "secondary": "#5856d6",
+                                "success": "#4cd964",
+                                "warning": "#ffcc00",
+                              },
+                            },
+                            "primary": "#2089dc",
+                            "searchBg": "#303337",
+                            "secondary": "#8F0CE8",
+                            "success": "#52c41a",
+                            "warning": "#faad14",
+                          },
+                        }
+                      }
+                      underlayColor="white"
+                    >
+                      <Text
+                        allowFontScaling={false}
+                        style={
+                          Array [
+                            Object {
+                              "color": "#86939e",
+                              "fontSize": 18,
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                            },
+                            Object {
+                              "fontFamily": "Material Icons",
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            },
+                            Object {},
+                          ]
+                        }
+                        testID="iconIcon"
+                      >
+                        
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <TextInput
+                  allowFontScaling={true}
+                  editable={true}
+                  placeholder="Search for users"
+                  placeholderTextColor="#86939e"
+                  platform="default"
+                  rejectResponderTermination={true}
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "color": "#86939e",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "marginLeft": 10,
+                      "minHeight": 40,
+                    }
+                  }
+                  testID="SearchUserScreenBar"
+                  underlineColorAndroid="transparent"
+                  value={null}
+                />
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 15,
+                      "marginRight": 8,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E1E8EE",
+              "flex": 1,
+              "justifyContent": "center",
+              "paddingRight": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderRadius": 3,
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.3}
+              disabled={true}
+              testID="SearchUserScreenButton"
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "hsl(208, 8%, 90%)",
+                    "borderColor": "#2089dc",
+                    "borderRadius": 3,
+                    "borderWidth": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "padding": 8,
+                  }
+                }
+              >
+                <ActivityIndicator
+                  animating={true}
+                  color="white"
+                  hidesWhenStopped={true}
+                  size="small"
+                  style={
+                    Object {
+                      "marginVertical": 2,
+                    }
+                  }
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+      <View>
+        <ScrollView
+          data={Array []}
+          disableVirtualization={false}
+          horizontal={false}
+          initialNumToRender={10}
+          maxToRenderPerBatch={10}
+          numColumns={1}
+          onEndReachedThreshold={2}
+          refreshing={true}
+          removeClippedSubviews={false}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="large"
+            style={
+              Object {
+                "paddingTop": 100,
+              }
+            }
+          />
+        </ScrollView>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Render the component 2`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 3,
+              "justifyContent": "space-around",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#e1e8ee",
+                "borderBottomColor": "#e1e1e1",
+                "borderBottomWidth": 1,
+                "borderTopColor": "#e1e1e1",
+                "borderTopWidth": 1,
+                "padding": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#bdc6cf",
+                    "borderBottomWidth": 0,
+                    "borderColor": "#86939e",
+                    "borderRadius": 3,
+                    "flexDirection": "row",
+                    "minHeight": 30,
+                    "overflow": "hidden",
+                    "transform": Array [
+                      Object {
+                        "translateX": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  <View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "justifyContent": "center",
+                        }
+                      }
+                      theme={
+                        Object {
+                          "colors": Object {
+                            "disabled": "hsl(208, 8%, 90%)",
+                            "divider": "#bcbbc1",
+                            "error": "#ff190c",
+                            "grey0": "#393e42",
+                            "grey1": "#43484d",
+                            "grey2": "#5e6977",
+                            "grey3": "#86939e",
+                            "grey4": "#bdc6cf",
+                            "grey5": "#e1e8ee",
+                            "greyOutline": "#bbb",
+                            "platform": Object {
+                              "android": Object {
+                                "error": "#f44336",
+                                "primary": "#2196f3",
+                                "secondary": "#9C27B0",
+                                "success": "#4caf50",
+                                "warning": "#ffeb3b",
+                              },
+                              "ios": Object {
+                                "error": "#ff3b30",
+                                "primary": "#007aff",
+                                "secondary": "#5856d6",
+                                "success": "#4cd964",
+                                "warning": "#ffcc00",
+                              },
+                            },
+                            "primary": "#2089dc",
+                            "searchBg": "#303337",
+                            "secondary": "#8F0CE8",
+                            "success": "#52c41a",
+                            "warning": "#faad14",
+                          },
+                        }
+                      }
+                      underlayColor="white"
+                    >
+                      <Text
+                        allowFontScaling={false}
+                        style={
+                          Array [
+                            Object {
+                              "color": "#86939e",
+                              "fontSize": 18,
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                            },
+                            Object {
+                              "fontFamily": "Material Icons",
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            },
+                            Object {},
+                          ]
+                        }
+                        testID="iconIcon"
+                      >
+                        
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <TextInput
+                  allowFontScaling={true}
+                  editable={true}
+                  placeholder="Search for users"
+                  placeholderTextColor="#86939e"
+                  platform="default"
+                  rejectResponderTermination={true}
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "color": "#86939e",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "marginLeft": 10,
+                      "minHeight": 40,
+                    }
+                  }
+                  testID="SearchUserScreenBar"
+                  underlineColorAndroid="transparent"
+                  value="DisplayName"
+                />
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 15,
+                      "marginRight": 8,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <View>
+                      <TouchableHighlight
+                        activeOpacity={0.85}
+                        delayPressOut={100}
+                        disabled={false}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "justifyContent": "center",
+                          }
+                        }
+                        theme={
+                          Object {
+                            "colors": Object {
+                              "disabled": "hsl(208, 8%, 90%)",
+                              "divider": "#bcbbc1",
+                              "error": "#ff190c",
+                              "grey0": "#393e42",
+                              "grey1": "#43484d",
+                              "grey2": "#5e6977",
+                              "grey3": "#86939e",
+                              "grey4": "#bdc6cf",
+                              "grey5": "#e1e8ee",
+                              "greyOutline": "#bbb",
+                              "platform": Object {
+                                "android": Object {
+                                  "error": "#f44336",
+                                  "primary": "#2196f3",
+                                  "secondary": "#9C27B0",
+                                  "success": "#4caf50",
+                                  "warning": "#ffeb3b",
+                                },
+                                "ios": Object {
+                                  "error": "#ff3b30",
+                                  "primary": "#007aff",
+                                  "secondary": "#5856d6",
+                                  "success": "#4cd964",
+                                  "warning": "#ffcc00",
+                                },
+                              },
+                              "primary": "#2089dc",
+                              "searchBg": "#303337",
+                              "secondary": "#8F0CE8",
+                              "success": "#52c41a",
+                              "warning": "#faad14",
+                            },
+                          }
+                        }
+                        underlayColor="white"
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "#86939e",
+                                "fontSize": 18,
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                              Object {
+                                "fontFamily": "Material Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
+                            ]
+                          }
+                          testID="iconIcon"
+                        >
+                          
+                        </Text>
+                      </TouchableHighlight>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E1E8EE",
+              "flex": 1,
+              "justifyContent": "center",
+              "paddingRight": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderRadius": 3,
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.3}
+              disabled={false}
+              testID="SearchUserScreenButton"
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#2089dc",
+                    "borderColor": "#2089dc",
+                    "borderRadius": 3,
+                    "borderWidth": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "padding": 8,
+                  }
+                }
+              >
+                <ActivityIndicator
+                  animating={true}
+                  color="white"
+                  hidesWhenStopped={true}
+                  size="small"
+                  style={
+                    Object {
+                      "marginVertical": 2,
+                    }
+                  }
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+      <View>
+        <ScrollView
+          data={Array []}
+          disableVirtualization={false}
+          horizontal={false}
+          initialNumToRender={10}
+          maxToRenderPerBatch={10}
+          numColumns={1}
+          onEndReachedThreshold={2}
+          refreshing={true}
+          removeClippedSubviews={false}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="large"
+            style={
+              Object {
+                "paddingTop": 100,
+              }
+            }
+          />
+        </ScrollView>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Render the component with 2 characters 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 3,
+              "justifyContent": "space-around",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#e1e8ee",
+                "borderBottomColor": "#e1e1e1",
+                "borderBottomWidth": 1,
+                "borderTopColor": "#e1e1e1",
+                "borderTopWidth": 1,
+                "padding": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#bdc6cf",
+                    "borderBottomWidth": 0,
+                    "borderColor": "#86939e",
+                    "borderRadius": 3,
+                    "flexDirection": "row",
+                    "minHeight": 30,
+                    "overflow": "hidden",
+                    "transform": Array [
+                      Object {
+                        "translateX": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  <View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "justifyContent": "center",
+                        }
+                      }
+                      theme={
+                        Object {
+                          "colors": Object {
+                            "disabled": "hsl(208, 8%, 90%)",
+                            "divider": "#bcbbc1",
+                            "error": "#ff190c",
+                            "grey0": "#393e42",
+                            "grey1": "#43484d",
+                            "grey2": "#5e6977",
+                            "grey3": "#86939e",
+                            "grey4": "#bdc6cf",
+                            "grey5": "#e1e8ee",
+                            "greyOutline": "#bbb",
+                            "platform": Object {
+                              "android": Object {
+                                "error": "#f44336",
+                                "primary": "#2196f3",
+                                "secondary": "#9C27B0",
+                                "success": "#4caf50",
+                                "warning": "#ffeb3b",
+                              },
+                              "ios": Object {
+                                "error": "#ff3b30",
+                                "primary": "#007aff",
+                                "secondary": "#5856d6",
+                                "success": "#4cd964",
+                                "warning": "#ffcc00",
+                              },
+                            },
+                            "primary": "#2089dc",
+                            "searchBg": "#303337",
+                            "secondary": "#8F0CE8",
+                            "success": "#52c41a",
+                            "warning": "#faad14",
+                          },
+                        }
+                      }
+                      underlayColor="white"
+                    >
+                      <Text
+                        allowFontScaling={false}
+                        style={
+                          Array [
+                            Object {
+                              "color": "#86939e",
+                              "fontSize": 18,
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                            },
+                            Object {
+                              "fontFamily": "Material Icons",
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            },
+                            Object {},
+                          ]
+                        }
+                        testID="iconIcon"
+                      >
+                        
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <TextInput
+                  allowFontScaling={true}
+                  editable={true}
+                  placeholder="Search for users"
+                  placeholderTextColor="#86939e"
+                  platform="default"
+                  rejectResponderTermination={true}
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "color": "#86939e",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "marginLeft": 10,
+                      "minHeight": 40,
+                    }
+                  }
+                  testID="SearchUserScreenBar"
+                  underlineColorAndroid="transparent"
+                  value="12"
+                />
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 15,
+                      "marginRight": 8,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <View>
+                      <TouchableHighlight
+                        activeOpacity={0.85}
+                        delayPressOut={100}
+                        disabled={false}
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "backgroundColor": "transparent",
+                            "justifyContent": "center",
+                          }
+                        }
+                        theme={
+                          Object {
+                            "colors": Object {
+                              "disabled": "hsl(208, 8%, 90%)",
+                              "divider": "#bcbbc1",
+                              "error": "#ff190c",
+                              "grey0": "#393e42",
+                              "grey1": "#43484d",
+                              "grey2": "#5e6977",
+                              "grey3": "#86939e",
+                              "grey4": "#bdc6cf",
+                              "grey5": "#e1e8ee",
+                              "greyOutline": "#bbb",
+                              "platform": Object {
+                                "android": Object {
+                                  "error": "#f44336",
+                                  "primary": "#2196f3",
+                                  "secondary": "#9C27B0",
+                                  "success": "#4caf50",
+                                  "warning": "#ffeb3b",
+                                },
+                                "ios": Object {
+                                  "error": "#ff3b30",
+                                  "primary": "#007aff",
+                                  "secondary": "#5856d6",
+                                  "success": "#4cd964",
+                                  "warning": "#ffcc00",
+                                },
+                              },
+                              "primary": "#2089dc",
+                              "searchBg": "#303337",
+                              "secondary": "#8F0CE8",
+                              "success": "#52c41a",
+                              "warning": "#faad14",
+                            },
+                          }
+                        }
+                        underlayColor="white"
+                      >
+                        <Text
+                          allowFontScaling={false}
+                          style={
+                            Array [
+                              Object {
+                                "color": "#86939e",
+                                "fontSize": 18,
+                              },
+                              Object {
+                                "backgroundColor": "transparent",
+                              },
+                              Object {
+                                "fontFamily": "Material Icons",
+                                "fontStyle": "normal",
+                                "fontWeight": "normal",
+                              },
+                              Object {},
+                            ]
+                          }
+                          testID="iconIcon"
+                        >
+                          
+                        </Text>
+                      </TouchableHighlight>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E1E8EE",
+              "flex": 1,
+              "justifyContent": "center",
+              "paddingRight": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderRadius": 3,
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.3}
+              disabled={true}
+              testID="SearchUserScreenButton"
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "hsl(208, 8%, 90%)",
+                    "borderColor": "#2089dc",
+                    "borderRadius": 3,
+                    "borderWidth": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "padding": 8,
+                  }
+                }
+              >
+                <ActivityIndicator
+                  animating={true}
+                  color="white"
+                  hidesWhenStopped={true}
+                  size="small"
+                  style={
+                    Object {
+                      "marginVertical": 2,
+                    }
+                  }
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+      <View>
+        <ScrollView
+          data={Array []}
+          disableVirtualization={false}
+          horizontal={false}
+          initialNumToRender={10}
+          maxToRenderPerBatch={10}
+          numColumns={1}
+          onEndReachedThreshold={2}
+          refreshing={true}
+          removeClippedSubviews={false}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="large"
+            style={
+              Object {
+                "paddingTop": 100,
+              }
+            }
+          />
+        </ScrollView>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: An update to ﻿%s inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act﻿%s",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: An update to \\"SearchUsersScreen\\" inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act\\"
+    in SearchUsersScreen
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)\\"",
+                  "substitutions": Array [
+                    Object {
+                      "length": 19,
+                      "offset": 22,
+                    },
+                    Object {
+                      "length": 204,
+                      "offset": 387,
+                    },
+                  ],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 32,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js",
+                    "lineNumber": 104,
+                    "methodName": "warningWithoutStack",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 7,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js",
+                    "lineNumber": 14051,
+                    "methodName": "warnIfNotCurrentlyActingUpdatesInDEV",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 9,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js",
+                    "lineNumber": 6467,
+                    "methodName": "setSearchResults",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/src/calls/screens/SearchUsersScreen/SearchUsersScreen.js",
+                    "lineNumber": 33,
+                    "methodName": "onPress$",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 40,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/regenerator-runtime/runtime.js",
+                    "lineNumber": 45,
+                    "methodName": "tryCatch",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 48.5,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: An update to 
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "color": "rgba(255, 255, 255, 0.6)",
+                    }
+                  }
+                >
+                  "SearchUsersScreen"
+                </Text>
+                <Text>
+                   inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "color": "rgba(255, 255, 255, 0.6)",
+                    }
+                  }
+                >
+                  "
+    in SearchUsersScreen
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)"
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Render the component with empty 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 3,
+              "justifyContent": "space-around",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "#e1e8ee",
+                "borderBottomColor": "#e1e1e1",
+                "borderBottomWidth": 1,
+                "borderTopColor": "#e1e1e1",
+                "borderTopWidth": 1,
+                "padding": 8,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "paddingHorizontal": 0,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#bdc6cf",
+                    "borderBottomWidth": 0,
+                    "borderColor": "#86939e",
+                    "borderRadius": 3,
+                    "flexDirection": "row",
+                    "minHeight": 30,
+                    "overflow": "hidden",
+                    "transform": Array [
+                      Object {
+                        "translateX": 0,
+                      },
+                    ],
+                  }
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 8,
+                    }
+                  }
+                >
+                  <View>
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "transparent",
+                          "justifyContent": "center",
+                        }
+                      }
+                      theme={
+                        Object {
+                          "colors": Object {
+                            "disabled": "hsl(208, 8%, 90%)",
+                            "divider": "#bcbbc1",
+                            "error": "#ff190c",
+                            "grey0": "#393e42",
+                            "grey1": "#43484d",
+                            "grey2": "#5e6977",
+                            "grey3": "#86939e",
+                            "grey4": "#bdc6cf",
+                            "grey5": "#e1e8ee",
+                            "greyOutline": "#bbb",
+                            "platform": Object {
+                              "android": Object {
+                                "error": "#f44336",
+                                "primary": "#2196f3",
+                                "secondary": "#9C27B0",
+                                "success": "#4caf50",
+                                "warning": "#ffeb3b",
+                              },
+                              "ios": Object {
+                                "error": "#ff3b30",
+                                "primary": "#007aff",
+                                "secondary": "#5856d6",
+                                "success": "#4cd964",
+                                "warning": "#ffcc00",
+                              },
+                            },
+                            "primary": "#2089dc",
+                            "searchBg": "#303337",
+                            "secondary": "#8F0CE8",
+                            "success": "#52c41a",
+                            "warning": "#faad14",
+                          },
+                        }
+                      }
+                      underlayColor="white"
+                    >
+                      <Text
+                        allowFontScaling={false}
+                        style={
+                          Array [
+                            Object {
+                              "color": "#86939e",
+                              "fontSize": 18,
+                            },
+                            Object {
+                              "backgroundColor": "transparent",
+                            },
+                            Object {
+                              "fontFamily": "Material Icons",
+                              "fontStyle": "normal",
+                              "fontWeight": "normal",
+                            },
+                            Object {},
+                          ]
+                        }
+                        testID="iconIcon"
+                      >
+                        
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <TextInput
+                  allowFontScaling={true}
+                  editable={true}
+                  placeholder="Search for users"
+                  placeholderTextColor="#86939e"
+                  platform="default"
+                  rejectResponderTermination={true}
+                  style={
+                    Object {
+                      "alignSelf": "center",
+                      "color": "#86939e",
+                      "flex": 1,
+                      "fontSize": 18,
+                      "marginLeft": 10,
+                      "minHeight": 40,
+                    }
+                  }
+                  testID="SearchUserScreenBar"
+                  underlineColorAndroid="transparent"
+                  value=""
+                />
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "height": 40,
+                      "justifyContent": "center",
+                      "marginLeft": 15,
+                      "marginRight": 8,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      Object {
+                        "flexDirection": "row",
+                      }
+                    }
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#E1E8EE",
+              "flex": 1,
+              "justifyContent": "center",
+              "paddingRight": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderRadius": 3,
+              }
+            }
+          >
+            <TouchableOpacity
+              activeOpacity={0.3}
+              disabled={true}
+              testID="SearchUserScreenButton"
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "hsl(208, 8%, 90%)",
+                    "borderColor": "#2089dc",
+                    "borderRadius": 3,
+                    "borderWidth": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "padding": 8,
+                  }
+                }
+              >
+                <ActivityIndicator
+                  animating={true}
+                  color="white"
+                  hidesWhenStopped={true}
+                  size="small"
+                  style={
+                    Object {
+                      "marginVertical": 2,
+                    }
+                  }
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+      <View>
+        <ScrollView
+          data={Array []}
+          disableVirtualization={false}
+          horizontal={false}
+          initialNumToRender={10}
+          maxToRenderPerBatch={10}
+          numColumns={1}
+          onEndReachedThreshold={2}
+          refreshing={true}
+          removeClippedSubviews={false}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          updateCellsBatchingPeriod={50}
+          viewabilityConfigCallbackPairs={Array []}
+          windowSize={21}
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#999999"
+            hidesWhenStopped={true}
+            size="large"
+            style={
+              Object {
+                "paddingTop": 100,
+              }
+            }
+          />
+        </ScrollView>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      pointerEvents="box-none"
+      style={
+        Object {
+          "bottom": "100%",
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "paddingBottom": 4,
+          "paddingEnd": 4,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    >
+      <TouchableWithoutFeedback
+        hitSlop={
+          Object {
+            "bottom": 4,
+            "left": 4,
+            "right": 4,
+            "top": 4,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(250, 186, 48, 0.95)",
+              },
+              Object {
+                "borderRadius": 14,
+                "height": 28,
+                "justifyContent": "center",
+                "paddingHorizontal": 12,
+              },
+            ]
+          }
+        >
+          <Text
+            numberOfLines={1}
+            style={
+              Object {
+                "color": "rgba(255, 255, 255, 1)",
+                "fontSize": 12,
+                "includeFontPadding": false,
+                "lineHeight": 16,
+              }
+            }
+          >
+            Dismiss All
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+    </View>
+    <ScrollView
+      data={
+        Array [
+          Object {
+            "category": "Warning: An update to ﻿%s inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act﻿%s",
+            "warnings": Array [
+              YellowBoxWarning {
+                "message": Object {
+                  "content": "Warning: An update to \\"SearchUsersScreen\\" inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act\\"
+    in SearchUsersScreen
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)\\"",
+                  "substitutions": Array [
+                    Object {
+                      "length": 19,
+                      "offset": 22,
+                    },
+                    Object {
+                      "length": 204,
+                      "offset": 387,
+                    },
+                  ],
+                },
+                "stack": Array [
+                  Object {
+                    "arguments": Array [],
+                    "column": 32,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js",
+                    "lineNumber": 104,
+                    "methodName": "warningWithoutStack",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 7,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js",
+                    "lineNumber": 14051,
+                    "methodName": "warnIfNotCurrentlyActingUpdatesInDEV",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 9,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/react-test-renderer/cjs/react-test-renderer.development.js",
+                    "lineNumber": 6467,
+                    "methodName": "setSearchResults",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 5,
+                    "file": "/Users/fiser/developer/mobile-phone-app/src/calls/screens/SearchUsersScreen/SearchUsersScreen.js",
+                    "lineNumber": 33,
+                    "methodName": "onPress$",
+                  },
+                  Object {
+                    "arguments": Array [],
+                    "column": 40,
+                    "file": "/Users/fiser/developer/mobile-phone-app/node_modules/regenerator-runtime/runtime.js",
+                    "lineNumber": 45,
+                    "methodName": "tryCatch",
+                  },
+                ],
+                "symbolicated": Object {
+                  "error": null,
+                  "stack": null,
+                  "status": "NONE",
+                },
+              },
+            ],
+          },
+        ]
+      }
+      disableVirtualization={false}
+      horizontal={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onEndReachedThreshold={2}
+      removeClippedSubviews={false}
+      scrollEnabled={false}
+      scrollEventThrottle={50}
+      scrollsToTop={false}
+      stickyHeaderIndices={Array []}
+      style={
+        Object {
+          "height": 48.5,
+        }
+      }
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <View
+        style={null}
+      >
+        <TouchableWithoutFeedback>
+          <View
+            style={
+              Array [
+                Object {
+                  "backgroundColor": "rgba(250, 186, 48, 0.95)",
+                },
+                Object {
+                  "height": 48,
+                  "justifyContent": "center",
+                  "marginTop": 0.5,
+                  "paddingHorizontal": 12,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <Text
+                numberOfLines={2}
+                style={
+                  Object {
+                    "color": "rgba(255, 255, 255, 1)",
+                    "flex": 1,
+                    "fontSize": 14,
+                    "includeFontPadding": false,
+                    "lineHeight": 18,
+                  }
+                }
+              >
+                <Text>
+                  Warning: An update to 
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "color": "rgba(255, 255, 255, 0.6)",
+                    }
+                  }
+                >
+                  "SearchUsersScreen"
+                </Text>
+                <Text>
+                   inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://fb.me/react-wrap-tests-with-act
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "color": "rgba(255, 255, 255, 0.6)",
+                    }
+                  }
+                >
+                  "
+    in SearchUsersScreen
+    in View (created by View)
+    in View (created by AppContainer)
+    in View (created by View)
+    in View (created by AppContainer)
+    in AppContainer (at src/index.js:26)"
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </ScrollView>
+    <SafeAreaView
+      style={
+        Object {
+          "backgroundColor": "rgba(250, 186, 48, 0.95)",
+          "marginTop": 0.5,
+        }
+      }
+    />
+  </View>
+</View>
+`;

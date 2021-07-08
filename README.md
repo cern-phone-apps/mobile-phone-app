@@ -101,3 +101,31 @@ The following command will generate the `apk` for Android.
 cd android
 ./gradlew assembleRelease
 ```
+
+## Testing Environment
+
+### Type of testing
+We make the testing with the @testing-library/react-native. We use principaly for test this different type of elements:
+- Components: We test all of the components without the redux state. Only for check the construction of the element and macking a snapshot.
+- Reducers and Actions: At the actions and reducers we have all of the logic of the application.
+- Other elements with logic: We have other files with a bussines logic.
+
+### Coverage
+For make a coverage page in HTML you only need to type at the terminal this:
+
+```
+yarn coverage
+```
+
+### Excluded files from testing
+- We exclude the Containers of the components because they only make a bridge between the redux state and the component.
+- We exclude the Navigators from the testing because his all of his logic is tested inside the react-navigation-stack project.
+
+
+### Testing of the project in the future
+
+For test all of the funtionality of the project we have other tools better than jest.
+Jest is the best tool for make unit and integration testing, but we need check the use cases of the application in a real environment for check if the app is running correctly.
+For this objetive we are studing diferent tools:
+
+- https://blog.logrocket.com/end-to-end-testing-in-react-native-with-detox/

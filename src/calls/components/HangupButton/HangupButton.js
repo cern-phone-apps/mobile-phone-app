@@ -4,7 +4,7 @@ import { Icon, Button } from 'react-native-elements';
 
 import { withPhoneService } from '../../providers/PhoneProvider/PhoneService';
 
-function HangupForm({ phoneService }) {
+export function HangupForm({ phoneService }) {
   const hangupCall = () => {
     phoneService.hangUpCurrentCallAction();
   };
@@ -20,6 +20,7 @@ function HangupForm({ phoneService }) {
         width: 70,
         height: 70
       }}
+      testID="HangupForm"
       icon={
         <Icon
           name="phone-hangup"

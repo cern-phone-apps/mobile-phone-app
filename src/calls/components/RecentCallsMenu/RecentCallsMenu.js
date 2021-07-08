@@ -49,6 +49,7 @@ const RecentCallsMenu = ({ clearRecentCalls }) => (
     HeaderButtonComponent={IoniconsHeaderButton}
   >
     <Item
+      testID="RecentCallMenuItem"
       title="Clear all"
       onPress={() => clearRecentCallsFunc(clearRecentCalls)}
       show="never"

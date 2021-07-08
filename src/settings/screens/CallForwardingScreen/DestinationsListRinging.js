@@ -11,13 +11,10 @@ const modes = Object.freeze({
   FORWARD_TO: 'forwardto'
 });
 
-function CallForwardingListRingingScreen(props) {
+export function CallForwardingListRingingScreen(props) {
   const {
-    navigation,
     localRingingList,
-    addLocalRingingNumber,
     removeLocalRingingNumber,
-    clearLocalRingingList,
     enabledRingingList,
     setEnabledRingingList
   } = props;
@@ -46,12 +43,14 @@ function CallForwardingListRingingScreen(props) {
           title={number.value}
           left={() => (
             <Switch
+              testID={`switch${number.value}`}
               onChange={() => onChangeRinging(number.value)}
               value={enabledRingingList.includes(number.value)}
             />
           )}
           right={() => (
             <IconButton
+              testID={`icon-button-${number.value}`}
               color="#000"
               icon="delete"
               onPress={() => {

@@ -68,6 +68,7 @@ export default function SearchUsersScreen({
       >
         <View style={{ flex: 3, justifyContent: 'space-around' }}>
           <SearchBar
+            testID="SearchUserScreenBar"
             placeholder="Search for users"
             onChangeText={onChangeText}
             value={searchText}
@@ -88,6 +89,7 @@ export default function SearchUsersScreen({
           }}
         >
           <Button
+            testID="SearchUserScreenButton"
             title="Search"
             onPress={onPress}
             loading={searching}

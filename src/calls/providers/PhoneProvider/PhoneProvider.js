@@ -12,16 +12,6 @@ import {
   toneOutMessage
 } from '../../../common/utils/logging';
 
-// TODO REMOVE
-const displayErrorAlert = (header = 'Error', message) => {
-  Alert.alert(header, message, [
-    {
-      text: 'Close',
-      style: 'cancel'
-    }
-  ]);
-};
-
 export class PhoneProvider extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,

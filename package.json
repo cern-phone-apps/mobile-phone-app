@@ -6,8 +6,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
-    "test-coverage": "jest --coverage",
+    "test": "jest --silent",
+    "coverage": "jest --coverage --silent",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -55,6 +55,7 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
     "eslint": "^6.5.1",
+    "@testing-library/react-native": "^5.0.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-import": "^2.17.2",
@@ -67,17 +68,12 @@
     "react-test-renderer": "16.9.0"
   },
   "jest": {
-    "preset": "react-native",
-    "transform": {
-      "^.+\\.js?$": "babel-jest"
-    },
-    "testPathIgnorePatterns": [
-      "modules/"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!**/node_modules/",
-      "!**/modules/"
+    "collectCoverage": true,
+    "collectCoverageFrom": ["!**/*Container.js", "!src/*.js", "!src/**/navigators/*.js", "src/**/*.{ts,js}"],
+    "coverageReporters": ["json", "html"],
+    "preset": "@testing-library/react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|native-base|react-navigation)"
     ]
   }
 }

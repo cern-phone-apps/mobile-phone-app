@@ -27,6 +27,7 @@ const logoutFunc = (logout, navigation, phoneService) => {
 const LogoutListComponent = ({ logout, navigation, phoneService }) => {
   return (
     <ListItem
+      testID="LogoutListComponent"
       key="logout"
       title="Log out"
       leftIcon={{ name: 'logout', type: 'material-community' }}
